@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="ELCID — Knowledge & Insights Hub">
+    <title>ELCID | Knowledge & Insights Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { burgundy: { 800: "#58111A", 900: "#35090f" }, silver: "#C0C0C0" } } } };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #58111A;
+            --dark: #35090f;
+            --silver: #C0C0C0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            color: #fff;
+            background: radial-gradient(circle at 10% 5%, rgba(255, 255, 255, .07), transparent 25%), radial-gradient(circle at 90% 25%, rgba(150, 20, 45, .18), transparent 30%), linear-gradient(145deg, #35090f, #58111A 50%, #3b0b12);
+            font-family: Inter, "Noto Sans Myanmar", sans-serif;
+            overflow-x: hidden
+        }
+
+        .mm {
+            font-family: "Noto Sans Myanmar", Inter, sans-serif
+        }
+
+        .glass {
+            background: linear-gradient(135deg, rgba(255, 255, 255, .075), rgba(255, 255, 255, .025));
+            border: 1px solid rgba(255, 255, 255, .13);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px)
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, .72);
+            position: relative;
+            transition: .25s
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff
+        }
+
+        .nav-link.active:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -8px;
+            height: 2px;
+            border-radius: 9px;
+            background: #fff
+        }
+
+        .card {
+            transition: .35s ease;
+            position: relative;
+            overflow: hidden
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, .3);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, .28)
+        }
+
+        .filter {
+            border: 1px solid rgba(255, 255, 255, .16);
+            background: rgba(255, 255, 255, .055);
+            color: rgba(255, 255, 255, .75);
+            transition: .25s
+        }
+
+        .filter:hover,
+        .filter.active {
+            background: #fff;
+            color: #58111A;
+            border-color: #fff
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: .7s ease
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: none
+        }
+
+        .modal-bg {
+            background: rgba(8, 2, 4, .8);
+            backdrop-filter: blur(12px)
+        }
+
+        .reader {
+            animation: readerIn .3s ease-out
+        }
+
+        @keyframes readerIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px) scale(.985)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @media(max-width:767px) {
+            .mobile-menu {
+                display: none
+            }
+
+            .mobile-menu.open {
+                display: block
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="fixed top-0 left-0 right-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+            <nav class="glass rounded-2xl px-4 sm:px-6 py-3 shadow-2xl">
+                <div class="flex items-center justify-between gap-4">
+                    <a href="index.html" class="flex items-center gap-3 shrink-0">
+                        <spanclass="w-10 h-10 rounded-xl bg-white text-burgundy-800 grid place-items-center
+                            font-extrabold"></span>
+                            <spanclass="font-extrabold tracking-[.18em]"> ELCID </span>
+                    </a>
+                    <div class="hidden md:flex items-center gap-7 text-sm font-medium">
+                        <a class="nav-link" data-nav="home" href="index.html" target="_blank">Home</a>
+                        <a class="nav-link" data-nav="about" href="about.html" target="_blank">About</a>
+                        <a class="nav-link" data-nav="service" href="service.html target="_blank"">Service</a>
+                        <a class="nav-link" data-nav="team" href="team.html" target="_blank">Team</a>
+                        <a class="nav-link active" data-nav="blog" href="blog.html" target="_blank">Blog</a>
+                        <a class="nav-link" data-nav="contact" href="#contact" ">Contact</a>
+                    </div>
+                    <div class="flex items-center gap-2"><button id="langBtn"
+                            class="glass rounded-xl px-3 py-2 text-xs font-bold tracking-wider hover:bg-white hover:text-burgundy-800 transition">EN
+                            / MM</button><button id="menuBtn" class="md:hidden glass rounded-xl w-10 h-10">☰</button>
+                    </div>
+                </div>
+                <div id="mobileMenu" class="mobile-menu md:hidden pt-4 pb-2">
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <a class="glass rounded-xl px-4 py-3" href="index.html" target="_blank">Home</a>
+                        <a class="glass rounded-xl px-4 py-3" href="about.html" target="_blank">About</a>
+                        <a class="glass rounded-xl px-4 py-3" href="service.html" target="_blank">Service</a>
+                        <a class="glass rounded-xl px-4 py-3" href="team.html" target="_blank">Team</a>
+                        <a class="glass rounded-xl px-4 py-3" href="blog.html" target="_blank">Blog</a>
+                        <a class="glass rounded-xl px-4 py-3" href="#contact" >Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="min-h-screen pt-32 pb-20 flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-12 items-center">
+                    <div class="reveal">
+                        <div
+                            class="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs font-semibold tracking-wider text-silver mb-6">
+                            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>ELCID KNOWLEDGE & INSIGHTS
+                            HUB
+                        </div>
+                        <h1 class="text-5xl sm:text-6xl lg:text-8xl font-extrabold tracking-[-.055em] leading-[.94]"
+                            data-i18n="heroTitle">Well-informed<br>decisions.</h1>
+                        <p class="mt-7 max-w-2xl text-base sm:text-lg leading-8 text-silver" data-i18n="heroText">
+                            Practical ideas, strategic perspectives, and knowledge for making smarter business, digital,
+                            and investment decisions.</p>
+                        <div class="flex flex-wrap gap-3 mt-8"><a href="#blog"
+                                class="bg-white text-burgundy-800 rounded-xl px-6 py-3.5 font-bold hover:-translate-y-1 transition"
+                                data-i18n="explore">Explore Insights</a><a href="#contact"
+                                class="glass rounded-xl px-6 py-3.5 font-bold hover:bg-white hover:text-burgundy-800 transition"
+                                data-i18n="talk">Talk to ELCID</a></div>
+                    </div>
+                    <div class="reveal">
+                        <div class="glass rounded-[2rem] p-7 sm:p-9 shadow-2xl">
+                            <p class="text-xs tracking-[.22em] text-silver font-bold">ELCID / 01</p>
+                            <h2 class="text-2xl font-bold mt-3" data-i18n="heroCard">Knowledge that moves decisions
+                                forward.</h2>
+                            <div class="mt-8 space-y-4">
+                                <div class="border-l border-white/30 pl-4">
+                                    <p class="font-semibold" data-i18n="p1">Business Strategy</p>
+                                    <p class="text-sm text-silver mt-1" data-i18n="p1t">Clear thinking before action.
+                                    </p>
+                                </div>
+                                <div class="border-l border-white/30 pl-4">
+                                    <p class="font-semibold" data-i18n="p2">Digital Growth</p>
+                                    <p class="text-sm text-silver mt-1" data-i18n="p2t">Modern tools, content and
+                                        systems.</p>
+                                </div>
+                                <div class="border-l border-white/30 pl-4">
+                                    <p class="font-semibold" data-i18n="p3">Investment Awareness</p>
+                                    <p class="text-sm text-silver mt-1" data-i18n="p3t">Research, risks and informed
+                                        choices.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-10 items-end reveal">
+                    <div>
+                        <p class="text-xs tracking-[.24em] font-bold text-silver">02 / ABOUT ELCID</p>
+                        <h2 class="mt-4 text-4xl sm:text-5xl font-extrabold" data-i18n="aboutTitle">A place to learn
+                            before you act.</h2>
+                    </div>
+                    <p class="text-silver leading-8" data-i18n="aboutText">ELCID shares practical knowledge across
+                        business strategy, digital marketing, e-commerce, content, web solutions, and investment
+                        awareness — helping readers understand options, trade-offs, and next steps.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="service" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 reveal">
+                    <p class="text-xs tracking-[.24em] font-bold text-silver">03 / SERVICE</p>
+                    <h2 class="mt-4 text-4xl sm:text-5xl font-extrabold" data-i18n="serviceTitle">Insights built around
+                        real-world needs.</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="glass rounded-2xl p-6 reveal">
+                        <div class="text-2xl">◎</div>
+                        <h3 class="font-bold mt-5" data-i18n="s1">Business Strategy</h3>
+                        <p class="text-sm text-silver leading-7 mt-2" data-i18n="s1t">Frameworks for evaluating
+                            opportunities, risks, and execution.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 reveal">
+                        <div class="text-2xl">◈</div>
+                        <h3 class="font-bold mt-5" data-i18n="s2">Digital Marketing</h3>
+                        <p class="text-sm text-silver leading-7 mt-2" data-i18n="s2t">Campaigns, content, social media,
+                            funnels, and online growth.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 reveal">
+                        <div class="text-2xl">◇</div>
+                        <h3 class="font-bold mt-5" data-i18n="s3">Web & E-Commerce</h3>
+                        <p class="text-sm text-silver leading-7 mt-2" data-i18n="s3t">Web experiences and systems
+                            designed around business goals.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 reveal">
+                        <div class="text-2xl">△</div>
+                        <h3 class="font-bold mt-5" data-i18n="s4">Content & Creative</h3>
+                        <p class="text-sm text-silver leading-7 mt-2" data-i18n="s4t">Storytelling, copywriting, video,
+                            and visual communication.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-24 border-y border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl reveal">
+                    <p class="text-xs tracking-[.24em] font-bold text-silver">04 / TEAM</p>
+                    <h2 class="mt-4 text-4xl sm:text-5xl font-extrabold" data-i18n="teamTitle">Built by
+                        multidisciplinary expertise.</h2>
+                    <p class="text-silver leading-8 mt-5" data-i18n="teamText">ELCID combines business thinking, digital
+                        execution, design, content, and technology to turn information into practical action.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="reveal">
+                    <p class="text-xs tracking-[.24em] font-bold text-silver">05 / BLOG</p>
+                    <h2 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold" data-i18n="blogTitle">Knowledge &
+                        Insights Hub</h2>
+                    <p class="mt-5 max-w-2xl text-silver leading-8" data-i18n="blogText">Well-informed decisions start
+                        here. Explore our latest articles on business, digital marketing, crypto/investments, and smart
+                        strategies.</p>
+                </div>
+                <div id="filters" class="flex flex-wrap gap-2 mt-10 reveal">
+                    <button class="filter active rounded-full px-4 py-2.5 text-sm font-semibold" data-filter="all"
+                        data-i18n="all">All</button>
+                    <button class="filter rounded-full px-4 py-2.5 text-sm font-semibold" data-filter="strategy"
+                        data-i18n="strategy">Business Strategy</button>
+                    <button class="filter rounded-full px-4 py-2.5 text-sm font-semibold" data-filter="marketing"
+                        data-i18n="marketing">Digital Marketing</button>
+                    <button class="filter rounded-full px-4 py-2.5 text-sm font-semibold" data-filter="investment"
+                        data-i18n="investment">Investment & Crypto</button>
+                    <button class="filter rounded-full px-4 py-2.5 text-sm font-semibold" data-filter="case"
+                        data-i18n="case">Case Studies</button>
+                    <button class="filter rounded-full px-4 py-2.5 text-sm font-semibold" data-filter="content"
+                        data-i18n="content">Content Creation</button>
+                </div>
+                <div id="grid" class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-8"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass rounded-[2rem] p-7 sm:p-10 lg:p-14 grid lg:grid-cols-[1fr_.7fr] gap-12 reveal">
+                    <div>
+                        <p class="text-xs tracking-[.24em] font-bold text-silver">06 / CONTACT</p>
+                        <h2 class="mt-4 text-4xl sm:text-5xl font-extrabold" data-i18n="contactTitle">Have a question
+                            worth exploring?</h2>
+                        <p class="mt-5 text-silver leading-8 max-w-xl" data-i18n="contactText">Start a conversation with
+                            ELCID about your business, digital project, or knowledge-sharing needs.</p><a
+                            href="mailto:hello@elcid.example"
+                            class="inline-flex mt-8 bg-white text-burgundy-800 rounded-xl px-6 py-3.5 font-bold"
+                            data-i18n="contactBtn">Contact ELCID</a>
+                    </div>
+                    <div class="space-y-4 text-sm">
+                        <div class="border border-white/10 rounded-2xl p-5">
+                            <p class="text-silver">Email</p>
+                            <p class="font-semibold mt-1">hello@elcid.example</p>
+                        </div>
+                        <div class="border border-white/10 rounded-2xl p-5">
+                            <p class="text-silver">Social</p>
+                            <p class="font-semibold mt-1">Facebook · LinkedIn · Telegram</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/10 py-10">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-6 items-center justify-between">
+            <div>
+                <div class="font-extrabold tracking-[.18em]">ELCID</div>
+                <p class="text-sm text-silver mt-2" data-i18n="tag">Empowering well-informed decisions.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-5 text-sm text-silver"><a href="#home">Home</a><a
+                    href="#about">About</a><a href="#service">Service</a><a href="#team">Team</a><a
+                    href="#blog">Blog</a><a href="#contact">Contact</a></div>
+            <p class="text-xs text-silver" data-i18n="copy">© ELCID. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="modal" class="fixed inset-0 z-50 hidden modal-bg p-4 sm:p-8 overflow-y-auto">
+        <div class="min-h-full grid place-items-center">
+            <article class="reader w-full max-w-4xl glass rounded-[2rem] overflow-hidden">
+                <div
+                    class="sticky top-0 z-10 bg-[#35090f]/90 backdrop-blur-xl border-b border-white/10 px-5 sm:px-8 py-4 flex items-center justify-between">
+                    <p id="mcat" class="text-xs tracking-[.2em] font-bold text-silver"></p><button id="close"
+                        class="w-10 h-10 rounded-xl glass text-xl">×</button>
+                </div>
+                <div class="p-6 sm:p-10">
+                    <h2 id="mtitle" class="text-3xl sm:text-5xl font-extrabold leading-tight"></h2>
+                    <div class="mt-8 grid lg:grid-cols-2 gap-8">
+                        <section>
+                            <p class="text-xs tracking-[.2em] text-silver font-bold mb-3">ENGLISH</p>
+                            <div id="men" class="leading-8 text-white/90 space-y-4"></div>
+                        </section>
+                        <section class="mm">
+                            <p class="text-xs tracking-[.2em] text-silver font-bold mb-3">မြန်မာ</p>
+                            <div id="mmy" class="leading-8 text-white/90 space-y-4"></div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <script>
+        const T = {
+            en: {
+                heroTitle: "Well-informed<br>decisions.", heroText: "Practical ideas, strategic perspectives, and knowledge for making smarter business, digital, and investment decisions.", explore: "Explore Insights", talk: "Talk to ELCID", heroCard: "Knowledge that moves decisions forward.", p1: "Business Strategy", p1t: "Clear thinking before action.", p2: "Digital Growth", p2t: "Modern tools, content and systems.", p3: "Investment Awareness", p3t: "Research, risks and informed choices.",
+                aboutTitle: "A place to learn before you act.", aboutText: "ELCID shares practical knowledge across business strategy, digital marketing, e-commerce, content, web solutions, and investment awareness — helping readers understand options, trade-offs, and next steps.",
+                serviceTitle: "Insights built around real-world needs.", s1: "Business Strategy", s1t: "Frameworks for evaluating opportunities, risks, and execution.", s2: "Digital Marketing", s2t: "Campaigns, content, social media, funnels, and online growth.", s3: "Web & E-Commerce", s3t: "Web experiences and systems designed around business goals.", s4: "Content & Creative", s4t: "Storytelling, copywriting, video, and visual communication.",
+                teamTitle: "Built by multidisciplinary expertise.", teamText: "ELCID combines business thinking, digital execution, design, content, and technology to turn information into practical action.", blogTitle: "Knowledge & Insights Hub", blogText: "Well-informed decisions start here. Explore our latest articles on business, digital marketing, crypto/investments, and smart strategies.",
+                all: "All", strategy: "Business Strategy", marketing: "Digital Marketing", investment: "Investment & Crypto", case: "Case Studies", content: "Content Creation", contactTitle: "Have a question worth exploring?", contactText: "Start a conversation with ELCID about your business, digital project, or knowledge-sharing needs.", contactBtn: "Contact ELCID", tag: "Empowering well-informed decisions.", copy: "© ELCID. All rights reserved."
+            },
+            mm: {
+                heroTitle: "သေချာသိရှိပြီး<br>ဆုံးဖြတ်ချက်များ။", heroText: "စီးပွားရေး၊ ဒစ်ဂျစ်တယ်နှင့် ရင်းနှီးမြှုပ်နှံမှုဆိုင်ရာ ဆုံးဖြတ်ချက်များကို ပိုမိုနားလည်ပြီး ချမှတ်နိုင်ရန် လက်တွေ့အသုံးချနိုင်သော အတွေးအမြင်နှင့် ဗဟုသုတများကို မျှဝေပေးပါသည်။", explore: "ဗဟုသုတများ ကြည့်ရန်", talk: "ELCID နှင့် ဆွေးနွေးရန်", heroCard: "ဆုံးဖြတ်ချက်များကို ရှေ့ဆက်စေမည့် ဗဟုသုတ။", p1: "စီးပွားရေး မဟာဗျူဟာ", p1t: "လုပ်ဆောင်မှုမတိုင်မီ ရှင်းလင်းစွာ စဉ်းစားခြင်း။", p2: "ဒစ်ဂျစ်တယ် တိုးတက်မှု", p2t: "ခေတ်မီကိရိယာ၊ အကြောင်းအရာနှင့် စနစ်များ။", p3: "ရင်းနှီးမြှုပ်နှံမှု အသိပညာ", p3t: "သုတေသန၊ အန္တရာယ်နှင့် အသိရှိသော ရွေးချယ်မှုများ။",
+                aboutTitle: "မလုပ်ဆောင်မီ လေ့လာနိုင်သော နေရာ။", aboutText: "ELCID သည် စီးပွားရေးမဟာဗျူဟာ၊ ဒစ်ဂျစ်တယ်မားကတ်တင်း၊ E-commerce၊ Content၊ Web Solutions နှင့် ရင်းနှီးမြှုပ်နှံမှုအသိပညာများကို လက်တွေ့အသုံးချနိုင်အောင် မျှဝေပေးပြီး ရွေးချယ်စရာများ၊ အကျိုးအပြစ်များနှင့် နောက်တစ်ဆင့်လုပ်ဆောင်ချက်များကို နားလည်စေပါသည်။",
+                serviceTitle: "လက်တွေ့လိုအပ်ချက်များကို အခြေခံထားသော အတွေးအမြင်များ။", s1: "စီးပွားရေး မဟာဗျူဟာ", s1t: "အခွင့်အလမ်း၊ အန္တရာယ်နှင့် လုပ်ဆောင်မှုများကို သုံးသပ်ရန် Framework များ။", s2: "ဒစ်ဂျစ်တယ် မားကတ်တင်း", s2t: "Campaign၊ Content၊ Social Media၊ Funnel နှင့် Online Growth။", s3: "Web နှင့် E-Commerce", s3t: "စီးပွားရေးရည်မှန်းချက်နှင့် ကိုက်ညီသော Website နှင့် စနစ်များ။", s4: "Content နှင့် Creative", s4t: "Storytelling၊ Copywriting၊ Video နှင့် Visual Communication။",
+                teamTitle: "ကဏ္ဍစုံ ကျွမ်းကျင်မှုများဖြင့် တည်ဆောက်ထားခြင်း။", teamText: "ELCID သည် စီးပွားရေးအတွေးအမြင်၊ ဒစ်ဂျစ်တယ်လုပ်ဆောင်မှု၊ ဒီဇိုင်း၊ Content နှင့် နည်းပညာတို့ကို ပေါင်းစပ်ပြီး ဗဟုသုတကို လက်တွေ့လုပ်ဆောင်ချက်အဖြစ် ပြောင်းလဲပေးပါသည်။", blogTitle: "ဗဟုသုတနှင့် ထိုးထွင်းဉာဏ်များ", blogText: "သေချာသိရှိပြီး ဆုံးဖြတ်ချက်ချခြင်းကို ဒီနေရာမှ စတင်ပါ။ စီးပွားရေး၊ ဒစ်ဂျစ်တယ်မားကတ်တင်း၊ Crypto/Investment နှင့် မဟာဗျူဟာများအကြောင်း ဆောင်းပါးများကို လေ့လာနိုင်ပါသည်။",
+                all: "အားလုံး", strategy: "စီးပွားရေး မဟာဗျူဟာ", marketing: "ဒစ်ဂျစ်တယ် မားကတ်တင်း", investment: "Investment & Crypto", case: "Case Studies", content: "Content Creation", contactTitle: "လေ့လာဆွေးနွေးလိုသော မေးခွန်းရှိပါသလား?", contactText: "သင့်လုပ်ငန်း၊ ဒစ်ဂျစ်တယ် Project သို့မဟုတ် ဗဟုသုတမျှဝေရေးလိုအပ်ချက်များအကြောင်း ELCID နှင့် စတင်ဆွေးနွေးနိုင်ပါသည်။", contactBtn: "ELCID ကို ဆက်သွယ်ရန်", tag: "သေချာသိရှိပြီး ဆုံးဖြတ်ချက်ချနိုင်ရန် အားပေးကူညီပေးခြင်း။", copy: "© ELCID. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိသည်။"
+            }
+        };
+
+        const posts = [
+            { id: 1, c: "investment", enCat: "Investment & Crypto", mmCat: "Investment & Crypto", enTitle: "How to Make Well-Informed Business & Investment Decisions", mmTitle: "စီးပွားရေးနှင့် ရင်းနှီးမြှုပ်နှံမှု ဆုံးဖြတ်ချက်များကို သေချာစွာ ချမှတ်နည်း", enEx: "Why research, pros & cons analysis, and legal awareness matter before putting your money into crypto or real estate.", mmEx: "Crypto သို့မဟုတ် အိမ်ခြံမြေတွင် ငွေမထည့်မီ သုတေသန၊ အကျိုးအပြစ်သုံးသပ်ခြင်းနှင့် ဥပဒေဆိုင်ရာ အသိပညာတို့ အရေးကြီးသည့်အကြောင်း။", en: ["Good decisions begin with a clear picture of the situation. Before committing money, identify the objective, understand the options, and separate facts from assumptions.", "For crypto or real estate, compare potential benefits with realistic risks. Consider liquidity, fees, market conditions, legal requirements, and possible capital loss.", "A useful decision process does not promise a result. It creates a documented basis for choosing, delaying, asking a specialist, or walking away."], mm: ["ကောင်းမွန်သော ဆုံးဖြတ်ချက်သည် အခြေအနေကို ရှင်းလင်းစွာ နားလည်ခြင်းမှ စတင်ပါသည်။ ငွေကြေးကို အသုံးမပြုမီ ရည်ရွယ်ချက်၊ ရွေးချယ်စရာများနှင့် အချက်အလက်အမှန်များကို ခွဲခြားသိရှိရန် လိုအပ်ပါသည်။", "Crypto သို့မဟုတ် အိမ်ခြံမြေကဲ့သို့ ရင်းနှီးမြှုပ်နှံမှုများတွင် အကျိုးအမြတ်နှင့် လက်တွေ့ကျသော အန္တရာယ်များကို နှိုင်းယှဉ်သုံးသပ်ပါ။ ငွေထုတ်ရလွယ်ကူမှု၊ ကုန်ကျစရိတ်၊ စျေးကွက်အခြေအနေ၊ ဥပဒေလိုအပ်ချက်နှင့် အရင်းအနှီးဆုံးရှုံးနိုင်ခြေများကို ထည့်သွင်းစဉ်းစားသင့်ပါသည်။", "ဆုံးဖြတ်ချက်ချသည့် လုပ်ငန်းစဉ်က ရလဒ်ကို အာမမခံပါ။ သို့သော် ရွေးချယ်ရန်၊ ခဏစောင့်ရန်၊ ကျွမ်းကျင်သူကို မေးရန် သို့မဟုတ် မလုပ်ဆောင်ရန် အခြေခံကောင်းတစ်ခုကို ဖန်တီးပေးနိုင်ပါသည်။"] },
+            { id: 2, c: "marketing", enCat: "Digital Marketing", mmCat: "ဒစ်ဂျစ်တယ် မားကတ်တင်း", enTitle: "The Power of Digital Marketing & E-Commerce for Modern Businesses", mmTitle: "ခေတ်မီလုပ်ငန်းများအတွက် Digital Marketing နှင့် E-Commerce ၏ အင်အား", enEx: "Scaling your business online through effective funnels, social media branding, and creative content strategy.", mmEx: "ထိရောက်သော Funnel များ၊ Social Media Branding နှင့် Creative Content Strategy များဖြင့် Online ပေါ်တွင် လုပ်ငန်းတိုးချဲ့ခြင်း။", en: ["Digital growth is more than posting frequently. A useful system connects audience research, positioning, content, offers, conversion paths, and measurement.", "For e-commerce, the customer journey should be easy to understand: discover, evaluate, trust, purchase, and receive useful follow-up.", "Creative work becomes more valuable when tied to a measurable objective such as qualified leads, sales, repeat purchases, or awareness."], mm: ["ဒစ်ဂျစ်တယ်တိုးတက်မှုဆိုသည်မှာ Post များ မကြာခဏတင်ခြင်းထက် ပိုမိုကျယ်ပြန့်ပါသည်။ Audience Research၊ Positioning၊ Content၊ Offer၊ Conversion Path နှင့် Measurement တို့ကို စနစ်တကျ ချိတ်ဆက်ရန် လိုအပ်ပါသည်။", "E-commerce တွင် Customer Journey သည် ရှင်းလင်းလွယ်ကူသင့်ပါသည်။ Product ကိုတွေ့ရှိခြင်း၊ သုံးသပ်ခြင်း၊ Brand ကိုယုံကြည်ခြင်း၊ ဝယ်ယူခြင်းနှင့် Follow-up ပြုလုပ်ခြင်းတို့ ဖြစ်ပါသည်။", "Creative လုပ်ဆောင်မှုက Lead၊ Sales၊ Repeat Purchase သို့မဟုတ် Brand Awareness ကဲ့သို့ တိုင်းတာနိုင်သော ရည်မှန်းချက်နှင့် ချိတ်ဆက်ထားသည့်အခါ ပိုမိုတန်ဖိုးရှိလာပါသည်။"] },
+            { id: 3, c: "strategy", enCat: "Business Strategy", mmCat: "စီးပွားရေး မဟာဗျူဟာ", enTitle: "Understanding Referral Consultancies vs. Paid Management Services", mmTitle: "Referral Consultancy နှင့် Paid Management Service တို့၏ ကွာခြားချက်", enEx: "How ELCID provides free expert-backed referral guidance alongside hands-off corporate management.", mmEx: "ELCID ၏ အခမဲ့ Referral Guidance နှင့် Hands-off Corporate Management ဝန်ဆောင်မှုတို့ကို နားလည်ခြင်း။", en: ["A referral consultancy can help someone understand a problem, compare options, and identify the kind of specialist they may need. The initial discussion can be free while a partner provides the specialized service.", "Paid management is different: the client hires a provider to execute an agreed scope. This can include digital marketing, website management, business operations, advertising, or other professional services.", "Transparency matters in both models. Clients should understand what is free, what is paid, who performs specialized work, and whether a referral relationship exists."], mm: ["Referral Consultancy သည် ပြဿနာကို နားလည်ရန်၊ ရွေးချယ်စရာများကို နှိုင်းယှဉ်ရန်နှင့် မည်သည့်ကျွမ်းကျင်သူလိုအပ်နိုင်သည်ကို သိရှိရန် ကူညီပေးနိုင်ပါသည်။ ကနဦးဆွေးနွေးမှုသည် အခမဲ့ဖြစ်နိုင်ပြီး အထူးဝန်ဆောင်မှုကို Partner က ဆောင်ရွက်နိုင်ပါသည်။", "Paid Management သည် ကွဲပြားပါသည်။ သတ်မှတ်ထားသော Scope အတိုင်း Client ကိုယ်စား လုပ်ငန်းများကို တိုက်ရိုက်ဆောင်ရွက်ရန် ဝန်ဆောင်မှုပေးသူကို ငှားရမ်းခြင်းဖြစ်ပါသည်။", "Model နှစ်မျိုးလုံးတွင် ပွင့်လင်းမြင်သာမှုသည် အရေးကြီးပါသည်။ ဘာသည်အခမဲ့၊ ဘာသည်အခကြေးငွေရှိသည်၊ မည်သူက ဝန်ဆောင်မှုပေးသည်နှင့် Referral Relationship ရှိ/မရှိတို့ကို Client က နားလည်ထားသင့်ပါသည်။"] },
+            { id: 4, c: "content", enCat: "Content Creation", mmCat: "Content Creation", enTitle: "Creative Content Creation: Telling Stories That Convert", mmTitle: "ရလဒ်ဖြစ်စေသော Creative Content နှင့် Storytelling", enEx: "Using copywriting, video editing, and AI multimedia to build strong and memorable brand identities.", mmEx: "Copywriting၊ Video Editing နှင့် AI Multimedia များကို အသုံးပြုပြီး မှတ်မိလွယ်သော Brand Identity တည်ဆောက်ခြင်း။", en: ["Effective content gives an audience a reason to pay attention and a clear next step. It can educate, demonstrate a product, answer an objection, or tell a memorable story.", "A practical workflow can combine copywriting, short-form video, CapCut or Premiere Pro, graphic design, and carefully selected AI-assisted multimedia.", "For a product or local business, strong stories often come from real details: origin, people, process, customer experience, and a clear promise the brand can deliver."], mm: ["ထိရောက်သော Content သည် Audience ကို စိတ်ဝင်စားစေပြီး နောက်တစ်ဆင့် ဘာလုပ်ရမည်ကို ရှင်းလင်းစေပါသည်။ ပညာပေးခြင်း၊ Product ပြသခြင်း၊ အခက်အခဲများကို ဖြေရှင်းပေးခြင်း သို့မဟုတ် မှတ်မိလွယ်သော ဇာတ်လမ်းပြောခြင်းတို့ကို လုပ်ဆောင်နိုင်ပါသည်။", "လက်တွေ့ Content Production Workflow တွင် Copywriting၊ Short-form Video၊ CapCut သို့မဟုတ် Premiere Pro၊ Graphic Design နှင့် သင့်လျော်သော AI-assisted Multimedia များကို ပေါင်းစပ်အသုံးပြုနိုင်ပါသည်။", "Product သို့မဟုတ် Local Business တစ်ခုအတွက် အကောင်းဆုံး Story များသည် မူလရင်းမြစ်၊ လူများ၊ လုပ်ငန်းစဉ်၊ Customer Experience နှင့် Brand က အမှန်တကယ်ပေးနိုင်သော ကတိကဝတ်တို့ကဲ့သို့ လက်တွေ့အသေးစိတ်များမှ ပေါ်ထွက်လာလေ့ရှိပါသည်။"] },
+            { id: 5, c: "case", enCat: "Case Studies", mmCat: "Case Studies", enTitle: "From Idea to Execution: A Simple Decision Framework", mmTitle: "အကြံဉာဏ်မှ လုပ်ဆောင်ချက်အထိ — ရိုးရှင်းသော ဆုံးဖြတ်ချက် Framework", enEx: "A practical framework for moving from a promising idea to a tested, measurable next step.", mmEx: "အလားအလာရှိသော အကြံဉာဏ်တစ်ခုမှ စမ်းသပ်တိုင်းတာနိုင်သော နောက်တစ်ဆင့်သို့ ရွှေ့ရန် လက်တွေ့ Framework။", en: ["Start with the problem rather than the tool. Define who has the problem, how important it is, and what outcome would count as meaningful.", "Then identify a small test. A landing page, pilot campaign, customer interview, sample product, or limited service can reveal information before a larger commitment.", "Finally, record the evidence and decide what changes, what continues, and what should stop. The purpose is not to remove uncertainty completely, but to make the next decision better informed."], mm: ["Tool တစ်ခုကနေ စတင်မည့်အစား Problem ကနေ စတင်ပါ။ မည်သူတွင် ပြဿနာရှိသည်၊ မည်မျှအရေးကြီးသည်နှင့် မည်သည့်ရလဒ်ကို အဓိပ္ပာယ်ရှိသော ရလဒ်ဟု သတ်မှတ်မည်ကို ရှင်းလင်းပါ။", "ထို့နောက် စမ်းသပ်မှုအသေးစားတစ်ခု ပြုလုပ်ပါ။ Landing Page၊ Pilot Campaign၊ Customer Interview၊ Sample Product သို့မဟုတ် Limited Service တစ်ခုက ကြီးမားသော ရင်းနှီးမြှုပ်နှံမှုမပြုမီ အချက်အလက်များ ရရှိစေနိုင်ပါသည်။", "နောက်ဆုံးတွင် ရရှိလာသော Evidence ကို မှတ်တမ်းတင်ပြီး ဘာကိုပြောင်းမည်၊ ဘာကိုဆက်လုပ်မည်နှင့် ဘာကိုရပ်မည်ကို ဆုံးဖြတ်ပါ။ ရည်ရွယ်ချက်မှာ မသေချာမှုအားလုံးကို ဖယ်ရှားခြင်းမဟုတ်ဘဲ နောက်ထပ်ဆုံးဖြတ်ချက်ကို ပိုမိုသိရှိပြီး ချမှတ်နိုင်ရန် ဖြစ်ပါသည်။"] }
+        ];
+
+        let lang = localStorage.getItem("elcidLang") || "en", filter = "all";
+        const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+
+        function render() {
+            const grid = $("#grid"); grid.innerHTML = "";
+            const list = filter === "all" ? posts : posts.filter(p => p.c === filter);
+            list.forEach((p, i) => {
+                const title = lang === "en" ? p.enTitle : p.mmTitle, ex = lang === "en" ? p.enEx : p.mmEx, cat = lang === "en" ? p.enCat : p.mmCat;
+                const el = document.createElement("article"); el.className = "card glass rounded-[1.5rem] p-6 flex flex-col min-h-[360px] cursor-pointer reveal"; el.tabIndex = 0;
+                el.innerHTML = `<div class="flex justify-between gap-3"><span class="text-[11px] uppercase tracking-[.17em] font-bold text-silver">${cat}</span><span>↗</span></div><div class="mt-8 flex-1"><div class="text-xs text-white/35 font-bold">0${p.id}</div><h3 class="text-xl sm:text-2xl font-bold leading-tight mt-3">${title}</h3><p class="text-sm text-silver leading-7 mt-4">${ex}</p></div><div class="pt-6 mt-5 border-t border-white/10 text-xs text-silver">${lang === "en" ? "Read article →" : "ဆောင်းပါးဖတ်ရန် →"}</div>`;
+                el.onclick = () => openPost(p); el.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPost(p) } }; grid.appendChild(el);
+            });
+            requestAnimationFrame(() => $$(".reveal").forEach(x => x.classList.add("show")));
+        }
+
+        function setLang(l) {
+            lang = l; localStorage.setItem("elcidLang", l); document.documentElement.lang = l === "mm" ? "my" : "en"; document.body.classList.toggle("mm", l === "mm");
+            $$("[data-i18n]").forEach(el => { const k = el.dataset.i18n; el.innerHTML = T[l][k] });
+            render();
+        }
+        function openPost(p) {
+            $("#mcat").textContent = lang === "en" ? p.enCat : p.mmCat; $("#mtitle").textContent = lang === "en" ? p.enTitle : p.mmTitle;
+            $("#men").innerHTML = p.en.map(x => `<p>${x}</p>`).join(""); $("#mmy").innerHTML = p.mm.map(x => `<p>${x}</p>`).join("");
+            $("#modal").classList.remove("hidden"); document.body.style.overflow = "hidden";
+        }
+        function closePost() { $("#modal").classList.add("hidden"); document.body.style.overflow = "" }
+
+        $("#langBtn").onclick = () => setLang(lang === "en" ? "mm" : "en");
+        $$(".filter").forEach(b => b.onclick = () => { $$(".filter").forEach(x => x.classList.remove("active")); b.classList.add("active"); filter = b.dataset.filter; render() });
+        $("#close").onclick = closePost; $("#modal").onclick = e => { if (e.target.id === "modal") closePost() }; document.onkeydown = e => { if (e.key === "Escape") closePost() };
+        $("#menuBtn").onclick = () => $("#mobileMenu").classList.toggle("open"); $$('#mobileMenu a').forEach(a => a.onclick = () => $("#mobileMenu").classList.remove("open"));
+
+        const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("show"); obs.unobserve(e.target) } }), { threshold: .08 }); $$(".reveal").forEach(x => obs.observe(x));
+        const navObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { $$(".nav-link").forEach(x => x.classList.remove("active")); const x = document.querySelector(`[data-nav="${e.target.id}"]`); if (x) x.classList.add("active") } }), { rootMargin: "-35% 0px -55% 0px" });
+        ["home", "about", "service", "team", "blog", "contact"].forEach(id => { const s = $("#" + id); if (s) navObs.observe(s) });
+        setLang(lang);
+    </script>
+</body>
+
+</html>

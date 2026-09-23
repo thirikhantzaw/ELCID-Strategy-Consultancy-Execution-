@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ELCID — About Company</title>
+
+    <meta name="description"
+        content="ELCID — Well-informed decisions. Consultancy, digital solutions, strategic growth and professional business management." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            950: "#210609",
+                            900: "#32090E",
+                            800: "#420C13",
+                            700: "#58111A",
+                            600: "#721522",
+                            500: "#8E1B2A"
+                        },
+                        silver: "#C0C0C0"
+                    },
+                    fontFamily: {
+                        sans: [
+                            "Inter",
+                            "Noto Sans Myanmar",
+                            "system-ui",
+                            "sans-serif"
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Myanmar:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --burgundy: #58111a;
+            --burgundy-dark: #210609;
+            --burgundy-deep: #32090e;
+            --burgundy-light: #8e1b2a;
+            --white: #ffffff;
+            --silver: #c0c0c0;
+            --silver-dark: #929292;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 75% 10%,
+                    rgba(142, 27, 42, 0.22),
+                    transparent 30%),
+                radial-gradient(circle at 15% 65%,
+                    rgba(114, 21, 34, 0.14),
+                    transparent 30%),
+                linear-gradient(135deg,
+                    #210609 0%,
+                    #32090e 42%,
+                    #58111a 100%);
+            color: var(--white);
+            font-family: "Inter", "Noto Sans Myanmar", system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        body.mm {
+            font-family: "Noto Sans Myanmar", "Inter", system-ui, sans-serif;
+        }
+
+        /* Grid background */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px,
+                    transparent 1px),
+                linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.035) 1px,
+                    transparent 1px);
+            background-size: 48px 48px;
+        }
+
+        /* Noise-like overlay */
+        .noise::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.025;
+            z-index: 100;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .glass-dark {
+            background: rgba(20, 3, 6, 0.42);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .nav-blur {
+            background: rgba(28, 4, 8, 0.78);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(110deg,
+                    #ffffff 10%,
+                    #d5d5d5 55%,
+                    #969696 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .red-gradient-text {
+            background: linear-gradient(110deg,
+                    #ffffff,
+                    #e8aeb5,
+                    #a52a3b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 9vw, 8.8rem);
+            line-height: 0.88;
+            letter-spacing: -0.075em;
+            font-weight: 900;
+        }
+
+        .section-title {
+            font-size: clamp(2.4rem, 5vw, 5rem);
+            line-height: 0.95;
+            letter-spacing: -0.055em;
+            font-weight: 800;
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            transition:
+                transform 0.45s cubic-bezier(.2, .8, .2, 1),
+                border-color 0.45s ease,
+                background 0.45s ease;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            top: -100px;
+            right: -100px;
+            background: rgba(142, 27, 42, 0.32);
+            border-radius: 50%;
+            filter: blur(20px);
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.24);
+            background: rgba(255, 255, 255, 0.075);
+        }
+
+        .service-card:hover::before {
+            transform: scale(1.8);
+        }
+
+        .number-box {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .06);
+            border-radius: 14px;
+            color: #fff;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .red-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: #8e1b2a;
+            filter: blur(90px);
+            opacity: .2;
+            pointer-events: none;
+        }
+
+        .orbit {
+            animation: orbit 16s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .float {
+            animation: floating 5s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition:
+                opacity .8s ease,
+                transform .8s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: .1s;
+        }
+
+        .delay-2 {
+            transition-delay: .2s;
+        }
+
+        .delay-3 {
+            transition-delay: .3s;
+        }
+
+        .delay-4 {
+            transition-delay: .4s;
+        }
+
+        .pill {
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .055);
+            border-radius: 999px;
+        }
+
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, .25),
+                    transparent);
+            transform: translateX(-110%);
+            transition: transform .7s ease;
+        }
+
+        .btn-primary:hover::before {
+            transform: translateX(110%);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, .25);
+        }
+
+        .language-btn {
+            transition: all .25s ease;
+        }
+
+        .language-btn.active {
+            background: white;
+            color: #32090e;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition:
+                max-height .35s ease,
+                opacity .25s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        ::selection {
+            background: #a52a3b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="noise">
+
+    <!-- =========================================================
+       NAVIGATION
+    ========================================================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 nav-blur">
+
+        <nav class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            <div class="h-20 flex items-center justify-between">
+
+                <!-- Logo -->
+                <a href="index.html" target="_blank" class="flex items-center gap-3 group" aria-label="ELCID Home">
+                    
+                    <div class="w-10 h-10 rounded-xl bg-white text-burgundy-900
+                        flex items-center justify-center font-black text-lg
+                        group-hover:rotate-6 transition-transform">
+                        E
+                    </div>
+
+                    <div>
+                        
+                        <div class="font-black tracking-[0.2em] text-lg">
+                            ELCID
+                        </div>
+
+                        <div class="text-[9px] uppercase tracking-[0.25em] text-white/45"
+                            data-en="Strategy • Consultancy" data-mm="မဟာဗျူဟာ • အကြံပေး">
+                            Strategy • Consultancy
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center gap-8">
+
+                    <a href="index.html" target="_blank" class="nav-link text-sm text-white/60 hover:text-white transition" data-en="Home"
+                        data-mm="ပင်မစာမျက်နှာ">Home</a>
+
+                    <a href="about.html" target="_blank" class="nav-link text-sm text-white hover:text-white transition" data-en="About"
+                        data-mm="အကြောင်း">About</a>
+
+                    <a href="service.html" target="_blank" class="nav-link text-sm text-white/60 hover:text-white transition"
+                        data-en="Service" data-mm="ဝန်ဆောင်မှု">Service</a>
+
+                    <a href="team.html" target="_blank" class="nav-link text-sm text-white/60 hover:text-white transition" data-en="Team"
+                        data-mm="အဖွဲ့">Team</a>
+
+                    <a href="blog.html" target="_blank" class="nav-link text-sm text-white/60 hover:text-white transition" data-en="Blog"
+                        data-mm="ဘလော့ဂ်">Blog</a>
+
+                    <a href="#contact" class="nav-link text-sm text-white/60 hover:text-white transition"
+                        data-en="Contact" data-mm="ဆက်သွယ်ရန်">Contact</a>
+
+                </div>
+
+                <!-- Language + Mobile -->
+                <div class="flex items-center gap-3">
+
+                    <div class="pill p-1 flex items-center">
+
+                        <button id="enBtn" class="language-btn active px-3 py-1.5 rounded-full text-xs font-bold"
+                            onclick="setLanguage('en')">
+                            EN
+                        </button>
+
+                        <button id="mmBtn" class="language-btn px-3 py-1.5 rounded-full text-xs font-bold text-white/70"
+                            onclick="setLanguage('mm')">
+                            MM
+                        </button>
+
+                    </div>
+
+                    <button id="mobileToggle"
+                        class="lg:hidden w-10 h-10 rounded-xl glass flex items-center justify-center"
+                        aria-label="Open navigation">
+
+                        <span class="text-xl">☰</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu lg:hidden">
+
+                <div class="glass-dark rounded-2xl mb-4 p-3 space-y-1">
+
+                    <a href="index.html" target="_blank" class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-white/10" data-en="Home"
+                        data-mm="ပင်မစာမျက်နှာ">
+                        Home
+                    </a>
+
+                    <a href="about.html" target="_blank" class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-white/10"
+                        data-en="About" data-mm="အကြောင်း">
+                        About
+                    </a>
+
+                    <a href="service.html" target="_blank" class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-white/10"
+                        data-en="Service" data-mm="ဝန်ဆောင်မှု">
+                        Service
+                    </a>
+
+                    <a href="team.html" target="_blank" class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-white/10" data-en="Team"
+                        data-mm="အဖွဲ့">
+                        Team
+                    </a>
+
+                    <a href="blog.html" target="_blank" class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-white/10" data-en="Blog"
+                        data-mm="ဘလော့ဂ်">
+                        Blog
+                    </a>
+
+                    <a href="#contact" class="mobile-nav-link block px-4 py-3 rounded-xl hover:bg-white/10"
+                        data-en="Contact" data-mm="ဆက်သွယ်ရန်">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================================================
+         HOME / HERO
+        ========================================================== -->
+        
+        <section id="home" class="relative min-h-screen grid-bg pt-32 pb-20 flex items-center overflow-hidden">
+            
+            <div class="red-orb w-[500px] h-[500px] top-10 right-[-200px]"></div>
+            
+            <div class="red-orb w-[300px] h-[300px] bottom-0 left-[-150px]"></div>
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 w-full relative">
+
+                <div class="max-w-5xl">
+
+                    <div class="pill inline-flex items-center gap-3 px-4 py-2 mb-8 reveal">
+                        
+                        <span class="w-2 h-2 rounded-full bg-white"></span>
+
+                        <span class="text-xs md:text-sm uppercase tracking-[0.2em] text-white/70"
+                            data-en="ABOUT ELCID • STRATEGY • CONSULTANCY • EXECUTION"
+                            data-mm="ELCID အကြောင်း • မဟာဗျူဟာ • အကြံပေး • အကောင်အထည်ဖော်မှု">
+                            ABOUT ELCID • STRATEGY • CONSULTANCY • EXECUTION
+                        </span>
+
+                    </div>
+
+                    <h1 class="hero-title reveal delay-1">
+
+                        <span class="block gradient-text" data-en="Well-informed" data-mm="သတင်းအချက်အလက်ပြည့်စုံ">
+                            Turning Ideas Into
+                        </span>
+
+                        <span class="block red-gradient-text" data-en="decisions." data-mm="ဆုံးဖြတ်ချက်များ။">
+                            Meaningful Progress.
+                        </span>
+                        
+                    </h1>
+
+                    <p class="mt-10 max-w-2xl text-lg md:text-xl leading-8 text-white/65 reveal delay-2"
+                        data-en="ELCID bridges the information gap between people, opportunities and professional expertise — helping individuals and businesses understand their options before taking action."
+                        data-mm="ELCID သည် လူများ၊ အခွင့်အလမ်းများနှင့် ကျွမ်းကျင်ပညာရှင်များကြားရှိ သတင်းအချက်အလက်ကွာဟချက်ကို ချိတ်ဆက်ပေးပြီး လုပ်ဆောင်မှုမပြုမီ ရွေးချယ်စရာများကို နားလည်နိုင်ရန် ကူညီပေးပါသည်။">
+                        ELCID bridges the information gap between people, opportunities
+                        and professional expertise — helping individuals and businesses
+                        understand their options before taking action.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mt-9 reveal delay-3">
+
+                        <a href="#about" class="btn-primary inline-flex items-center gap-3
+                            rounded-full bg-white text-burgundy-900
+                            px-7 py-4 font-bold">
+
+                            <span data-en="Discover ELCID" data-mm="ELCID ကိုလေ့လာရန်">
+                                Discover ELCID
+                            </span>
+
+                            <span>→</span>
+
+                        </a>
+
+                        <a href="#contact" class="inline-flex items-center gap-3
+                            rounded-full border border-white/20
+                            bg-white/5 px-7 py-4 font-bold
+                            hover:bg-white/10 transition">
+
+                            <span data-en="Start a Conversation" data-mm="ဆွေးနွေးရန် စတင်ပါ">
+                                Start a Conversation
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Hero metrics -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-20 reveal delay-4">
+
+                    <div class="glass rounded-2xl p-5">
+
+                        <div class="text-3xl font-black">01</div>
+
+                        <div class="text-xs text-white/45 mt-2" data-en="Information First"
+                            data-mm="သတင်းအချက်အလက် ဦးစားပေး">
+                            Information First
+                        </div>
+
+                    </div>
+
+                    <div class="glass rounded-2xl p-5">
+
+                        <div class="text-3xl font-black">02</div>
+
+                        <div class="text-xs text-white/45 mt-2" data-en="Specialist Network"
+                            data-mm="ကျွမ်းကျင်သူကွန်ရက်">
+                            Specialist Network
+                        </div>
+
+                    </div>
+
+                    <div class="glass rounded-2xl p-5">
+
+                        <div class="text-3xl font-black">03</div>
+
+                        <div class="text-xs text-white/45 mt-2" data-en="Digital Solutions"
+                            data-mm="ဒစ်ဂျစ်တယ် ဖြေရှင်းချက်များ">
+                            Digital Solutions
+                        </div>
+
+                    </div>
+
+                    <div class="glass rounded-2xl p-5">
+
+                        <div class="text-3xl font-black">04</div>
+
+                        <div class="text-xs text-white/45 mt-2" data-en="End-to-End Execution"
+                            data-mm="အစမှအဆုံး အကောင်အထည်ဖော်မှု">
+                            End-to-End Execution
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+         ABOUT COMPANY
+         ========================================================== -->
+        <section id="about" class="relative py-28 md:py-36 overflow-hidden"> 
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-14 lg:gap-24">
+
+                    <!-- Left -->
+                    <div class="reveal">
+
+                        <div class="text-xs uppercase tracking-[.3em] text-white/40 mb-5" data-en="01 / WHO WE ARE"
+                            data-mm="၀၁ / ကျွန်ုပ်တို့အကြောင်း">
+                            01 / WHO WE ARE
+                        </div>
+
+                        <h2 class="section-title gradient-text" data-en="A bridge between information and action."
+                            data-mm="သတင်းအချက်အလက်နှင့် လုပ်ဆောင်ချက်ကြားက တံတားတစ်စင်း။">
+                            A bridge between information and action.
+                        </h2>
+
+                    </div>
+
+                    <!-- Right -->
+                    <div class="reveal delay-2">
+
+                        <p class="text-xl md:text-2xl leading-relaxed text-white/80"
+                            data-en="ELCID is a multidisciplinary consultancy and digital solutions platform built around one simple philosophy: people make better decisions when they have better information."
+                            data-mm="ELCID သည် အဓိကအတွေးအခေါ်တစ်ခုကို အခြေခံတည်ဆောက်ထားသော ဘက်စုံအကြံပေးနှင့် ဒစ်ဂျစ်တယ်ဖြေရှင်းချက်ပေးသည့် လုပ်ငန်းတစ်ခုဖြစ်ပါသည်။ လူများသည် သတင်းအချက်အလက်ကောင်းမွန်စွာ ရရှိသောအခါ ပိုမိုကောင်းမွန်သော ဆုံးဖြတ်ချက်များကို ချနိုင်ကြပါသည်။">
+                            ELCID is a multidisciplinary consultancy and digital solutions
+                            platform built around one simple philosophy: people make better
+                            decisions when they have better information.
+                        </p>
+
+                        <p class="mt-7 text-base md:text-lg leading-8 text-white/50"
+                            data-en="We help individuals and businesses understand opportunities, compare options, identify potential risks, connect with specialists and, when needed, manage the execution from strategy through delivery."
+                            data-mm="တစ်ဦးချင်းပုဂ္ဂိုလ်များနှင့် လုပ်ငန်းများအတွက် အခွင့်အလမ်းများကို နားလည်ရန်၊ ရွေးချယ်စရာများကို နှိုင်းယှဉ်ရန်၊ ဖြစ်နိုင်သောအန္တရာယ်များကို ဖော်ထုတ်ရန်၊ ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ရန်နှင့် လိုအပ်ပါက မဟာဗျူဟာမှ အကောင်အထည်ဖော်မှုအထိ စီမံခန့်ခွဲပေးရန် ကူညီပါသည်။">
+                            We help individuals and businesses understand opportunities,
+                            compare options, identify potential risks, connect with
+                            specialists and, when needed, manage the execution from strategy
+                            through delivery.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 mt-10">
+
+                            <div class="glass rounded-2xl p-6">
+
+                                <div class="text-sm text-white/40 mb-3">01</div>
+
+                                <h3 class="font-bold text-lg" data-en="Understand" data-mm="နားလည်ခြင်း">
+                                    Understand
+                                </h3>
+
+                                <p class="text-sm text-white/45 mt-2 leading-6"
+                                    data-en="Clarify the situation, opportunity and available options."
+                                    data-mm="အခြေအနေ၊ အခွင့်အလမ်းနှင့် ရရှိနိုင်သော ရွေးချယ်စရာများကို ရှင်းလင်းစွာ နားလည်ခြင်း။">
+                                    Clarify the situation, opportunity and available options.
+                                </p>
+
+                            </div>
+
+                            <div class="glass rounded-2xl p-6">
+
+                                <div class="text-sm text-white/40 mb-3">02</div>
+
+                                <h3 class="font-bold text-lg" data-en="Evaluate" data-mm="အကဲဖြတ်ခြင်း">
+                                    Evaluate
+                                </h3>
+
+                                <p class="text-sm text-white/45 mt-2 leading-6"
+                                    data-en="Consider pros, cons, scenarios, requirements and potential risks."
+                                    data-mm="အားသာချက်၊ အားနည်းချက်၊ အခြေအနေများ၊ လိုအပ်ချက်များနှင့် ဖြစ်နိုင်သောအန္တရာယ်များကို စဉ်းစားခြင်း။">
+                                    Consider pros, cons, scenarios, requirements and potential
+                                    risks.
+                                </p>
+
+                            </div>
+
+                            <div class="glass rounded-2xl p-6">
+
+                                <div class="text-sm text-white/40 mb-3">03</div>
+
+                                <h3 class="font-bold text-lg" data-en="Connect" data-mm="ချိတ်ဆက်ခြင်း">
+                                    Connect
+                                </h3>
+
+                                <p class="text-sm text-white/45 mt-2 leading-6"
+                                    data-en="Introduce clients to appropriate specialists when specialized execution is required."
+                                    data-mm="အထူးကျွမ်းကျင်မှုလိုအပ်သောအခါ သင့်လျော်သည့် ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ပေးခြင်း။">
+                                    Introduce clients to appropriate specialists when specialized
+                                    execution is required.
+                                </p>
+
+                            </div>
+
+                            <div class="glass rounded-2xl p-6">
+
+                                <div class="text-sm text-white/40 mb-3">04</div>
+
+                                <h3 class="font-bold text-lg" data-en="Execute" data-mm="အကောင်အထည်ဖော်ခြင်း">
+                                    Execute
+                                </h3>
+
+                                <p class="text-sm text-white/45 mt-2 leading-6"
+                                    data-en="For paid engagements, manage projects and operations through execution."
+                                    data-mm="အခကြေးငွေပေးရသော ဝန်ဆောင်မှုများအတွက် ပရောဂျက်နှင့် လုပ်ငန်းလည်ပတ်မှုများကို အကောင်အထည်ဖော်သည်အထိ စီမံခန့်ခွဲခြင်း။">
+                                    For paid engagements, manage projects and operations through
+                                    execution.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+         BUSINESS MODEL
+         ========================================================== -->
+        <section id="services" class="relative py-28 md:py-36 bg-black/10 border-y border-white/5">
+            
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="max-w-3xl mb-16 reveal">
+
+                    <div class="text-xs uppercase tracking-[.3em] text-white/40 mb-5" data-en="02 / OUR BUSINESS MODEL"
+                        data-mm="၀၂ / ကျွန်ုပ်တို့၏ လုပ်ငန်းပုံစံ">
+                        02 / OUR BUSINESS MODEL
+                    </div>
+
+                    <h2 class="section-title gradient-text" data-en="Two ways to move forward."
+                        data-mm="ရှေ့ဆက်ရန် နည်းလမ်းနှစ်မျိုး။">
+                        Two ways to move forward.
+                    </h2>
+
+                    <p class="text-white/50 text-lg leading-8 mt-7"
+                        data-en="Our model separates information and execution so clients can choose the level of support they actually need."
+                        data-mm="ကျွန်ုပ်တို့၏ လုပ်ငန်းပုံစံသည် သတင်းအချက်အလက်နှင့် အကောင်အထည်ဖော်မှုကို ခွဲခြားပေးထားသောကြောင့် သုံးစွဲသူများသည် မိမိတို့လိုအပ်သော ပံ့ပိုးမှုအဆင့်ကို ရွေးချယ်နိုင်ပါသည်။">
+                        Our model separates information and execution so clients can
+                        choose the level of support they actually need.
+                    </p>
+
+                </div>
+
+
+                <div class="grid lg:grid-cols-2 gap-6">
+
+                    <!-- FREE -->
+                    <article class="service-card glass rounded-[2rem] p-7 md:p-10 reveal">
+
+                        <div class="flex items-start justify-between gap-5">
+
+                            <div class="number-box">01</div>
+
+                            <span class="pill px-4 py-2 text-xs uppercase tracking-wider text-white/70" data-en="FREE"
+                                data-mm="အခမဲ့">
+                                FREE
+                            </span>
+
+                        </div>
+
+                        <h3 class="text-3xl md:text-4xl font-extrabold mt-9 tracking-tight"
+                            data-en="Consultancy & Referral" data-mm="အကြံပေးခြင်းနှင့် လွှဲပြောင်းချိတ်ဆက်ခြင်း">
+                            Consultancy & Referral
+                        </h3>
+
+                        <p class="text-white/55 leading-7 mt-5"
+                            data-en="We help people understand complicated decisions before they commit money, time or resources."
+                            data-mm="ငွေကြေး၊ အချိန် သို့မဟုတ် အရင်းအမြစ်များ မသုံးစွဲမီ ရှုပ်ထွေးသော ဆုံးဖြတ်ချက်များကို နားလည်နိုင်ရန် ကူညီပေးပါသည်။">
+                            We help people understand complicated decisions before they
+                            commit money, time or resources.
+                        </p>
+
+                        <div class="line my-8"></div>
+
+                        <div class="space-y-6">
+
+                            <div>
+
+                                <h4 class="font-bold" data-en="General Business & Strategic Consultancy"
+                                    data-mm="အထွေထွေစီးပွားရေးနှင့် မဟာဗျူဟာအကြံပေး">
+                                    General Business & Strategic Consultancy
+                                </h4>
+
+                                <p class="text-sm text-white/45 leading-6 mt-2"
+                                    data-en="Discuss business opportunities, pros and cons, legal considerations and case scenarios. When specialist action is needed, clients may be introduced to appropriate professional partners."
+                                    data-mm="စီးပွားရေးအခွင့်အလမ်းများ၊ အားသာချက်၊ အားနည်းချက်၊ ဥပဒေရေးရာစဉ်းစားစရာများနှင့် ဖြစ်ရပ်အခြေအနေများကို ဆွေးနွေးပေးပါသည်။ အထူးကျွမ်းကျင်သူလိုအပ်ပါက သင့်လျော်သော ပရော်ဖက်ရှင်နယ်မိတ်ဖက်များထံ ချိတ်ဆက်ပေးနိုင်ပါသည်။">
+                                    Discuss business opportunities, pros and cons, legal
+                                    considerations and case scenarios. When specialist action is
+                                    needed, clients may be introduced to appropriate professional
+                                    partners.
+                                </p>
+
+                            </div>
+
+                            <div>
+
+                                <h4 class="font-bold" data-en="Investment & Crypto Advisory"
+                                    data-mm="ရင်းနှီးမြှုပ်နှံမှုနှင့် Crypto အကြံပေး">
+                                    Investment & Crypto Advisory
+                                </h4>
+
+                                <p class="text-sm text-white/45 leading-6 mt-2"
+                                    data-en="Discuss opportunities, risks, market scenarios and general considerations. If the client chooses to proceed, ELCID may introduce them to relevant external providers."
+                                    data-mm="အခွင့်အလမ်းများ၊ အန္တရာယ်များ၊ စျေးကွက်အခြေအနေများနှင့် အထွေထွေစဉ်းစားစရာများကို ဆွေးနွေးပေးပါသည်။ ဆက်လက်လုပ်ဆောင်ရန် ဆုံးဖြတ်ပါက သက်ဆိုင်ရာ ပြင်ပဝန်ဆောင်မှုပေးသူများထံ ချိတ်ဆက်ပေးနိုင်ပါသည်။">
+                                    Discuss opportunities, risks, market scenarios and general
+                                    considerations. If the client chooses to proceed, ELCID may
+                                    introduce them to relevant external providers.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mt-9 rounded-2xl bg-white/5 border border-white/10 p-5">
+
+                            <div class="text-xs uppercase tracking-widest text-white/35" data-en="Model"
+                                data-mm="လုပ်ငန်းပုံစံ">
+                                Model
+                            </div>
+
+                            <p class="text-sm text-white/65 leading-6 mt-2"
+                                data-en="Initial discussions are offered without a consultancy fee. Where a referral relationship exists, ELCID may receive a referral or affiliate fee from the external provider."
+                                data-mm="ကနဦးဆွေးနွေးမှုများအတွက် အကြံပေးခ မကောက်ခံပါ။ Referral မိတ်ဖက်ဆက်ဆံရေးရှိပါက ပြင်ပဝန်ဆောင်မှုပေးသူထံမှ referral သို့မဟုတ် affiliate fee ရရှိနိုင်ပါသည်။">
+                                Initial discussions are offered without a consultancy fee.
+                                Where a referral relationship exists, ELCID may receive a
+                                referral or affiliate fee from the external provider.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- PAID -->
+                    <article class="service-card glass rounded-[2rem] p-7 md:p-10 reveal delay-2">
+
+                        <div class="flex items-start justify-between gap-5">
+
+                            <div class="number-box">02</div>
+
+                            <span class="pill px-4 py-2 text-xs uppercase tracking-wider text-white/70" data-en="PAID"
+                                data-mm="အခကြေးငွေ">
+                                PAID
+                            </span>
+
+                        </div>
+
+                        <h3 class="text-3xl md:text-4xl font-extrabold mt-9 tracking-tight"
+                            data-en="Professional Management" data-mm="ပရော်ဖက်ရှင်နယ် စီမံခန့်ခွဲမှု">
+                            Professional Management
+                        </h3>
+
+                        <p class="text-white/55 leading-7 mt-5"
+                            data-en="For clients who want hands-off execution, ELCID can manage digital, marketing and selected business operations."
+                            data-mm="ကိုယ်တိုင်အများကြီး မစီမံချင်ဘဲ လုပ်ငန်းများကို အစမှအဆုံး စီမံခန့်ခွဲပေးစေလိုသူများအတွက် ELCID မှ ဒစ်ဂျစ်တယ်၊ မားကက်တင်းနှင့် သက်ဆိုင်ရာလုပ်ငန်းလည်ပတ်မှုများကို စီမံပေးနိုင်ပါသည်။">
+                            For clients who want hands-off execution, ELCID can manage
+                            digital, marketing and selected business operations.
+                        </p>
+
+                        <div class="line my-8"></div>
+
+                        <div class="grid sm:grid-cols-2 gap-3">
+
+                            <div class="glass-dark rounded-xl p-5">
+
+                                <div class="text-white/30 text-xs">01</div>
+
+                                <h4 class="font-bold mt-2" data-en="Business Management"
+                                    data-mm="စီးပွားရေး စီမံခန့်ခွဲမှု">
+                                    Business Management
+                                </h4>
+
+                            </div>
+
+                            <div class="glass-dark rounded-xl p-5">
+
+                                <div class="text-white/30 text-xs">02</div>
+
+                                <h4 class="font-bold mt-2" data-en="Digital Marketing" data-mm="ဒစ်ဂျစ်တယ် မားကက်တင်း">
+                                    Digital Marketing
+                                </h4>
+
+                            </div>
+
+                            <div class="glass-dark rounded-xl p-5">
+
+                                <div class="text-white/30 text-xs">03</div>
+                                
+                                <h4 class="font-bold mt-2" data-en="Website Management"
+                                    data-mm="ဝဘ်ဆိုဒ် စီမံခန့်ခွဲမှု">
+                                    Website Management
+                                </h4>
+
+                            </div>
+
+                            <div class="glass-dark rounded-xl p-5">
+
+                                <div class="text-white/30 text-xs">04</div>
+
+                                <h4 class="font-bold mt-2" data-en="Advertising" data-mm="ကြော်ငြာ စီမံခန့်ခွဲမှု">
+                                    Advertising
+                                </h4>
+
+                            </div>
+
+                            <div class="glass-dark rounded-xl p-5">
+
+                                <div class="text-white/30 text-xs">05</div>
+
+                                <h4 class="font-bold mt-2" data-en="Taxation Oversight"
+                                    data-mm="အခွန်ဆိုင်ရာ ကြီးကြပ်မှု">
+                                    Taxation Oversight
+                                </h4>
+
+                            </div>
+
+                            <div class="glass-dark rounded-xl p-5">
+
+                                <div class="text-white/30 text-xs">06</div>
+
+                                <h4 class="font-bold mt-2" data-en="Digital Operations"
+                                    data-mm="ဒစ်ဂျစ်တယ် လုပ်ငန်းလည်ပတ်မှု">
+                                    Digital Operations
+                                </h4>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+         PHILOSOPHY
+         ========================================================== -->
+        <section id="team" class="relative py-28 md:py-36 overflow-hidden border-y border-white/5">
+            
+            <div class="red-orb w-[500px] h-[500px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+
+                <div class="max-w-5xl mx-auto text-center reveal">
+
+                    <div class="pill inline-flex px-5 py-2 text-xs uppercase tracking-[.25em] text-white/55 mb-8"
+                        data-en="THE ELCID PHILOSOPHY" data-mm="ELCID ၏ အတွေးအခေါ်">
+                        THE ELCID PHILOSOPHY
+                    </div>
+
+                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-[-.07em] leading-[.9] gradient-text"
+                        data-en="Information creates clarity. Clarity creates better decisions."
+                        data-mm="သတင်းအချက်အလက်က ရှင်းလင်းမှုကို ဖန်တီးပေးသည်။ ရှင်းလင်းမှုက ပိုကောင်းသော ဆုံးဖြတ်ချက်များကို ဖန်တီးပေးသည်။">
+                        Information creates clarity.
+                        Clarity creates better decisions.
+                    </h2>
+
+                    <p class="max-w-2xl mx-auto text-white/50 text-lg leading-8 mt-9"
+                        data-en="Our role is not to make every decision for our clients. Our role is to help them understand the decision well enough to make it with confidence."
+                        data-mm="ကျွန်ုပ်တို့၏ အခန်းကဏ္ဍသည် သုံးစွဲသူများအတွက် ဆုံးဖြတ်ချက်တိုင်းကို အစားထိုးချမှတ်ပေးရန် မဟုတ်ပါ။ ဆုံးဖြတ်ချက်ကို ယုံကြည်မှုရှိစွာ ချနိုင်လောက်အောင် နားလည်စေရန် ကူညီပေးခြင်းဖြစ်ပါသည်။">
+                        Our role is not to make every decision for our clients. Our role is
+                        to help them understand the decision well enough to make it with
+                        confidence.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+      <!-- =========================================================
+         CONTACT CTA
+         ========================================================== -->
+        <section id="contact" class="pb-28 md:pb-36">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="relative overflow-hidden rounded-[2rem] md:rounded-[3rem]
+                 border border-white/10 bg-white/[.045]
+                 p-8 md:p-14 lg:p-20 reveal">
+
+                    <div class="red-orb w-[350px] h-[350px] right-[-100px] top-[-150px]"></div>
+
+                    <div class="relative max-w-4xl">
+
+                        <div class="text-xs uppercase tracking-[.3em] text-white/40 mb-6" data-en="05 / LET'S TALK"
+                            data-mm="၀၅ / ဆွေးနွေးကြရအောင်">
+                            05 / LET'S TALK
+                        </div>
+
+                        <h2 class="text-5xl md:text-7xl font-black tracking-[-.06em] leading-[.9]"
+                            data-en="Have a decision to make?" data-mm="ဆုံးဖြတ်ရမည့် အရာတစ်ခုရှိပါသလား။">
+                            Have a decision to make?
+                        </h2>
+
+                        <p class="text-white/50 text-lg leading-8 max-w-2xl mt-7"
+                            data-en="Start with a conversation. Tell us what you are considering, what you need to understand and where you want to go next."
+                            data-mm="ဆွေးနွေးမှုတစ်ခုဖြင့် စတင်ပါ။ သင်စဉ်းစားနေသောအရာ၊ နားလည်လိုသောအရာနှင့် နောက်တစ်ဆင့်သွားလိုသည့်နေရာကို ပြောပြပါ။">
+                            Start with a conversation. Tell us what you are considering,
+                            what you need to understand and where you want to go next.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4 mt-9">
+
+                            <a href="index.html" class="btn-primary inline-flex items-center gap-3
+                                rounded-full bg-white text-burgundy-900
+                                px-7 py-4 font-bold"> 
+
+                                <span data-en="Contact ELCID" data-mm="ELCID သို့ ဆက်သွယ်ရန်">
+                                    Contact ELCID
+                                </span>
+
+                                <span>→</span>
+
+                            </a>
+
+                            <a href="#home" class="inline-flex items-center gap-3
+                                rounded-full border border-white/15
+                                px-7 py-4 font-bold hover:bg-white/10 transition">
+
+                                <span data-en="Back to top" data-mm="အပေါ်သို့">
+                                    Back to top
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+       FOOTER
+     ========================================================== -->
+    <footer class="border-t border-white/10"> 
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 py-12">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <div class="lg:col-span-2">
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-10 h-10 rounded-xl bg-white text-burgundy-900
+                          flex items-center justify-center font-black">
+                            E
+                        </div>
+
+                        <div>
+
+                            <div class="font-black tracking-[.2em]">ELCID</div>
+
+                            <div class="text-[9px] uppercase tracking-[.2em] text-white/35"
+                                data-en="Well-informed decisions."
+                                data-mm="သတင်းအချက်အလက်ပြည့်စုံသော ဆုံးဖြတ်ချက်များ။">
+                                Well-informed decisions.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <p class="max-w-md text-sm text-white/40 leading-7 mt-6"
+                        data-en="Empowering people with information, connecting them with expertise and helping businesses move from ideas to execution."
+                        data-mm="လူများအား သတင်းအချက်အလက်များဖြင့် အားဖြည့်ပေးခြင်း၊ ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ပေးခြင်းနှင့် လုပ်ငန်းများအား အတွေးအမြင်မှ အကောင်အထည်ဖော်မှုသို့ ရွှေ့ပြောင်းနိုင်ရန် ကူညီပေးခြင်း။">
+                        Empowering people with information, connecting them with expertise
+                        and helping businesses move from ideas to execution.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <div class="text-xs uppercase tracking-widest text-white/30 mb-5" data-en="Navigation"
+                        data-mm="လမ်းညွှန်">
+                        Navigation
+                    </div>
+
+                    <div class="space-y-3 text-sm text-white/55">
+
+                        <a href="#home" class="block hover:text-white transition" data-en="Home"
+                            data-mm="ပင်မစာမျက်နှာ">
+                            Home
+                        </a>
+
+                        <a href="#about" class="block hover:text-white transition" data-en="About" data-mm="အကြောင်း">
+                            About
+                        </a>
+
+                        <a href="#services" class="block hover:text-white transition" data-en="Service"
+                            data-mm="ဝန်ဆောင်မှု">
+                            Service
+                        </a>
+
+                        <a href="#blog" class="block hover:text-white transition" data-en="Blog" data-mm="ဘလော့ဂ်">
+                            Blog
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <div class="text-xs uppercase tracking-widest text-white/30 mb-5" data-en="Connect"
+                        data-mm="ချိတ်ဆက်ရန်">
+                        Connect
+                    </div>
+
+                    <div class="space-y-3 text-sm text-white/55">
+
+                        <a href="mailto:hello@elcid.example" class="block hover:text-white transition">
+                            hello@elcid.example
+                        </a>
+
+                        <a href="#contact" class="block hover:text-white transition" data-en="Start a Conversation"
+                            data-mm="ဆွေးနွေးမှု စတင်ရန်">
+                            Start a Conversation
+                        </a>
+
+                        <div class="flex gap-2 pt-3">
+
+                            <a href="#" aria-label="Facebook"
+                                class="w-9 h-9 rounded-full glass flex items-center justify-center hover:bg-white/10 transition">
+                                f
+                            </a>
+
+                            <a href="#" aria-label="Instagram"
+                                class="w-9 h-9 rounded-full glass flex items-center justify-center hover:bg-white/10 transition">
+                                ◎
+                            </a>
+
+                            <a href="#" aria-label="LinkedIn"
+                                class="w-9 h-9 rounded-full glass flex items-center justify-center hover:bg-white/10 transition">
+                                in
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="line my-10"></div>
+
+            <div class="flex flex-col md:flex-row md:items-center
+               justify-between gap-4 text-xs text-white/30">
+
+                <div data-en="© ELCID. All rights reserved." data-mm="© ELCID။ မူပိုင်ခွင့်အားလုံး ရယူထားသည်။">
+                    © ELCID. All rights reserved.
+                </div>
+
+                <div data-en="Empowering well-informed decisions."
+                    data-mm="သတင်းအချက်အလက်ပြည့်စုံသော ဆုံးဖြတ်ချက်များကို အားပေးခြင်း။">
+                    Empowering well-informed decisions.
+                </div>
+
+            </div>
+
+        </div>
+        
+    </footer>
+
+
+    <!-- =========================================================
+       JAVASCRIPT
+     ========================================================== -->
+    <script>
+
+        /*
+         * ============================================================
+         * LANGUAGE SYSTEM
+         * ============================================================
+         *
+         * Every bilingual element uses:
+         *
+         * data-en="English text"
+         * data-mm="Myanmar text"
+         *
+         * The script replaces the visible text instantly.
+         */
+
+        let currentLanguage =
+            localStorage.getItem("elcid-language") || "en";
+
+
+        function setLanguage(language) {
+
+            currentLanguage = language;
+
+            localStorage.setItem(
+                "elcid-language",
+                language
+            );
+
+            document.documentElement.lang =
+                language === "mm" ? "my" : "en";
+
+            document.body.classList.toggle(
+                "mm",
+                language === "mm"
+            );
+
+
+            document
+                .querySelectorAll("[data-en][data-mm]")
+                .forEach(element => {
+
+                    const value =
+                        element.getAttribute(
+                            language === "mm"
+                                ? "data-mm"
+                                : "data-en"
+                        );
+
+                    if (value !== null) {
+                        element.textContent = value;
+                    }
+
+                });
+
+
+            // Update language button state
+            const enBtn =
+                document.getElementById("enBtn");
+
+            const mmBtn =
+                document.getElementById("mmBtn");
+
+            enBtn.classList.toggle(
+                "active",
+                language === "en"
+            );
+
+            mmBtn.classList.toggle(
+                "active",
+                language === "mm"
+            );
+
+            enBtn.classList.toggle(
+                "text-white/70",
+                language !== "en"
+            );
+
+            mmBtn.classList.toggle(
+                "text-white/70",
+                language !== "mm"
+            );
+        }
+
+
+        /*
+         * ============================================================
+         * MOBILE NAVIGATION
+         * ============================================================
+         */
+
+        const mobileToggle =
+            document.getElementById("mobileToggle");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        mobileToggle.addEventListener(
+            "click",
+            () => {
+
+                mobileMenu.classList.toggle(
+                    "open"
+                );
+
+            }
+        );
+
+
+        // Close mobile menu after selecting a link
+        document
+            .querySelectorAll(".mobile-nav-link")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        mobileMenu.classList.remove(
+                            "open"
+                        );
+
+                    }
+                );
+
+            });
+
+
+        /*
+         * ============================================================
+         * SCROLL REVEAL
+         * ============================================================
+         */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+
+        /*
+         * ============================================================
+         * ACTIVE NAVIGATION
+         * ============================================================
+         */
+
+        const sections =
+            document.querySelectorAll(
+                "main section[id]"
+            );
+
+        const navLinks =
+            document.querySelectorAll(
+                ".nav-link"
+            );
+
+
+        const sectionObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        const id =
+                            entry.target.id;
+
+                        navLinks.forEach(link => {
+
+                            const isActive =
+                                link.getAttribute("href") ===
+                                `#${id}`;
+
+                            link.classList.toggle(
+                                "text-white",
+                                isActive
+                            );
+
+                            link.classList.toggle(
+                                "text-white/60",
+                                !isActive
+                            );
+
+                        });
+
+                    });
+
+                },
+                {
+                    rootMargin:
+                        "-35% 0px -55% 0px"
+                }
+            );
+
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+
+        /*
+         * ============================================================
+         * INITIAL LANGUAGE
+         * ============================================================
+         */
+
+        setLanguage(currentLanguage);
+
+    </script>
+
+</body>
+
+</html>

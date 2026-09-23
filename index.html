@@ -1,0 +1,2961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Professional consultancy, management, digital marketing, e-commerce, web design, content creation and business solutions." />
+    <title>ELCID ( Strategy • Consultancy • Execution )</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            950: "#160306",
+                            900: "#28070b",
+                            800: "#430b12",
+                            700: "#5e1019",
+                            600: "#761421",
+                            500: "#941c2b"
+                        },
+                        silver: "#cbd0d6"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "Noto Sans Myanmar", "sans-serif"]
+                    },
+                    boxShadow: {
+                        crimson: "0 20px 70px rgba(148, 28, 43, .25)"
+                    }
+                }
+            }
+        };
+    </script>
+
+
+    <style>
+        :root {
+            --burgundy: #58111A;
+            --burgundy-dark: #35090F;
+            --burgundy-deep: #21070B;
+            --crimson: #8D1A29;
+            --white: #FFFFFF;
+            --silver: #C0C0C0;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 80% 10%, rgba(141, 26, 41, .16), transparent 30%),
+                radial-gradient(circle at 10% 70%, rgba(114, 21, 34, .12), transparent 28%),
+                var(--burgundy-deep);
+            color: var(--white);
+            font-family: Inter, "Noto Sans Myanmar", system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        .orb {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 35% 28%, #a62b3b 0%, #721522 20%, #3b0a11 52%, #190306 100%);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, .12),
+                0 0 55px rgba(141, 26, 41, .38),
+                inset 0 0 45px rgba(0, 0, 0, .65);
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+
+        .orb::before,
+        .orb::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .orb::before {
+            inset: -18px;
+            border-color: rgba(141, 26, 41, .38);
+        }
+
+        .orb::after {
+            inset: -42px;
+            border-color: rgba(255, 255, 255, .06);
+        }
+
+        .network-line {
+            position: absolute;
+            height: 1px;
+            transform-origin: left center;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(192, 192, 192, .55),
+                    rgba(141, 26, 41, .7),
+                    transparent);
+        }
+
+        .network-node {
+            position: absolute;
+            padding: 9px 13px;
+            border-radius: 11px;
+            background: rgba(24, 3, 7, .82);
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: #c0c0c0;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            backdrop-filter: blur(10px);
+        }
+
+        .network-node::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin-right: 6px;
+            background: #9d2333;
+            box-shadow: 0 0 10px rgba(157, 35, 51, .8);
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .floating-delay {
+            animation: float 5s ease-in-out 1.4s infinite;
+        }
+    </style>
+    <style>
+        .hero-network {
+            position: relative;
+            width: min(540px, 42vw);
+            height: 540px;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-network::before {
+            content: "";
+            position: absolute;
+            inset: 12%;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    rgba(148, 28, 43, 0.28) 0%,
+                    rgba(118, 20, 33, 0.13) 35%,
+                    transparent 70%);
+            filter: blur(25px);
+        }
+
+        .network-ring {
+            position: absolute;
+            width: 78%;
+            height: 78%;
+            border: 1px solid rgba(203, 208, 214, 0.13);
+            border-radius: 50%;
+            transform: rotate(-18deg);
+        }
+
+        .network-ring.r2 {
+            width: 60%;
+            height: 60%;
+            transform: rotate(42deg);
+            border-color: rgba(148, 28, 43, 0.35);
+        }
+
+        .network-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(148, 28, 43, 0.75),
+                    rgba(203, 208, 214, 0.45),
+                    transparent);
+            transform-origin: left center;
+            opacity: .7;
+        }
+
+        .line-1 {
+            width: 210px;
+            transform: rotate(-34deg);
+            top: 35%;
+            left: 27%;
+        }
+
+        .line-2 {
+            width: 230px;
+            transform: rotate(28deg);
+            top: 45%;
+            left: 28%;
+        }
+
+        .line-3 {
+            width: 190px;
+            transform: rotate(145deg);
+            top: 62%;
+            left: 57%;
+        }
+
+        .line-4 {
+            width: 175px;
+            transform: rotate(-150deg);
+            top: 59%;
+            left: 51%;
+        }
+
+        .network-node {
+            position: absolute;
+            z-index: 3;
+            min-width: 108px;
+            padding: 9px 13px;
+            border-radius: 12px;
+            border: 1px solid rgba(203, 208, 214, .18);
+            background: rgba(22, 3, 6, .78);
+            backdrop-filter: blur(12px);
+            color: #cbd0d6;
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: .06em;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+        }
+
+        .network-node::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin-right: 6px;
+            border-radius: 50%;
+            background: #941c2b;
+            box-shadow: 0 0 12px rgba(148, 28, 43, .9);
+        }
+
+        .node-top {
+            top: 8%;
+            left: 38%;
+        }
+
+        .node-left {
+            top: 36%;
+            left: 2%;
+        }
+
+        .node-right {
+            top: 30%;
+            right: 2%;
+        }
+
+        .node-bottom-left {
+            bottom: 13%;
+            left: 15%;
+        }
+
+        .node-bottom-right {
+            bottom: 9%;
+            right: 14%;
+        }
+
+        .node-center-bottom {
+            bottom: 2%;
+            left: 42%;
+        }
+
+        .network-core {
+            position: relative;
+            z-index: 5;
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at 35% 30%,
+                    #941c2b 0%,
+                    #5e1019 28%,
+                    #28070b 62%,
+                    #160306 100%);
+            border: 1px solid rgba(255, 255, 255, .2);
+            box-shadow:
+                0 0 0 1px rgba(148, 28, 43, .2),
+                0 0 45px rgba(148, 28, 43, .35),
+                inset 0 0 40px rgba(0, 0, 0, .55);
+        }
+
+        .network-core::before,
+        .network-core::after {
+            content: "";
+            position: absolute;
+            inset: -16px;
+            border: 1px solid rgba(148, 28, 43, .3);
+            border-radius: 50%;
+        }
+
+        .network-core::after {
+            inset: -32px;
+            border-color: rgba(203, 208, 214, .08);
+        }
+
+        .core-content {
+            text-align: center;
+        }
+
+        .core-logo {
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: .12em;
+        }
+
+        .core-label {
+            margin-top: 5px;
+            font-size: 8px;
+            letter-spacing: .28em;
+            color: #cbd0d6;
+            text-transform: uppercase;
+        }
+
+        @keyframes corePulse {
+
+            0%,
+            100% {
+                box-shadow:
+                    0 0 0 1px rgba(148, 28, 43, .2),
+                    0 0 45px rgba(148, 28, 43, .35),
+                    inset 0 0 40px rgba(0, 0, 0, .55);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 0 1px rgba(148, 28, 43, .35),
+                    0 0 70px rgba(148, 28, 43, .55),
+                    inset 0 0 40px rgba(0, 0, 0, .55);
+            }
+        }
+
+        .network-core {
+            animation: corePulse 4s ease-in-out infinite;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-network {
+                width: 440px;
+                height: 440px;
+                margin: 45px auto 0;
+            }
+
+            .network-core {
+                width: 155px;
+                height: 155px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-network {
+                width: 330px;
+                height: 330px;
+            }
+
+            .network-core {
+                width: 120px;
+                height: 120px;
+            }
+
+            .core-logo {
+                font-size: 22px;
+            }
+
+            .network-node {
+                min-width: 78px;
+                padding: 7px 8px;
+                font-size: 7px;
+            }
+
+            .line-1,
+            .line-2,
+            .line-3,
+            .line-4 {
+                width: 120px;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", "Noto Sans Myanmar", sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(148, 28, 43, .25), transparent 30%),
+                radial-gradient(circle at 85% 20%, rgba(118, 20, 33, .2), transparent 28%),
+                #160306;
+            color: #fff;
+        }
+
+        .mm {
+            font-family: "Noto Sans Myanmar", "Inter", sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, .055);
+            border: 1px solid rgba(255, 255, 255, .11);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .glass:hover {
+            border-color: rgba(203, 208, 214, .25);
+            background: rgba(255, 255, 255, .075);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #fff, #cbd0d6, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .crimson-glow {
+            box-shadow:
+                0 0 0 1px rgba(148, 28, 43, .25),
+                0 25px 80px rgba(118, 20, 33, .2);
+        }
+
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 45px 45px;
+            mask-image: linear-gradient(to bottom, black 20%, transparent 90%);
+        }
+
+        .nav-link.active {
+            color: white;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            margin-top: 5px;
+            background: #cbd0d6;
+            transition: width .25s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform .3s ease;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .language-btn {
+            transition: all .25s ease;
+        }
+
+        .language-btn.active {
+            background: #fff;
+            color: #430b12;
+        }
+
+        .service-card {
+            transition: transform .3s ease, border-color .3s ease, background .3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .floating-orb {
+            animation: float 7s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-18px) translateX(8px);
+            }
+        }
+
+        ::selection {
+            background: #941c2b;
+            color: white;
+        }
+
+        body {
+            font-family:
+                Inter,
+                "Noto Sans Myanmar",
+                sans-serif;
+        }
+
+        body.mm {
+            font-family:
+                "Noto Sans Myanmar",
+                Inter,
+                sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+        HEADER
+        ========================================================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#160306]/85 backdrop-blur-xl">
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            <div class="h-20 flex items-center justify-between">
+
+                <a href="index.html" class="flex items-center gap-3">
+
+                    <!-- <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-burgundy-500 to-burgundy-800 flex items-center justify-center font-bold text-lg shadow-crimson">
+                    </div> -->
+
+                    <div>
+                        <div class="font-bold tracking-tight">ELCID</div>
+                        <div class="text-[10px] uppercase tracking-[.25em] text-silver">
+                            Well-Informed Decisions
+                        </div>
+                    </div>
+
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-7">
+
+                    <a href="index.html" target="_blank"
+                        class="nav-link active text-sm text-silver hover:text-white transition" data-section="home">
+
+                        <span data-en="Home" data-mm="ပင်မစာမျက်နှာ">Home</span>
+
+                    </a>
+
+                    <a href="about.html" target="_blank"
+                        class="nav-link text-sm text-silver hover:text-white transition" data-section="about">
+
+                        <span data-en="About" data-mm="အကြောင်း">About</span>
+
+                    </a>
+
+                    <a href="service.html" target="_blank"
+                        class="nav-link text-sm text-silver hover:text-white transition" data-section="services">
+
+                        <span data-en="Services" data-mm="ဝန်ဆောင်မှုများ">Services</span>
+
+                    </a>
+
+                    <a href="team.html" target="_blank" class="nav-link text-sm text-silver hover:text-white transition"
+                        data-section="team">
+
+                        <span data-en="Team" data-mm="အဖွဲ့">Team</span>
+
+                    </a>
+
+                    <a href="blog.html" target="_blank" class="nav-link text-sm text-silver hover:text-white transition"
+                        data-section="blog">
+
+                        <span data-en="Blog" data-mm="ဘလော့ဂ်">Blog</span>
+
+                    </a>
+
+                    <a href="#contact" class="nav-link text-sm text-silver hover:text-white transition"
+                        data-section="contact">
+
+                        <span data-en="Contact" data-mm="ဆက်သွယ်ရန်">Contact</span>
+
+                    </a>
+
+                </nav>
+
+                <div class="flex items-center gap-3">
+
+                    <div class="hidden sm:flex items-center rounded-full border border-white/15 p-1 bg-white/5">
+
+                        <button class="language-btn active rounded-full px-3 py-1.5 text-xs font-semibold"
+                            data-lang="en">
+                            EN
+                        </button>
+
+                        <button class="language-btn rounded-full px-3 py-1.5 text-xs font-semibold text-silver"
+                            data-lang="mm">
+                            မြန်မာ
+                        </button>
+
+                    </div>
+
+                    <a href="#contact"
+                        class="hidden md:inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-burgundy-800 hover:bg-silver transition">
+
+                        <span data-en="Let's Talk" data-mm="ဆွေးနွေးကြမယ်">Let's Talk</span>
+
+                    </a>
+
+                    <button id="menuBtn"
+                        class="lg:hidden w-10 h-10 rounded-xl border border-white/10 flex items-center justify-center"
+                        aria-label="Open menu">
+
+                        <svg width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M3 6h15M3 10.5h15M3 15h15" />
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+        MOBILE MENU
+        ========================================================== -->
+    <div id="mobileMenu"
+        class="mobile-menu fixed z-[60] top-0 right-0 h-full w-[85%] max-w-sm bg-[#28070b] border-l border-white/10 p-7 lg:hidden">
+
+        <div class="flex items-center justify-between mb-12">
+
+            <span class="font-bold">ELCID</span>
+
+            <button id="closeMenu" class="w-10 h-10 rounded-xl border border-white/10">✕</button>
+
+        </div>
+
+        <div class="space-y-5">
+
+            <a href="index.html" target="_blank" class="mobile-nav block text-xl text-silver hover:text-white">
+
+                <span data-en="Home" data-mm="ပင်မစာမျက်နှာ">Home</span>
+
+            </a>
+
+            <a href="about.html" target="_blank" class="mobile-nav block text-xl text-silver hover:text-white">
+
+                <span data-en="About" data-mm="အကြောင်း">About</span>
+
+            </a>
+
+            <a href="service.html" target="_blank" class="mobile-nav block text-xl text-silver hover:text-white">
+
+                <span data-en="Services" data-mm="ဝန်ဆောင်မှုများ">Services</span>
+
+            </a>
+
+            <a href="team.html" target="_blank" class="mobile-nav block text-xl text-silver hover:text-white">
+
+                <span data-en="Team" data-mm="အဖွဲ့">Team</span>
+
+            </a>
+
+            <a href="blog.html" target="_blank" class="mobile-nav block text-xl text-silver hover:text-white">
+
+                <span data-en="Blog" data-mm="ဘလော့ဂ်">Blog</span>
+
+            </a>
+
+            <a href="#contact" class="mobile-nav block text-xl text-silver hover:text-white">
+
+                <span data-en="Contact" data-mm="ဆက်သွယ်ရန်">Contact</span>
+
+            </a>
+
+        </div>
+
+        <div class="mt-10 flex items-center rounded-full border border-white/15 p-1 bg-white/5 w-fit">
+
+            <button class="language-btn active rounded-full px-4 py-2 text-xs font-semibold" data-lang="en">EN</button>
+
+            <button class="language-btn rounded-full px-4 py-2 text-xs font-semibold text-silver"
+                data-lang="mm">မြန်မာ</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+        HERO
+        ========================================================== -->
+    <main>
+
+        <!-- =========================================================
+        HEADER
+        ========================================================== -->
+
+        <section id="home" class="relative min-h-screen flex items-center pt-28 overflow-hidden">
+
+            <!-- Background grid -->
+            <div class="hero-grid absolute inset-0 pointer-events-none"></div>
+
+            <!-- Burgundy ambient glow -->
+            <div class="absolute top-20 right-[15%] w-96 h-96 rounded-full bg-burgundy-700/10 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-burgundy-600/10 blur-3xl"></div>
+
+
+            <div class="relative max-w-7xl mx-auto px-5 lg:px-8 w-full">
+
+                <div class="grid lg:grid-cols-[1.08fr_.92fr] items-center gap-8 xl:gap-4">
+
+                    <!-- =====================================================
+                    LEFT — HERO TEXT
+                    ====================================================== -->
+                    <div class="max-w-4xl">
+
+                        <div
+                            class="reveal inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 mb-7">
+
+                            <span class="w-2 h-2 rounded-full bg-silver"></span>
+
+                            <span class="text-xs uppercase tracking-[.2em] text-silver"
+                                data-en="Strategy • Consultancy • Execution"
+                                data-mm="မဟာဗျူဟာ • အကြံပေးခြင်း • အကောင်အထည်ဖော်ခြင်း">
+                                Strategy • Consultancy • Execution
+                            </span>
+
+                        </div>
+
+
+                        <h1
+                            class="reveal text-5xl sm:text-6xl lg:text-[76px] xl:text-[86px] font-extrabold tracking-[-.055em] leading-[.94]">
+
+                            <span data-en="Make decisions" data-mm="သတင်းအချက်အလက်ပြည့်စုံစွာ">
+                                Make decisions
+                            </span>
+
+                            <br />
+
+                            <span class="gradient-text" data-en="with confidence." data-mm="ဆုံးဖြတ်ချက်များ ချမှတ်ပါ။">
+                                with confidence.
+                            </span>
+
+                        </h1>
+
+
+                        <p class="reveal mt-8 max-w-2xl text-lg sm:text-xl leading-8 text-silver">
+
+                            <span
+                                data-en="We help individuals and businesses understand their options, evaluate opportunities, connect with trusted specialists, and execute the right strategy."
+                                data-mm="တစ်ဦးချင်းစီနှင့် စီးပွားရေးလုပ်ငန်းများအတွက် ရွေးချယ်စရာများကို နားလည်စေပြီး အခွင့်အလမ်းများကို သုံးသပ်ကာ ယုံကြည်ရသော ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ပေးပြီး သင့်တော်သော မဟာဗျူဟာကို အကောင်အထည်ဖော်ပေးပါသည်။">
+                                We help individuals and businesses understand their options, evaluate opportunities,
+                                connect with trusted specialists, and execute the right strategy.
+                            </span>
+
+                        </p>
+
+
+                        <div class="reveal mt-9 flex flex-col sm:flex-row gap-4">
+
+                            <a href="service.html" target="_blank"
+                                class="inline-flex items-center justify-center gap-2 rounded-full bg-white text-burgundy-900 px-7 py-4 font-bold hover:bg-silver transition">
+                                <span data-en="Explore Services" data-mm="ဝန်ဆောင်မှုများကြည့်ရန်">
+                                    Explore Services
+                                </span>
+
+                                <span>→</span>
+                            </a>
+
+
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold hover:bg-white/10 transition">
+                                <span data-en="Free Initial Consultation" data-mm="အခမဲ့ ကနဦးအကြံပေးဆွေးနွေးမှု">
+                                    Free Initial Consultation
+                                </span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =====================================================
+                    RIGHT — ELCID NETWORK DESIGN
+                    ====================================================== -->
+                    <div class="hidden md:flex justify-center items-center min-h-[500px] relative">
+
+                        <div class="absolute w-[390px] h-[390px] rounded-full border border-white/[.05]"></div>
+
+                        <div class="absolute w-[300px] h-[300px] rounded-full border border-[#8D1A29]/30"></div>
+
+                        <div class="network-line w-[210px] rotate-[-35deg] left-[22%] top-[37%]"></div>
+
+                        <div class="network-line w-[225px] rotate-[26deg] left-[31%] top-[42%]"></div>
+
+                        <div class="network-line w-[190px] rotate-[145deg] left-[54%] top-[59%]"></div>
+
+                        <div class="network-line w-[180px] rotate-[-145deg] left-[51%] top-[58%]"></div>
+
+                        <div class="network-node floating top-[7%] left-[38%]">
+                            Digital Marketing
+                        </div>
+
+                        <div class="network-node floating-delay top-[31%] left-[2%]">
+                            Consultancy
+                        </div>
+
+                        <div class="network-node floating top-[28%] right-[0%]">
+                            E-Commerce
+                        </div>
+
+                        <div class="network-node floating-delay bottom-[16%] left-[10%]">
+                            Web Design
+                        </div>
+
+                        <div class="network-node floating bottom-[10%] right-[9%]">
+                            Business
+                        </div>
+
+                        <div class="network-node floating-delay bottom-[0%] left-[39%]">
+                            Management
+                        </div>
+
+                        <div class="orb pulse">
+
+                            <div class="text-center">
+
+                                <div class="text-3xl sm:text-4xl font-extrabold tracking-[.14em]">
+                                    ELCID
+                                </div>
+
+                                <div class="text-[8px] mt-2 tracking-[.3em] text-silver uppercase">
+                                    Well-Informed
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+        ABOUT
+        ========================================================== -->
+        <section id="about" class="py-28 border-t border-white/5">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+                    <div>
+
+                        <div class="reveal text-sm uppercase tracking-[.25em] text-silver mb-5">
+
+                            <span data-en="About Us" data-mm="ကျွန်ုပ်တို့အကြောင်း">About Us</span>
+
+                        </div>
+
+                        <h2 class="reveal text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
+
+                            <span data-en="Information first. Decisions second."
+                                data-mm="သတင်းအချက်အလက်ကို ဦးစားပေးပြီး ဆုံးဖြတ်ချက်ချပါ။">
+                                Information first. Decisions second.
+                            </span>
+
+                        </h2>
+
+                        <p class="reveal mt-7 text-silver leading-8">
+
+                            <span
+                                data-en="Our philosophy is simple: people make better decisions when they have access to clear, relevant and practical information."
+                                data-mm="ကျွန်ုပ်တို့၏ အခြေခံခံယူချက်မှာ ရိုးရှင်းပါသည်။ ရှင်းလင်းပြီး သက်ဆိုင်မှုရှိသော လက်တွေ့အသုံးချနိုင်သည့် သတင်းအချက်အလက်များ ရရှိသောအခါ လူများသည် ပိုမိုကောင်းမွန်သော ဆုံးဖြတ်ချက်များကို ချမှတ်နိုင်ပါသည်။">
+                                Our philosophy is simple: people make better decisions when they have access to clear,
+                                relevant and practical information.
+                            </span>
+
+                        </p>
+
+                        <p class="reveal mt-5 text-silver leading-8">
+
+                            <span
+                                data-en="We begin by listening and explaining. When your needs go beyond our direct scope, we connect you with appropriate specialists and trusted partners. When you need someone to take responsibility for execution, our paid management services step in."
+                                data-mm="သင့်လိုအပ်ချက်ကို နားထောင်ပြီး ရှင်းလင်းစွာ အကြံပေးခြင်းဖြင့် စတင်ပါသည်။ ကျွန်ုပ်တို့၏ တိုက်ရိုက်ဝန်ဆောင်မှုနယ်ပယ်ထက် ကျော်လွန်ပါက သင့်တော်သော ကျွမ်းကျင်သူများနှင့် ယုံကြည်ရသော မိတ်ဖက်များထံ ချိတ်ဆက်ပေးပါသည်။ အကောင်အထည်ဖော်မှုတစ်ခုလုံးကို ကျွန်ုပ်တို့က တာဝန်ယူစေလိုပါက အခပေး စီမံခန့်ခွဲမှုဝန်ဆောင်မှုများကို ပေးအပ်ပါသည်။">
+                                We begin by listening and explaining. When your needs go beyond our direct scope, we
+                                connect you with appropriate specialists and trusted partners. When you need someone to
+                                take responsibility for execution, our paid management services step in.
+                            </span>
+
+                        </p>
+
+                        <a href="#contact"
+                            class="reveal inline-flex mt-8 items-center gap-2 text-white font-semibold border-b border-white/30 pb-2 hover:border-white transition">
+
+                            <span data-en="Start a conversation" data-mm="ဆွေးနွေးမှု စတင်ရန်">
+                                Start a conversation
+                            </span>
+
+                            <span>→</span>
+
+                        </a>
+
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+
+                        <div class="reveal glass rounded-3xl p-7">
+
+                            <div class="w-12 h-12 rounded-2xl bg-burgundy-700 flex items-center justify-center mb-6">
+                                ✓
+                            </div>
+
+                            <h3 class="text-xl font-bold">
+                                <span data-en="Clear Thinking" data-mm="ရှင်းလင်းသော အတွေးအခေါ်">Clear Thinking</span>
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-7 text-silver">
+
+                                <span data-en="Break complicated choices into understandable options."
+                                    data-mm="ရှုပ်ထွေးသော ရွေးချယ်စရာများကို နားလည်လွယ်သော ရွေးချယ်စရာများအဖြစ် ခွဲခြမ်းပေးပါသည်။">
+                                    Break complicated choices into understandable options.
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                        <div class="reveal glass rounded-3xl p-7 sm:translate-y-8">
+
+                            <div class="w-12 h-12 rounded-2xl bg-burgundy-700 flex items-center justify-center mb-6">
+                                ↗
+                            </div>
+
+                            <h3 class="text-xl font-bold">
+
+                                <span data-en="Trusted Connections" data-mm="ယုံကြည်ရသော ချိတ်ဆက်မှုများ">
+                                    Trusted Connections
+                                </span>
+
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-7 text-silver">
+
+                                <span
+                                    data-en="Access relevant specialists when a project requires expertise outside our scope."
+                                    data-mm="ကျွန်ုပ်တို့၏ နယ်ပယ်ပြင်ပ ကျွမ်းကျင်မှုလိုအပ်ပါက သင့်တော်သော ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ပေးပါသည်။">
+                                    Access relevant specialists when a project requires expertise outside our scope.
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                        <div class="reveal glass rounded-3xl p-7">
+
+                            <div class="w-12 h-12 rounded-2xl bg-burgundy-700 flex items-center justify-center mb-6">
+                                ◈
+                            </div>
+
+                            <h3 class="text-xl font-bold">
+
+                                <span data-en="Practical Strategy" data-mm="လက်တွေ့ကျသော မဟာဗျူဟာ">
+                                    Practical Strategy
+                                </span>
+
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-7 text-silver">
+
+                                <span data-en="Advice designed around real-world goals, constraints and opportunities."
+                                    data-mm="လက်တွေ့ရည်မှန်းချက်များ၊ အကန့်အသတ်များနှင့် အခွင့်အလမ်းများအပေါ် အခြေခံထားသော အကြံပေးမှု။">
+                                    Advice designed around real-world goals, constraints and opportunities.
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                        <div class="reveal glass rounded-3xl p-7 sm:translate-y-8">
+
+                            <div class="w-12 h-12 rounded-2xl bg-burgundy-700 flex items-center justify-center mb-6">
+                                ◎
+                            </div>
+
+                            <h3 class="text-xl font-bold">
+
+                                <span data-en="Execution" data-mm="အကောင်အထည်ဖော်ခြင်း">Execution</span>
+
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-7 text-silver">
+
+                                <span data-en="Hands-on management for clients who want implementation handled."
+                                    data-mm="အကောင်အထည်ဖော်မှုကို ကိုယ်တိုင်စီမံမနေလိုသူများအတွက် လက်တွေ့စီမံခန့်ခွဲပေးခြင်း။">
+                                    Hands-on management for clients who want implementation handled.
+                                </span>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+        BUSINESS MODEL
+        ========================================================== -->
+        <section class="py-28 bg-black/10 border-y border-white/5">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="reveal text-center max-w-3xl mx-auto">
+
+                    <div class="text-sm uppercase tracking-[.25em] text-silver">
+
+                        <span data-en="How We Work" data-mm="ကျွန်ုပ်တို့၏ လုပ်ဆောင်ပုံ">
+                            How We Work
+                        </span>
+
+                    </div>
+
+                    <h2 class="mt-4 text-4xl sm:text-5xl font-bold">
+
+                        <span data-en="Two ways to work with us."
+                            data-mm="ကျွန်ုပ်တို့နှင့် ပူးပေါင်းရန် နည်းလမ်းနှစ်မျိုး">
+                            Two ways to work with us.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <div class="mt-14 grid lg:grid-cols-2 gap-6">
+
+                    <!-- FREE -->
+                    <div
+                        class="reveal rounded-[2rem] border border-white/10 bg-gradient-to-br from-burgundy-800/50 to-white/[.03] p-8 lg:p-10 crimson-glow">
+
+                        <div class="flex items-center justify-between">
+
+                            <span
+                                class="px-3 py-1 rounded-full bg-white/10 text-xs uppercase tracking-widest text-silver">
+                                <span data-en="Model 01" data-mm="ပုံစံ ၀၁">Model 01</span>
+                            </span>
+
+                            <span class="text-sm text-silver">
+                                <span data-en="Free" data-mm="အခမဲ့">Free</span>
+                            </span>
+
+                        </div>
+
+                        <h3 class="mt-8 text-3xl font-bold">
+
+                            <span data-en="Consult & Connect" data-mm="အကြံပေးပြီး ချိတ်ဆက်ပေးခြင်း">
+                                Consult & Connect
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-4 text-silver leading-7">
+
+                            <span
+                                data-en="Start with a free initial discussion. Understand pros and cons, potential issues, possible scenarios and what type of specialist may be appropriate."
+                                data-mm="အခမဲ့ ကနဦးဆွေးနွေးမှုဖြင့် စတင်ပါ။ အားသာချက်၊ အားနည်းချက်များ၊ ဖြစ်နိုင်သောပြဿနာများ၊ အခြေအနေများနှင့် မည်သည့်ကျွမ်းကျင်သူနှင့် သင့်တော်မည်ကို နားလည်နိုင်ပါသည်။">
+                                Start with a free initial discussion. Understand pros and cons, potential issues,
+                                possible scenarios and what type of specialist may be appropriate.
+                            </span>
+
+                        </p>
+
+                        <div class="mt-8 space-y-4">
+
+                            <div class="flex gap-3">
+
+                                <span class="text-silver">✓</span>
+
+                                <span data-en="Initial advisory & discussion" data-mm="ကနဦး အကြံပေးဆွေးနွေးမှု">
+                                    Initial advisory & discussion
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3">
+
+                                <span class="text-silver">✓</span>
+
+                                <span data-en="Pros / cons analysis" data-mm="အားသာချက် / အားနည်းချက် သုံးသပ်ခြင်း">
+                                    Pros / cons analysis
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3">
+
+                                <span class="text-silver">✓</span>
+
+                                <span data-en="Case scenario discussion" data-mm="ဖြစ်ရပ်အခြေအနေ ဆွေးနွေးခြင်း">
+                                    Case scenario discussion
+                                </span>
+
+                            </div>
+
+                            <div class="flex gap-3">
+
+                                <span class="text-silver">✓</span>
+
+                                <span data-en="Specialist / partner referrals"
+                                    data-mm="ကျွမ်းကျင်သူ / မိတ်ဖက်များထံ လွှဲပြောင်းပေးခြင်း">
+                                    Specialist / partner referrals
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="mt-8 rounded-2xl bg-black/20 border border-white/10 p-5 text-sm text-silver leading-6">
+
+                            <strong class="text-white">
+                                <span data-en="How it works:" data-mm="လုပ်ဆောင်ပုံ:">How it works:</span>
+                            </strong>
+
+                            <br />
+
+                            <span
+                                data-en="The customer does not pay us for the initial consultancy. Where applicable, revenue may be generated through referral or affiliate arrangements with the specialist or partner."
+                                data-mm="ကနဦး အကြံပေးဆွေးနွေးမှုအတွက် ဖောက်သည်ထံမှ အခကြေးငွေ မယူပါ။ သက်ဆိုင်သည့်အခါ ကျွမ်းကျင်သူ သို့မဟုတ် မိတ်ဖက်များနှင့် ပြုလုပ်ထားသော referral / affiliate အစီအစဉ်များမှ ဝင်ငွေရရှိနိုင်ပါသည်။">
+                                The customer does not pay us for the initial consultancy. Where applicable, revenue may
+                                be generated through referral or affiliate arrangements with the specialist or partner.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- PAID -->
+                    <div class="reveal glass rounded-[2rem] p-8 lg:p-10">
+
+                        <div class="flex items-center justify-between">
+
+                            <span
+                                class="px-3 py-1 rounded-full bg-white/10 text-xs uppercase tracking-widest text-silver">
+                                <span data-en="Model 02" data-mm="ပုံစံ ၀၂">Model 02</span>
+
+                            </span>
+
+                            <span class="text-sm text-silver">
+
+                                <span data-en="Paid Management" data-mm="အခပေး စီမံခန့်ခွဲမှု">Paid Management</span>
+
+                            </span>
+
+                        </div>
+
+                        <h3 class="mt-8 text-3xl font-bold">
+
+                            <span data-en="Manage & Execute" data-mm="စီမံပြီး အကောင်အထည်ဖော်ခြင်း">
+                                Manage & Execute
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-4 text-silver leading-7">
+
+                            <span
+                                data-en="For clients who want a hands-off approach, we take on defined responsibilities and manage execution from strategy through implementation."
+                                data-mm="ကိုယ်တိုင် အချိန်ပေးစီမံရန် မလိုဘဲ လုပ်ငန်းကို အကောင်အထည်ဖော်စေလိုသူများအတွက် မဟာဗျူဟာမှ အကောင်အထည်ဖော်မှုအထိ သတ်မှတ်ထားသော တာဝန်များကို ကျွန်ုပ်တို့က စီမံပေးပါသည်။">
+                                For clients who want a hands-off approach, we take on defined responsibilities and
+                                manage execution from strategy through implementation.
+                            </span>
+
+                        </p>
+
+                        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+
+                            <div class="rounded-2xl bg-white/5 p-5">
+
+                                <div class="text-silver text-sm">01</div>
+
+                                <div class="mt-2 font-semibold">
+
+                                    <span data-en="Business Management" data-mm="စီးပွားရေး စီမံခန့်ခွဲမှု">
+                                        Business Management
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="rounded-2xl bg-white/5 p-5">
+
+                                <div class="text-silver text-sm">02</div>
+
+                                <div class="mt-2 font-semibold">
+
+                                    <span data-en="Digital Marketing" data-mm="ဒစ်ဂျစ်တယ် မားကက်တင်း">
+                                        Digital Marketing
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="rounded-2xl bg-white/5 p-5">
+
+                                <div class="text-silver text-sm">03</div>
+
+                                <div class="mt-2 font-semibold">
+
+                                    <span data-en="Taxation Support" data-mm="အခွန်ဆိုင်ရာ အထောက်အပံ့">
+                                        Taxation Support
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="rounded-2xl bg-white/5 p-5">
+
+                                <div class="text-silver text-sm">04</div>
+
+                                <div class="mt-2 font-semibold">
+
+                                    <span data-en="Website Management" data-mm="ဝက်ဘ်ဆိုက် စီမံခန့်ခွဲမှု">
+                                        Website Management
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="rounded-2xl bg-white/5 p-5">
+
+                                <div class="text-silver text-sm">05</div>
+
+                                <div class="mt-2 font-semibold">
+
+                                    <span data-en="Advertising" data-mm="ကြော်ငြာစီမံခန့်ခွဲမှု">
+                                        Advertising
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="rounded-2xl bg-white/5 p-5">
+
+                                <div class="text-silver text-sm">06</div>
+
+                                <div class="mt-2 font-semibold">
+
+                                    <span data-en="Custom Projects" data-mm="စိတ်ကြိုက် ပရောဂျက်များ">
+                                        Custom Projects
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+        SERVICES
+        ========================================================== -->
+        <section id="services" class="py-28">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="max-w-3xl reveal">
+
+                    <div class="text-sm uppercase tracking-[.25em] text-silver">
+
+                        <span data-en="Capabilities" data-mm="ကျွမ်းကျင်မှုများ">Capabilities</span>
+
+                    </div>
+
+                    <h2 class="mt-4 text-4xl sm:text-5xl font-bold">
+
+                        <span data-en="One strategic partner. Multiple capabilities."
+                            data-mm="မဟာဗျူဟာမိတ်ဖက်တစ်ဦး၊ ကျွမ်းကျင်မှုများစွာ။">
+                            One strategic partner. Multiple capabilities.
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-5 text-silver leading-7">
+
+                        <span
+                            data-en="From digital presence to business operations, our service ecosystem is designed to support different stages of growth."
+                            data-mm="ဒစ်ဂျစ်တယ်တည်ရှိမှုမှ စီးပွားရေးလုပ်ငန်း လည်ပတ်မှုအထိ လုပ်ငန်းတိုးတက်မှုအဆင့်များကို ပံ့ပိုးရန် ဝန်ဆောင်မှုများကို စုစည်းထားပါသည်။">
+                            From digital presence to business operations, our service ecosystem is designed to support
+                            different stages of growth.
+                        </span>
+
+                    </p>
+
+                </div>
+
+                <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                    <article class="reveal service-card glass rounded-3xl p-7">
+
+                        <div class="text-silver text-sm">01</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="Digital Marketing Agency" data-mm="ဒစ်ဂျစ်တယ် မားကက်တင်း အေဂျင်စီ">
+                                Digital Marketing Agency
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span
+                                data-en="Campaign strategy, social media, lead generation, paid advertising and digital growth."
+                                data-mm="Campaign မဟာဗျူဟာ၊ Social Media၊ Lead Generation၊ Paid Advertising နှင့် Digital Growth။">
+                                Campaign strategy, social media, lead generation, paid advertising and digital growth.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                    <article class="reveal service-card glass rounded-3xl p-7">
+
+                        <div class="text-silver text-sm">02</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="E-Commerce Solutions" data-mm="E-Commerce ဖြေရှင်းချက်များ">
+                                E-Commerce Solutions
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span
+                                data-en="Online storefronts, product presentation, customer journeys and digital sales systems."
+                                data-mm="Online Store၊ Product Presentation၊ Customer Journey နှင့် Digital Sales Systems များ။">
+                                Online storefronts, product presentation, customer journeys and digital sales systems.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                    <article class="reveal service-card glass rounded-3xl p-7">
+
+                        <div class="text-silver text-sm">03</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="Graphics & Print" data-mm="ဂရပ်ဖစ်နှင့် ပရင့်">
+                                Graphics & Print
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span
+                                data-en="Brand materials, marketing collateral, print-ready designs and creative assets."
+                                data-mm="Brand Material၊ Marketing Collateral၊ Print-ready Design နှင့် Creative Asset များ။">
+                                Brand materials, marketing collateral, print-ready designs and creative assets.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                    <article class="reveal service-card glass rounded-3xl p-7">
+
+                        <div class="text-silver text-sm">04</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="Content Creation" data-mm="Content ဖန်တီးခြင်း">
+                                Content Creation
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span
+                                data-en="Content concepts, copy, visual direction, social content and brand storytelling."
+                                data-mm="Content Concept၊ Copy၊ Visual Direction၊ Social Content နှင့် Brand Storytelling။">
+                                Content concepts, copy, visual direction, social content and brand storytelling.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                    <article class="reveal service-card glass rounded-3xl p-7">
+
+                        <div class="text-silver text-sm">05</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="Web Design & Management" data-mm="Web Design နှင့် စီမံခန့်ခွဲမှု">
+                                Web Design & Management
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span data-en="Modern websites, landing pages, ongoing maintenance and digital experiences."
+                                data-mm="ခေတ်မီ Website၊ Landing Page၊ ပြုပြင်ထိန်းသိမ်းမှုနှင့် Digital Experience များ။">
+                                Modern websites, landing pages, ongoing maintenance and digital experiences.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                    <article class="reveal service-card glass rounded-3xl p-7">
+
+                        <div class="text-silver text-sm">06</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="Business Consultancy" data-mm="စီးပွားရေး အကြံပေးဝန်ဆောင်မှု">
+                                Business Consultancy
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span
+                                data-en="Business planning, opportunity analysis, operational thinking and management support."
+                                data-mm="စီးပွားရေး စီမံကိန်း၊ အခွင့်အလမ်း သုံးသပ်မှု၊ လုပ်ငန်းလည်ပတ်မှုနှင့် စီမံခန့်ခွဲမှု အထောက်အပံ့။">
+                                Business planning, opportunity analysis, operational thinking and management support.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                    <article class="reveal service-card glass rounded-3xl p-7 sm:col-span-2 lg:col-span-1">
+
+                        <div class="text-silver text-sm">07</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="Investment / Crypto Consultancy"
+                                data-mm="ရင်းနှီးမြှုပ်နှံမှု / Crypto အကြံပေးမှု">
+                                Investment / Crypto Consultancy
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span
+                                data-en="Educational discussions, risk considerations, scenario analysis and referrals to relevant providers."
+                                data-mm="ပညာပေးဆွေးနွေးမှု၊ Risk သုံးသပ်မှု၊ Scenario Analysis နှင့် သက်ဆိုင်ရာ Provider များထံ Referral ပြုလုပ်ပေးခြင်း။">
+                                Educational discussions, risk considerations, scenario analysis and referrals to
+                                relevant providers.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                    <article class="reveal service-card glass rounded-3xl p-7 sm:col-span-2">
+
+                        <div class="text-silver text-sm">08</div>
+
+                        <h3 class="mt-6 text-xl font-bold">
+
+                            <span data-en="General Management" data-mm="အထွေထွေ စီမံခန့်ခွဲမှု">
+                                General Management
+                            </span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7 max-w-xl">
+
+                            <span
+                                data-en="A flexible management layer for clients who need coordination across marketing, websites, vendors, operations and growth initiatives."
+                                data-mm="Marketing၊ Website၊ Vendor၊ Operations နှင့် Growth Initiative များကို တစ်စုတစ်စည်းတည်း ညှိနှိုင်းစီမံပေးရန် လိုအပ်သူများအတွက် Flexible Management Service။">
+                                A flexible management layer for clients who need coordination across marketing,
+                                websites, vendors, operations and growth initiatives.
+                            </span>
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <div
+                    class="reveal mt-10 rounded-3xl border border-white/10 bg-black/20 p-6 text-sm text-silver leading-7">
+
+                    <strong class="text-white">
+
+                        <span data-en="Important disclaimer:" data-mm="အရေးကြီးသော သတိပေးချက်:">
+                            Important disclaimer:
+                        </span>
+
+                    </strong>
+
+                    <span
+                        data-en="Investment and cryptocurrency discussions are educational and informational only and are not financial, legal or tax advice. Investment products involve risk, including possible loss of capital. Any referral or introduction to a third-party provider does not constitute an endorsement or guarantee."
+                        data-mm="ရင်းနှီးမြှုပ်နှံမှုနှင့် Cryptocurrency ဆိုင်ရာ ဆွေးနွေးမှုများသည် ပညာပေးနှင့် သတင်းအချက်အလက်ပေးရန်သာ ဖြစ်ပြီး ငွေကြေး၊ ဥပဒေ သို့မဟုတ် အခွန်ဆိုင်ရာ အကြံပေးမှု မဟုတ်ပါ။ ရင်းနှီးမြှုပ်နှံမှုများတွင် အရင်းအနှီးဆုံးရှုံးနိုင်ခြေအပါအဝင် အန္တရာယ်များရှိပါသည်။ Third-party Provider ထံ Referral သို့မဟုတ် မိတ်ဆက်ပေးခြင်းသည် ထောက်ခံချက် သို့မဟုတ် အာမခံချက် မဟုတ်ပါ။">
+                        Investment and cryptocurrency discussions are educational and informational only and are not
+                        financial, legal or tax advice. Investment products involve risk, including possible loss of
+                        capital. Any referral or introduction to a third-party provider does not constitute an
+                        endorsement or guarantee.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+        PROCESS
+        ========================================================== -->
+        <section class="py-28 bg-black/10 border-y border-white/5">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="reveal text-center">
+
+                    <div class="text-sm uppercase tracking-[.25em] text-silver">
+
+                        <span data-en="Our Process" data-mm="လုပ်ငန်းစဉ်">Our Process</span>
+
+                    </div>
+
+                    <h2 class="mt-4 text-4xl sm:text-5xl font-bold">
+
+                        <span data-en="From question to action." data-mm="မေးခွန်းမှ အကောင်အထည်ဖော်မှုအထိ">
+                            From question to action.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <div class="mt-14 grid md:grid-cols-4 gap-5">
+
+                    <div class="reveal relative glass rounded-3xl p-7">
+
+                        <span class="text-5xl font-extrabold text-white/10">01</span>
+
+                        <h3 class="mt-4 font-bold text-xl">
+
+                            <span data-en="Listen" data-mm="နားထောင်ခြင်း">Listen</span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span data-en="Understand your situation and objective."
+                                data-mm="သင့်အခြေအနေနှင့် ရည်မှန်းချက်ကို နားလည်ပါသည်။">
+                                Understand your situation and objective.
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                    <div class="reveal relative glass rounded-3xl p-7">
+
+                        <span class="text-5xl font-extrabold text-white/10">02</span>
+
+                        <h3 class="mt-4 font-bold text-xl">
+
+                            <span data-en="Analyze" data-mm="သုံးသပ်ခြင်း">Analyze</span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span data-en="Explore options, risks and possible scenarios."
+                                data-mm="ရွေးချယ်စရာများ၊ အန္တရာယ်များနှင့် ဖြစ်နိုင်သော အခြေအနေများကို သုံးသပ်ပါသည်။">
+                                Explore options, risks and possible scenarios.
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                    <div class="reveal relative glass rounded-3xl p-7">
+
+                        <span class="text-5xl font-extrabold text-white/10">03</span>
+
+                        <h3 class="mt-4 font-bold text-xl">
+
+                            <span data-en="Connect" data-mm="ချိတ်ဆက်ခြင်း">Connect</span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span data-en="Bring in specialists when required."
+                                data-mm="လိုအပ်ပါက သက်ဆိုင်ရာ ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ပေးပါသည်။">
+                                Bring in specialists when required.
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                    <div class="reveal relative glass rounded-3xl p-7">
+
+                        <span class="text-5xl font-extrabold text-white/10">04</span>
+
+                        <h3 class="mt-4 font-bold text-xl">
+
+                            <span data-en="Execute" data-mm="အကောင်အထည်ဖော်ခြင်း">Execute</span>
+
+                        </h3>
+
+                        <p class="mt-3 text-sm text-silver leading-7">
+
+                            <span data-en="Manage the work when you want hands-on support."
+                                data-mm="လက်တွေ့အကောင်အထည်ဖော်ရန် လိုအပ်ပါက စီမံခန့်ခွဲပေးပါသည်။">
+                                Manage the work when you want hands-on support.
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+        TEAM
+        ========================================================== -->
+        <section id="team" class="py-28">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-14 items-start">
+
+                    <div class="reveal">
+
+                        <div class="text-sm uppercase tracking-[.25em] text-silver">
+
+                            <span data-en="Team & Expertise" data-mm="အဖွဲ့နှင့် ကျွမ်းကျင်မှု">
+                                Team & Expertise
+                            </span>
+
+                        </div>
+
+                        <h2 class="mt-4 text-4xl sm:text-5xl font-bold">
+
+                            <span data-en="Built around expertise." data-mm="ကျွမ်းကျင်မှုအပေါ် အခြေခံတည်ဆောက်ထားသည်။">
+                                Built around expertise.
+                            </span>
+
+                        </h2>
+
+                        <p class="mt-6 text-silver leading-8">
+
+                            <span
+                                data-en="A multidisciplinary capability designed to solve business problems from strategy to execution."
+                                data-mm="မဟာဗျူဟာမှ အကောင်အထည်ဖော်မှုအထိ စီးပွားရေးပြဿနာများကို ဖြေရှင်းနိုင်ရန် မတူညီသော ကျွမ်းကျင်မှုများကို ပေါင်းစပ်ထားပါသည်။">
+                                A multidisciplinary capability designed to solve business problems from strategy to
+                                execution.
+                            </span>
+
+                        </p>
+
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-5">
+
+                        <a href="team.html" target="_blank" class="block h-full">
+
+                            <div class="reveal group relative h-full overflow-hidden
+                                rounded-3xl border border-white/10
+                                bg-[#1c1012]">
+
+                                <!-- Full Card Image -->
+                                <img src="img/Gemini_Generated_Image_iux39yiux39yiux3.jpg"
+                                    alt="Thiri Khant Zaw - Founder & Lead Consultant" class="absolute inset-0 h-full w-full
+                                    object-cover object-[center_20%]
+                                    transition-transform duration-700 ease-out
+                                    group-hover:scale-105">
+
+                                <!-- Dark Overlay -->
+                                <div class="absolute inset-0
+                                    bg-gradient-to-t
+                                    from-[#120608]/70
+                                    via-transparent
+                                    to-transparent">
+                                </div>
+
+                            </div>
+
+                        </a>
+
+                        <a href="team.html" target="_blank">
+
+                            <div class="reveal glass rounded-3xl p-7 sm:translate-y-8">
+
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-2xl font-bold">
+                                    [B]
+                                </div>
+
+                                <h3 class="mt-6 text-xl font-bold">[Specialist / Partner]</h3>
+
+                                <p class="mt-1 text-sm text-silver">
+
+                                    <span data-en="Specialist Network" data-mm="ကျွမ်းကျင်သူကွန်ရက်">
+                                        Specialist Network
+                                    </span>
+
+                                </p>
+
+                                <p class="mt-4 text-sm text-silver leading-7">
+
+                                    <span
+                                        data-en="Trusted external professionals can be introduced when a client's requirements call for specialized services."
+                                        data-mm="ဖောက်သည်၏ လိုအပ်ချက်အရ အထူးပြုဝန်ဆောင်မှုများ လိုအပ်ပါက ယုံကြည်ရသော ပြင်ပကျွမ်းကျင်သူများနှင့် မိတ်ဆက်ပေးနိုင်ပါသည်။">
+                                        Trusted external professionals can be introduced when a client's requirements
+                                        call
+                                        for specialized services.
+                                    </span>
+
+                                </p>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+        BLOG
+        ========================================================== -->
+        <section id="blog" class="py-28 bg-black/10 border-y border-white/5">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+
+                    <div class="reveal">
+
+                        <div class="text-sm uppercase tracking-[.25em] text-silver">
+
+                            <span data-en="Insights" data-mm="အတွေးအမြင်များ">Insights</span>
+
+                        </div>
+
+                        <h2 class="mt-4 text-4xl sm:text-5xl font-bold">
+
+                            <span data-en="Ideas worth understanding." data-mm="နားလည်သင့်သော အတွေးအမြင်များ">
+                                Ideas worth understanding.
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+                    <span class="reveal text-sm text-silver">
+
+                        <span data-en="Articles • Cases • Updates" data-mm="ဆောင်းပါးများ • ဖြစ်ရပ်များ • အပ်ဒိတ်များ">
+                            Articles • Cases • Updates
+                        </span>
+
+                    </span>
+
+                </div>
+
+                <div class="mt-14 grid lg:grid-cols-3 gap-5">
+
+                    <article class="reveal glass rounded-3xl overflow-hidden group">
+
+                        <div class="h-48 bg-gradient-to-br from-burgundy-700 to-black flex items-end p-6">
+
+                            <span class="text-xs uppercase tracking-widest text-silver">01 / Strategy</span>
+
+                        </div>
+
+                        <div class="p-7">
+
+                            <h3 class="text-xl font-bold group-hover:text-silver transition">
+
+                                <span data-en="How to evaluate an opportunity before committing"
+                                    data-mm="အခွင့်အလမ်းတစ်ခုကို မဆုံးဖြတ်မီ မည်သို့သုံးသပ်မည်နည်း">
+                                    How to evaluate an opportunity before committing
+                                </span>
+
+                            </h3>
+
+                            <p class="mt-3 text-sm text-silver leading-7">
+
+                                <span
+                                    data-en="A practical framework for comparing upside, downside, assumptions and alternatives."
+                                    data-mm="အကျိုးအမြတ်၊ အန္တရာယ်၊ ယူဆချက်များနှင့် အခြားရွေးချယ်စရာများကို နှိုင်းယှဉ်ရန် လက်တွေ့ Framework တစ်ခု။">
+                                    A practical framework for comparing upside, downside, assumptions and alternatives.
+                                </span>
+
+                            </p>
+
+                            <a href="#contact"
+                                class="inline-block mt-6 text-sm font-semibold border-b border-white/20 pb-1">
+
+                                <span data-en="Read more →" data-mm="ဆက်ဖတ်ရန် →">Read more →</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <article class="reveal glass rounded-3xl overflow-hidden group">
+
+                        <div class="h-48 bg-gradient-to-br from-burgundy-600 to-black flex items-end p-6">
+
+                            <span class="text-xs uppercase tracking-widest text-silver">02 / Business</span>
+
+                        </div>
+
+                        <div class="p-7">
+
+                            <h3 class="text-xl font-bold group-hover:text-silver transition">
+
+                                <span data-en="When should you outsource business management?"
+                                    data-mm="Business Management ကို ဘယ်အချိန်မှာ Outsource လုပ်သင့်သလဲ">
+                                    When should you outsource business management?
+                                </span>
+
+                            </h3>
+
+                            <p class="mt-3 text-sm text-silver leading-7">
+
+                                <span
+                                    data-en="The trade-offs between doing everything yourself, hiring internally and using external management."
+                                    data-mm="ကိုယ်တိုင်လုပ်ခြင်း၊ အတွင်းပိုင်းဝန်ထမ်းခန့်ခြင်းနှင့် ပြင်ပစီမံခန့်ခွဲမှု အသုံးပြုခြင်းတို့၏ အားသာချက်အားနည်းချက်များ။">
+                                    The trade-offs between doing everything yourself, hiring internally and using
+                                    external management.
+                                </span>
+
+                            </p>
+
+                            <a href="#contact"
+                                class="inline-block mt-6 text-sm font-semibold border-b border-white/20 pb-1">
+
+                                <span data-en="Read more →" data-mm="ဆက်ဖတ်ရန် →">Read more →</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <article class="reveal glass rounded-3xl overflow-hidden group">
+
+                        <div class="h-48 bg-gradient-to-br from-burgundy-800 to-black flex items-end p-6">
+
+                            <span class="text-xs uppercase tracking-widest text-silver">03 / Crypto</span>
+
+                        </div>
+
+                        <div class="p-7">
+
+                            <h3 class="text-xl font-bold group-hover:text-silver transition">
+
+                                <span data-en="Questions to ask before entering crypto"
+                                    data-mm="Crypto ထဲ မဝင်မီ မေးသင့်သော မေးခွန်းများ">
+                                    Questions to ask before entering crypto
+                                </span>
+
+                            </h3>
+
+                            <p class="mt-3 text-sm text-silver leading-7">
+
+                                <span
+                                    data-en="A risk-awareness checklist covering goals, volatility, custody, liquidity and regulation."
+                                    data-mm="ရည်မှန်းချက်၊ Volatility၊ Custody၊ Liquidity နှင့် Regulation များကို စဉ်းစားရန် Risk-awareness Checklist။">
+                                    A risk-awareness checklist covering goals, volatility, custody, liquidity and
+                                    regulation.
+                                </span>
+
+                            </p>
+
+                            <a href="#contact"
+                                class="inline-block mt-6 text-sm font-semibold border-b border-white/20 pb-1">
+
+                                <span data-en="Read more →" data-mm="ဆက်ဖတ်ရန် →">Read more →</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+        CONTACT
+        ========================================================== -->
+        <section id="contact" class="py-28">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-14">
+
+                    <div class="reveal">
+
+                        <div class="text-sm uppercase tracking-[.25em] text-silver">
+
+                            <span data-en="Contact" data-mm="ဆက်သွယ်ရန်">Contact</span>
+
+                        </div>
+
+                        <h2 class="mt-4 text-4xl sm:text-6xl font-bold leading-tight">
+
+                            <span data-en="Have a question? Let's make it clearer."
+                                data-mm="မေးစရာရှိပါသလား။ ပိုမိုရှင်းလင်းအောင် ဆွေးနွေးကြရအောင်။">
+                                Have a question? Let's make it clearer.
+                            </span>
+
+                        </h2>
+
+                        <p class="mt-6 text-silver leading-8 max-w-xl">
+
+                            <span
+                                data-en="Tell us what you're considering. We'll start with the information you need and identify the appropriate next step."
+                                data-mm="သင်စဉ်းစားနေသည့်အကြောင်းအရာကို ပြောပြပါ။ သင်လိုအပ်သော သတင်းအချက်အလက်မှ စတင်ပြီး သင့်တော်သော နောက်တစ်ဆင့်ကို ဖော်ထုတ်ပေးပါမည်။">
+                                Tell us what you're considering. We'll start with the information you need and identify
+                                the appropriate next step.
+                            </span>
+
+                        </p>
+
+                        <div class="mt-10 space-y-5">
+
+                            <div class="flex items-center gap-4">
+
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                    @
+                                </div>
+
+                                <div>
+                                    
+                                    <div class="text-xs text-silver uppercase tracking-widest">Email</div>
+
+                                    <div class="mt-1 font-medium">[your@email.com]</div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="flex items-center gap-4">
+
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                    ☎
+                                </div>
+
+                                <div>
+
+                                    <div class="text-xs text-silver uppercase tracking-widest">
+
+                                        <span data-en="Phone" data-mm="ဖုန်း">Phone</span>
+
+                                    </div>
+
+                                    <div class="mt-1 font-medium">[+95 XXX XXX XXX]</div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="flex items-center gap-4">
+
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                                    ◎
+                                </div>
+
+                                <div>
+
+                                    <div class="text-xs text-silver uppercase tracking-widest">Social</div>
+
+                                    <div class="mt-1 font-medium">Facebook • LinkedIn • Telegram</div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reveal glass rounded-[2rem] p-7 sm:p-9">
+
+                        <!--
+                            IMPORTANT:
+                            Replace YOUR_FORM_ENDPOINT with a real backend/form service endpoint.
+                            Without an endpoint, this demo form only shows a success message and
+                            does not actually transmit submissions.
+                        -->
+                        <form id="contactForm"
+                            action="https://script.google.com/macros/s/AKfycbxc8plms6hlW2ef1_YTRE189KbTb8Uj6NoMy6vrB18RNxjd3m4yQuZVOOZ3d0RaHSmFug/exec"
+                            method="POST">
+
+                            <!-- Name + Email -->
+                            <div class="grid sm:grid-cols-2 gap-5">
+
+                                <!-- Name -->
+                                <div>
+                                    
+                                    <label for="name" class="block text-sm font-medium mb-2">
+                                        
+                                        <span data-en="Name" data-mm="အမည်">
+                                            Name
+                                        </span>
+
+                                    </label>
+
+                                    <input id="name" name="name" type="text" required autocomplete="name"
+                                        data-placeholder-en="Your name" data-placeholder-mm="သင့်အမည်"
+                                        placeholder="Your name" class="w-full rounded-2xl bg-black/20 border border-white/10
+                                                    px-4 py-3.5 outline-none
+                                                    focus:border-white/40 transition">
+
+                                </div>
+
+
+                                <!-- Email -->
+                                <div>
+
+                                    <label for="email" class="block text-sm font-medium mb-2">
+
+                                        <span data-en="Email" data-mm="အီးမေးလ်">
+                                            Email
+                                        </span>
+
+                                    </label>
+
+                                    <input id="email" name="email" type="email" required autocomplete="email"
+                                        data-placeholder-en="you@example.com" data-placeholder-mm="you@example.com"
+                                        placeholder="you@example.com" class="w-full rounded-2xl bg-black/20 border border-white/10
+                                                    px-4 py-3.5 outline-none
+                                                    focus:border-white/40 transition">
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- Topic -->
+                            <div class="mt-5">
+
+                                <label for="topic" class="block text-sm font-medium mb-2">
+
+                                    <span data-en="What can we help with?"
+                                        data-mm="မည်သည့်အကြောင်းအရာအတွက် အကူအညီလိုပါသလဲ">
+
+                                        What can we help with?
+
+                                    </span>
+
+                                </label>
+
+
+                                <select id="topic" name="topic" required class="w-full rounded-2xl bg-black/20 border border-white/10
+                                                        px-4 py-3.5 outline-none
+                                                        focus:border-white/40 transition">
+
+                                    <option value="general" data-en="General Consultancy"
+                                        data-mm="အထွေထွေ အကြံပေးဝန်ဆောင်မှု">
+                                        General Consultancy
+                                    </option>
+
+                                    <option value="business" data-en="Business Management"
+                                        data-mm="စီးပွားရေး စီမံခန့်ခွဲမှု">
+                                        Business Management
+                                    </option>
+
+                                    <option value="marketing" data-en="Digital Marketing"
+                                        data-mm="ဒစ်ဂျစ်တယ် မားကတ်တင်း">
+                                        Digital Marketing
+                                    </option>
+
+                                    <option value="website" data-en="Website / E-Commerce"
+                                        data-mm="Website / E-Commerce">
+                                        Website / E-Commerce
+                                    </option>
+
+                                    <option value="investment" data-en="Investment / Crypto Discussion"
+                                        data-mm="Investment / Crypto ဆွေးနွေးမှု">
+                                        Investment / Crypto Discussion
+                                    </option>
+
+                                    <option value="referral" data-en="Specialist Referral"
+                                        data-mm="ကျွမ်းကျင်သူ Referral">
+                                        Specialist Referral
+                                    </option>
+
+                                    <option value="other" data-en="Other" data-mm="အခြား">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Message -->
+                            <div class="mt-5">
+
+                                <label for="message" class="block text-sm font-medium mb-2">
+
+                                    <span data-en="Message" data-mm="မက်ဆေ့ချ်">
+                                        Message
+                                    </span>
+
+                                </label>
+
+
+                                <textarea id="message" name="message" rows="6" required
+                                    data-placeholder-en="Tell us briefly about your situation..."
+                                    data-placeholder-mm="သင့်အခြေအနေကို အကျဉ်းချုပ် ရေးပေးပါ..."
+                                    placeholder="Tell us briefly about your situation..."
+                                    class="w-full rounded-2xl bg-black/20 border border-white/10
+                                                                px-4 py-3.5 outline-none
+                                                                focus:border-white/40 transition resize-none"></textarea>
+
+                            </div>
+
+
+                            <!-- Consent -->
+                            <div class="mt-5 flex items-start gap-3">
+
+                                <input id="consent" name="consent" type="checkbox" value="Yes" required class="mt-1">
+
+                                <label for="consent" class="text-xs text-silver leading-5">
+
+                                    <span
+                                        data-en="I understand that the initial consultancy may be informational and that specialist referrals may involve third-party businesses."
+                                        data-mm="ကနဦးအကြံပေးမှုသည် သတင်းအချက်အလက်ပေးရန် ဖြစ်နိုင်ပြီး Specialist Referral များတွင် Third-party လုပ်ငန်းများ ပါဝင်နိုင်သည်ကို နားလည်ပါသည်။">
+
+                                        I understand that the initial consultancy may be informational and that
+                                        specialist referrals may involve third-party businesses.
+
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- Submit Button -->
+                            <button id="submitBtn" type="submit" class="mt-7 w-full rounded-2xl
+                                    bg-white text-burgundy-900
+                                    py-4 font-bold
+                                    hover:bg-silver
+                                    transition
+                                    disabled:opacity-50
+                                    disabled:cursor-not-allowed">
+
+                                <span id="submitText" data-en="Send Inquiry →" data-mm="စုံစမ်းမေးမြန်းရန် ပေးပို့ပါ →">
+
+                                    Send Inquiry →
+
+                                </span>
+
+                            </button>
+
+
+                            <!-- Form Message -->
+                            <div id="formMessage" class="hidden mt-4 rounded-2xl
+                                   bg-white/5 border border-white/10
+                                       p-4 text-sm text-silver">
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+        FOOTER
+        ========================================================== -->
+    <footer class="border-t border-white/10 py-10">
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+                <div>
+
+                    <div class="font-bold">ELCID</div>
+
+                    <div class="mt-1 text-xs text-silver">
+
+                        <span data-en="Well-informed decisions. Better next steps."
+                            data-mm="သတင်းအချက်အလက်ပြည့်စုံသော ဆုံးဖြတ်ချက်များ။ ပိုမိုကောင်းမွန်သော နောက်တစ်ဆင့်များ။">
+                            Well-informed decisions. Better next steps.
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="flex gap-6 text-sm text-silver">
+
+                    <a href="#about" class="hover:text-white transition">
+
+                        <span data-en="About" data-mm="အကြောင်း">About</span>
+
+                    </a>
+
+                    <a href="#services" class="hover:text-white transition">
+
+                        <span data-en="Services" data-mm="ဝန်ဆောင်မှုများ">Services</span>
+
+                    </a>
+
+                    <a href="#blog" class="hover:text-white transition">
+
+                        <span data-en="Blog" data-mm="ဘလော့ဂ်">Blog</span>
+
+                    </a>
+
+                    <a href="#contact" class="hover:text-white transition">
+                        
+                        <span data-en="Contact" data-mm="ဆက်သွယ်ရန်">Contact</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-white/5 text-xs text-silver/70 text-center">
+
+                © <span id="year"></span> [Your Company]. All rights reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+       JAVASCRIPT
+       ========================================================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /* ---------------------------------------------
+               LANGUAGE SWITCHER
+            --------------------------------------------- */
+            let currentLanguage = localStorage.getItem("siteLanguage") || "en";
+
+            const languageButtons = document.querySelectorAll("[data-lang]");
+            const bilingualElements = document.querySelectorAll("[data-en][data-mm]");
+
+            function applyLanguage(language) {
+                currentLanguage = language;
+
+                document.documentElement.lang = language === "mm" ? "my" : "en";
+
+                bilingualElements.forEach((element) => {
+                    element.textContent = element.dataset[language];
+                });
+
+                languageButtons.forEach((button) => {
+                    const isActive = button.dataset.lang === language;
+
+                    button.classList.toggle("active", isActive);
+
+                    if (!isActive) {
+                        button.classList.add("text-silver");
+                    } else {
+                        button.classList.remove("text-silver");
+                    }
+                });
+
+                document.body.classList.toggle("mm", language === "mm");
+
+                localStorage.setItem("siteLanguage", language);
+            }
+
+            languageButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    applyLanguage(button.dataset.lang);
+                });
+            });
+
+            applyLanguage(currentLanguage);
+
+
+            /* ---------------------------------------------
+               MOBILE MENU
+            --------------------------------------------- */
+            const menuBtn = document.getElementById("menuBtn");
+            const closeMenu = document.getElementById("closeMenu");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const mobileNavLinks = document.querySelectorAll(".mobile-nav");
+
+            function openMobileMenu() {
+                mobileMenu.classList.add("open");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.remove("open");
+                document.body.style.overflow = "";
+            }
+
+            menuBtn.addEventListener("click", openMobileMenu);
+            closeMenu.addEventListener("click", closeMobileMenu);
+
+            mobileNavLinks.forEach((link) => {
+                link.addEventListener("click", closeMobileMenu);
+            });
+
+
+            /* ---------------------------------------------
+               SCROLL REVEAL
+            --------------------------------------------- */
+            const revealElements = document.querySelectorAll(".reveal");
+
+            const revealObserver = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+            revealElements.forEach((element) => {
+                revealObserver.observe(element);
+            });
+
+
+            /* ---------------------------------------------
+               ACTIVE NAVIGATION
+            --------------------------------------------- */
+            const sections = document.querySelectorAll("main section[id]");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            const sectionObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            navLinks.forEach((link) => {
+                                link.classList.toggle(
+                                    "active",
+                                    link.dataset.section === entry.target.id
+                                );
+                            });
+                        }
+                    });
+                },
+                {
+                    rootMargin: "-35% 0px -55% 0px"
+                }
+            );
+
+            sections.forEach((section) => {
+                sectionObserver.observe(section);
+            });
+
+
+            /* ---------------------------------------------
+               CONTACT FORM
+            --------------------------------------------- */
+            const contactForm = document.getElementById("contactForm");
+            const formMessage = document.getElementById("formMessage");
+
+            contactForm.addEventListener("submit", (event) => {
+                const endpoint = contactForm.getAttribute("action");
+
+                /*
+                  The placeholder endpoint is intentionally detected so that
+                  the demo does not pretend to send data somewhere that does
+                  not exist.
+                */
+                if (endpoint === "YOUR_FORM_ENDPOINT") {
+                    event.preventDefault();
+
+                    formMessage.classList.remove("hidden");
+
+                    formMessage.textContent =
+                        currentLanguage === "mm"
+                            ? "Demo Form ဖြစ်သောကြောင့် အချက်အလက်များကို မပို့ရသေးပါ။ Production အသုံးပြုရန် YOUR_FORM_ENDPOINT နေရာတွင် အမှန်တကယ် Form/Backend Endpoint ထည့်ပါ။"
+                            : "This is a demo form, so no submission was transmitted. Replace YOUR_FORM_ENDPOINT with a real form or backend endpoint before production.";
+
+                    formMessage.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest"
+                    });
+
+                    return;
+                }
+
+                formMessage.classList.remove("hidden");
+
+                formMessage.textContent =
+                    currentLanguage === "mm"
+                        ? "သင့်စုံစမ်းမေးမြန်းမှုကို ပေးပို့နေပါသည်။"
+                        : "Your inquiry is being submitted.";
+            });
+
+
+            /* ---------------------------------------------
+               CURRENT YEAR
+            --------------------------------------------- */
+            document.getElementById("year").textContent =
+                new Date().getFullYear();
+
+        });
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.getElementById("contactForm");
+            const submitBtn = document.getElementById("submitBtn");
+            const submitText = document.getElementById("submitText");
+            const formMessage = document.getElementById("formMessage");
+
+            /*
+            |--------------------------------------------------------------------------
+            | Current Language
+            |--------------------------------------------------------------------------
+            */
+
+            let currentLanguage =
+                localStorage.getItem("elcidLanguage") || "en";
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | Language Switch Function
+            |--------------------------------------------------------------------------
+            */
+
+            function updateFormLanguage(language) {
+
+                currentLanguage = language;
+
+                localStorage.setItem(
+                    "elcidLanguage",
+                    language
+                );
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Normal Text
+                |--------------------------------------------------------------------------
+                */
+
+                document
+                    .querySelectorAll("[data-en][data-mm]")
+                    .forEach(function (element) {
+
+                        const text =
+                            language === "mm"
+                                ? element.getAttribute("data-mm")
+                                : element.getAttribute("data-en");
+
+                        if (text !== null) {
+                            element.textContent = text;
+                        }
+
+                    });
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Input Placeholders
+                |--------------------------------------------------------------------------
+                */
+
+                document
+                    .querySelectorAll("[data-placeholder-en][data-placeholder-mm]")
+                    .forEach(function (element) {
+
+                        const placeholder =
+                            language === "mm"
+                                ? element.getAttribute("data-placeholder-mm")
+                                : element.getAttribute("data-placeholder-en");
+
+                        element.placeholder = placeholder;
+
+                    });
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Select Options
+                |--------------------------------------------------------------------------
+                */
+
+                document
+                    .querySelectorAll("select option[data-en][data-mm]")
+                    .forEach(function (option) {
+
+                        option.textContent =
+                            language === "mm"
+                                ? option.getAttribute("data-mm")
+                                : option.getAttribute("data-en");
+
+                    });
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Myanmar Font
+                |--------------------------------------------------------------------------
+                */
+
+                if (language === "mm") {
+
+                    document.body.classList.add("mm");
+
+                } else {
+
+                    document.body.classList.remove("mm");
+
+                }
+
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | Connect Existing Language Button
+            |--------------------------------------------------------------------------
+            |
+            | Your existing website should have one of these IDs:
+            | #langBtn OR #languageToggle
+            |
+            */
+
+            const languageButton =
+                document.getElementById("langBtn") ||
+                document.getElementById("languageToggle");
+
+
+            if (languageButton) {
+
+                languageButton.addEventListener("click", function () {
+
+                    const newLanguage =
+                        currentLanguage === "en"
+                            ? "mm"
+                            : "en";
+
+                    updateFormLanguage(newLanguage);
+
+                });
+
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | FORM SUBMIT
+            |--------------------------------------------------------------------------
+            */
+
+            form.addEventListener("submit", async function (event) {
+
+                event.preventDefault();
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Disable button
+                |--------------------------------------------------------------------------
+                */
+
+                submitBtn.disabled = true;
+
+
+                if (currentLanguage === "mm") {
+
+                    submitText.textContent =
+                        "ပေးပို့နေပါသည်...";
+
+                } else {
+
+                    submitText.textContent =
+                        "Sending...";
+
+                }
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Clear old message
+                |--------------------------------------------------------------------------
+                */
+
+                formMessage.classList.remove("hidden");
+
+                formMessage.classList.remove(
+                    "border-green-400/30",
+                    "bg-green-400/10",
+                    "border-red-400/30",
+                    "bg-red-400/10"
+                );
+
+
+                formMessage.classList.add(
+                    "border-white/10",
+                    "bg-white/5"
+                );
+
+
+                if (currentLanguage === "mm") {
+
+                    formMessage.textContent =
+                        "သင့်မက်ဆေ့ချ်ကို ပေးပို့နေပါသည်...";
+
+                } else {
+
+                    formMessage.textContent =
+                        "Sending your inquiry...";
+
+                }
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Collect Form Data
+                |--------------------------------------------------------------------------
+                */
+
+                const formData =
+                    new FormData(form);
+
+
+                try {
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Send to Google Apps Script
+                    |--------------------------------------------------------------------------
+                    */
+
+                    const response =
+                        await fetch(
+                            form.action,
+                            {
+                                method: "POST",
+                                body: formData
+                            }
+                        );
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Read Response
+                    |--------------------------------------------------------------------------
+                    */
+
+                    const result =
+                        await response.json();
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | SUCCESS
+                    |--------------------------------------------------------------------------
+                    */
+
+                    if (result.success) {
+
+                        formMessage.classList.remove(
+                            "border-white/10",
+                            "bg-white/5",
+                            "border-red-400/30",
+                            "bg-red-400/10"
+                        );
+
+                        formMessage.classList.add(
+                            "border-green-400/30",
+                            "bg-green-400/10"
+                        );
+
+
+                        if (currentLanguage === "mm") {
+
+                            formMessage.textContent =
+                                "သင့်စုံစမ်းမေးမြန်းမှုကို အောင်မြင်စွာ ပေးပို့ပြီးပါပြီ။ ကျေးဇူးတင်ပါသည်။";
+
+                            submitText.textContent =
+                                "ပေးပို့ပြီးပါပြီ ✓";
+
+                        } else {
+
+                            formMessage.textContent =
+                                "Your inquiry has been sent successfully. Thank you.";
+
+                            submitText.textContent =
+                                "Sent Successfully ✓";
+
+                        }
+
+
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Reset Form
+                        |--------------------------------------------------------------------------
+                        */
+
+                        form.reset();
+
+
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Restore Language After Reset
+                        |--------------------------------------------------------------------------
+                        */
+
+                        updateFormLanguage(currentLanguage);
+
+
+                        /*
+                        |--------------------------------------------------------------------------
+                        | Hide message after 6 seconds
+                        |--------------------------------------------------------------------------
+                        */
+
+                        setTimeout(function () {
+
+                            formMessage.classList.add("hidden");
+
+                            if (currentLanguage === "mm") {
+
+                                submitText.textContent =
+                                    "စုံစမ်းမေးမြန်းရန် ပေးပို့ပါ →";
+
+                            } else {
+
+                                submitText.textContent =
+                                    "Send Inquiry →";
+
+                            }
+
+                        }, 6000);
+
+
+                    } else {
+
+                        throw new Error(
+                            result.message ||
+                            "Submission failed."
+                        );
+
+                    }
+
+
+                } catch (error) {
+
+                    console.error(
+                        "ELCID Form Error:",
+                        error
+                    );
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | ERROR MESSAGE
+                    |--------------------------------------------------------------------------
+                    */
+
+                    formMessage.classList.remove(
+                        "border-white/10",
+                        "bg-white/5",
+                        "border-green-400/30",
+                        "bg-green-400/10"
+                    );
+
+                    formMessage.classList.add(
+                        "border-red-400/30",
+                        "bg-red-400/10"
+                    );
+
+
+                    if (currentLanguage === "mm") {
+
+                        formMessage.textContent =
+                            "မက်ဆေ့ချ်ပေးပို့၍ မရပါ။ ခဏအကြာတွင် ပြန်လည်ကြိုးစားပေးပါ။";
+
+                    } else {
+
+                        formMessage.textContent =
+                            "Unable to send your inquiry. Please try again.";
+
+                    }
+
+
+                    /*
+                    |--------------------------------------------------------------------------
+                    | Restore button
+                    |--------------------------------------------------------------------------
+                    */
+
+                    if (currentLanguage === "mm") {
+
+                        submitText.textContent =
+                            "စုံစမ်းမေးမြန်းရန် ပေးပို့ပါ →";
+
+                    } else {
+
+                        submitText.textContent =
+                            "Send Inquiry →";
+
+                    }
+
+                }
+
+
+                /*
+                |--------------------------------------------------------------------------
+                | Enable Button
+                |--------------------------------------------------------------------------
+                */
+
+                submitBtn.disabled = false;
+
+            });
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | Initialize Language
+            |--------------------------------------------------------------------------
+            */
+
+            updateFormLanguage(currentLanguage);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

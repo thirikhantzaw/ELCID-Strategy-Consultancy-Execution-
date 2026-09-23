@@ -1,0 +1,273 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="ELCID — Well-informed decisions. Consultancy, digital services, business management and execution." />
+    <meta name="theme-color" content="#58111A" />
+
+    <title>ELCID — Strategy • Consultancy • Execution</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            950: "#21070B",
+                            900: "#35090F",
+                            800: "#450D14",
+                            700: "#58111A",
+                            600: "#721522",
+                            500: "#8D1A29"
+                        },
+                        silver: "#C0C0C0"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "Noto Sans Myanmar", "system-ui", "sans-serif"]
+                    },
+                    boxShadow: {
+                        crimson: "0 25px 80px rgba(141, 26, 41, .28)",
+                        card: "0 20px 70px rgba(0, 0, 0, .25)"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --burgundy: #58111A;
+            --burgundy-dark: #35090F;
+            --burgundy-deep: #21070B;
+            --crimson: #8D1A29;
+            --white: #FFFFFF;
+            --silver: #C0C0C0;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 80% 10%, rgba(141, 26, 41, .16), transparent 30%),
+                radial-gradient(circle at 10% 70%, rgba(114, 21, 34, .12), transparent 28%),
+                var(--burgundy-deep);
+            color: var(--white);
+            font-family: Inter, "Noto Sans Myanmar", system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+
+  
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        .orb {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 35% 28%, #a62b3b 0%, #721522 20%, #3b0a11 52%, #190306 100%);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, .12),
+                0 0 55px rgba(141, 26, 41, .38),
+                inset 0 0 45px rgba(0, 0, 0, .65);
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+
+        .orb::before,
+        .orb::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .orb::before {
+            inset: -18px;
+            border-color: rgba(141, 26, 41, .38);
+        }
+
+        .orb::after {
+            inset: -42px;
+            border-color: rgba(255, 255, 255, .06);
+        }
+
+        .network-line {
+            position: absolute;
+            height: 1px;
+            transform-origin: left center;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(192, 192, 192, .55),
+                    rgba(141, 26, 41, .7),
+                    transparent);
+        }
+
+        .network-node {
+            position: absolute;
+            padding: 9px 13px;
+            border-radius: 11px;
+            background: rgba(24, 3, 7, .82);
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: #c0c0c0;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            backdrop-filter: blur(10px);
+        }
+
+        .network-node::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin-right: 6px;
+            background: #9d2333;
+            box-shadow: 0 0 10px rgba(157, 35, 51, .8);
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .floating-delay {
+            animation: float 5s ease-in-out 1.4s infinite;
+        }
+
+ 
+    </style>
+</head>
+<div class="hidden md:flex justify-center items-center min-h-[500px] relative">
+
+    <div class="absolute w-[390px] h-[390px] rounded-full border border-white/[.05]"></div>
+    <div class="absolute w-[300px] h-[300px] rounded-full border border-[#8D1A29]/30"></div>
+
+    <div class="network-line w-[210px] rotate-[-35deg] left-[22%] top-[37%]"></div>
+    <div class="network-line w-[225px] rotate-[26deg] left-[31%] top-[42%]"></div>
+    <div class="network-line w-[190px] rotate-[145deg] left-[54%] top-[59%]"></div>
+    <div class="network-line w-[180px] rotate-[-145deg] left-[51%] top-[58%]"></div>
+
+    <div class="network-node floating top-[7%] left-[38%]">
+        Digital Marketing
+    </div>
+
+    <div class="network-node floating-delay top-[31%] left-[2%]">
+        Consultancy
+    </div>
+
+    <div class="network-node floating top-[28%] right-[0%]">
+        E-Commerce
+    </div>
+
+    <div class="network-node floating-delay bottom-[16%] left-[10%]">
+        Web Design
+    </div>
+
+    <div class="network-node floating bottom-[10%] right-[9%]">
+        Business
+    </div>
+
+    <div class="network-node floating-delay bottom-[0%] left-[39%]">
+        Management
+    </div>
+
+    <div class="orb pulse">
+        <div class="text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold tracking-[.14em]">
+                ELCID
+            </div>
+            <div class="text-[8px] mt-2 tracking-[.3em] text-silver uppercase">
+                Well-Informed
+            </div>
+        </div>
+    </div>
+
+</div>
+
+                   <div class="hidden md:block">
+
+                        <div class="hero-network">
+
+                            <!-- Orbit rings -->
+                            <div class="network-ring"></div>
+                            <div class="network-ring r2"></div>
+
+                            <!-- Connecting lines -->
+                            <div class="network-line line-1"></div>
+                            <div class="network-line line-2"></div>
+                            <div class="network-line line-3"></div>
+                            <div class="network-line line-4"></div>
+
+
+                            <!-- Top -->
+                            <div class="network-node node-top">
+                                Digital Marketing
+                            </div>
+
+
+                            <!-- Left -->
+                            <div class="network-node node-left">
+                                Consultancy
+                            </div>
+
+
+                            <!-- Right -->
+                            <div class="network-node node-right">
+                                Management
+                            </div>
+
+
+                            <!-- Bottom Left -->
+                            <div class="network-node node-bottom-left">
+                                Web Design
+                            </div>
+
+
+                            <!-- Bottom Right -->
+                            <div class="network-node node-bottom-right">
+                                Business
+                            </div>
+
+
+                            <!-- Central ELCID orb -->
+                            <div class="network-core">
+
+                                <div class="core-content">
+
+                                    <div class="core-logo">
+                                        ELCID
+                                    </div>
+
+                                    <div class="core-label">
+                                        Well-Informed
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>

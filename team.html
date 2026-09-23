@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="ELCID — Meet the expert behind strategy, digital marketing, web development, multimedia and business consultancy." />
+    <title>ELCID — Team</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Myanmar:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            950: "#25070B",
+                            900: "#35090F",
+                            800: "#58111A",
+                            700: "#711521",
+                            600: "#8B1E2D",
+                        },
+                        silver: "#C0C0C0",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "Noto Sans Myanmar", "sans-serif"],
+                        myanmar: ["Noto Sans Myanmar", "Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        .avatar-ring {
+            position: relative;
+            border: 2px solid rgba(255, 255, 255, 0.65);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.08),
+                0 0 30px rgba(113, 21, 33, 0.45),
+                0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        :root {
+            --bg: #35090f;
+            --bg-deep: #25070b;
+            --burgundy: #58111a;
+            --burgundy-light: #711521;
+            --white: #ffffff;
+            --silver: #c0c0c0;
+            --muted: #a9a3a5;
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 80% 15%, rgba(139, 30, 45, 0.22), transparent 28%),
+                radial-gradient(circle at 10% 75%, rgba(113, 21, 33, 0.18), transparent 32%),
+                var(--bg);
+            color: var(--white);
+            font-family: "Inter", "Noto Sans Myanmar", sans-serif;
+            overflow-x: hidden;
+        }
+
+        body.mm {
+            font-family: "Noto Sans Myanmar", "Inter", sans-serif;
+        }
+
+        /* Fine grid */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+
+        /* Noise-like overlay */
+        .noise {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .glass-strong {
+            background: rgba(37, 7, 11, 0.55);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+        }
+
+        .card {
+            transition:
+                transform 0.45s cubic-bezier(.2, .8, .2, 1),
+                border-color 0.45s ease,
+                background 0.45s ease,
+                box-shadow 0.45s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-glow {
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.08),
+                0 35px 100px rgba(0, 0, 0, 0.35),
+                0 0 90px rgba(139, 30, 45, 0.18);
+        }
+
+        .shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine::after {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -120%;
+            width: 70%;
+            height: 300%;
+            transform: rotate(22deg);
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.08),
+                    transparent);
+            transition: left 0.8s ease;
+            pointer-events: none;
+        }
+
+        .shine:hover::after {
+            left: 150%;
+        }
+
+        .avatar-ring {
+            background:
+                linear-gradient(var(--bg-deep), var(--bg-deep)) padding-box,
+                linear-gradient(135deg, #ffffff, #6e1722, #c0c0c0) border-box;
+            border: 2px solid transparent;
+        }
+
+        .skill-tag {
+            transition: all 0.25s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            color: #fff;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .language-btn {
+            transition: all 0.25s ease;
+        }
+
+        .language-btn.active {
+            background: white;
+            color: var(--bg-deep);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition:
+                max-height 0.35s ease,
+                opacity 0.25s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .floating-orb {
+            animation: float 7s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-18px) translateX(8px);
+            }
+        }
+
+        .counter-line {
+            width: 42px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .grid-bg {
+                background-size: 32px 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noise"></div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-[#25070B]/75 backdrop-blur-xl">
+        
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+
+            <!-- Logo -->
+            <a href="#home" class="group flex items-center gap-3">
+                
+                <div
+                    class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white text-sm font-black tracking-tight text-[#35090F] shadow-lg">
+                    E
+                </div>
+
+                <div>
+                    
+                    <div class="text-lg font-black tracking-[0.2em]">ELCID</div>
+                    
+                    <div class="hidden text-[8px] font-medium tracking-[0.28em] text-white/45 sm:block"
+                        data-i18n="brand_subtitle">
+                        STRATEGY • CONSULTANCY • EXECUTION
+                    </div>
+
+                
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
+                
+                <a href="index.html" target="_blank" class="nav-link text-sm text-white/65 hover:text-white"
+                    data-i18n="nav_home">
+                    Home
+                </a>
+
+                <a href="about.html" target="_blank" class="nav-link text-sm text-white/65 hover:text-white"
+                    data-i18n="nav_about">
+                    About
+                </a>
+
+                <a href="service.html" target="_blank" class="nav-link text-sm text-white/65 hover:text-white"
+                    data-i18n="nav_service">
+                    Service
+                </a>
+
+                <a href="team.html" target="_blank" class="nav-link active text-sm text-white" data-i18n="nav_team">
+                    Team
+                </a>
+
+                <a href="blog.html" target="_blank" class="nav-link text-sm text-white/65 hover:text-white"
+                    data-i18n="nav_blog">
+                    Blog
+                </a>
+
+                <a href="#contact" class="nav-link text-sm text-white/65 hover:text-white" data-i18n="nav_contact">
+                    Contact
+                </a>
+
+            </nav>
+
+            <!-- Language + Mobile -->
+            <div class="flex items-center gap-3">
+
+                <div class="flex items-center rounded-full border border-white/15 bg-white/5 p-1"
+                    aria-label="Language selector">
+
+                    <button id="enBtn" class="language-btn active rounded-full px-3 py-1.5 text-xs font-bold"
+                        type="button" onclick="setLanguage('en')">
+                        EN
+                    </button>
+
+                    <button id="mmBtn" class="language-btn rounded-full px-3 py-1.5 text-xs font-bold text-white/60"
+                        type="button" onclick="setLanguage('mm')">
+                        MM
+                    </button>
+
+                </div>
+
+                <button id="menuBtn" type="button" class="rounded-lg border border-white/10 p-2 lg:hidden"
+                    aria-label="Open navigation menu" aria-expanded="false">
+                    
+                    <svg width="21" height="21" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.7"
+                            stroke-linecap="round" />
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobileMenu" class="mobile-menu border-t border-white/10 lg:hidden">
+            
+            <nav class="flex flex-col px-5 py-4" aria-label="Mobile navigation">
+                
+                <a href="index.html" target="_blank" class="border-b border-white/5 py-3 text-sm text-white/75"
+                    data-i18n="nav_home">
+                    Home
+                </a>
+
+                <a href="about.html" target="_blank" class="border-b border-white/5 py-3 text-sm text-white/75"
+                    data-i18n="nav_about">
+                    About
+                </a>
+
+                <a href="service.html" target="_blank" class="border-b border-white/5 py-3 text-sm text-white/75"
+                    data-i18n="nav_service">
+                    Service
+                </a>
+
+                <a href="team.html" target="_blank"
+                    class="border-b border-white/5 py-3 text-sm font-semibold text-white" data-i18n="nav_team">
+                    Team
+                </a>
+
+                <a href="blog.html" target="_blank" class="border-b border-white/5 py-3 text-sm text-white/75"
+                    data-i18n="nav_blog">
+                    Blog
+                </a>
+
+                <a href="#contact" class="py-3 text-sm text-white/75" data-i18n="nav_contact">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO / HOME ================= -->
+    <main id="home" class="grid-bg">
+
+        <section class="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 lg:px-8">
+            <!-- Decorative elements -->
+            <div
+                class="floating-orb pointer-events-none absolute right-[5%] top-[18%] h-72 w-72 rounded-full bg-[#8B1E2D]/20 blur-3xl">
+            </div>
+
+            <div
+                class="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-[#711521]/15 blur-3xl">
+            </div>
+
+            <div class="mx-auto grid w-full max-w-7xl gap-16 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+
+                <!-- Hero copy -->
+                <div class="reveal">
+                    
+                    <div
+                        class="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2">
+                        
+                        <span class="h-2 w-2 rounded-full bg-white"></span>
+                       
+                        <span class="text-[10px] font-bold tracking-[0.25em] text-white/70" data-i18n="hero_label">
+                            THE PEOPLE BEHIND ELCID
+                        </span>
+
+                    </div>
+
+                    <h1
+                        class="max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.055em] sm:text-6xl lg:text-8xl">
+                        
+                        <span data-i18n="hero_title_1">People.</span>
+
+                        <br />
+
+                        <span class="text-white/45" data-i18n="hero_title_2">Ideas.</span>
+
+                        <br />
+
+                        <span data-i18n="hero_title_3">Execution.</span>
+
+                    </h1>
+
+                    <p class="mt-8 max-w-2xl text-base leading-7 text-[#C0C0C0] sm:text-lg"
+                        data-i18n="hero_description">
+                        Meet the expertise driving ELCID — combining digital strategy,
+                        technology, multimedia, business thinking and practical execution
+                        to help people make well-informed decisions.
+                    </p>
+
+                    <div class="mt-9 flex flex-wrap gap-3">
+
+                        <a href="#profile"
+                            class="rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[#35090F] transition hover:-translate-y-1 hover:bg-[#eeeeee]"
+                            data-i18n="hero_cta">
+                            Meet the Expert →
+                        </a>
+
+                        <a href="#contact"
+                            class="rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-1 hover:bg-white/10"
+                            data-i18n="hero_cta_secondary">
+                            Get in Touch
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Hero visual -->
+                <div class="reveal relative lg:justify-self-end">
+                   
+                    <div class="profile-glow glass-strong relative mx-auto max-w-md rounded-[2rem] p-3">
+
+                        <div class="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#25070B]">
+
+                            <!-- Placeholder avatar -->
+                            <div class="flex aspect-[4/5] items-center justify-center bg:
+                                radial-gradient(circle at 50% 25%, rgba(255,255,255,.08), transparent 25%),
+                                linear-gradient(145deg, #711521, #25070B 70%);">
+
+                                <div class="text-center">
+
+                                    <div
+                                        class="avatar-ring mx-auto flex h-32 w-32 items-center justify-center rounded-full text-5xl font-black text-white/90">
+                                        TK
+                                    </div>
+
+                                    <div class="mt-7 px-6">
+
+                                        <p class="text-xs font-bold uppercase tracking-[0.28em] text-white/45">
+                                            ELCID
+                                        </p>
+
+                                        <p class="mt-2 text-2xl font-black tracking-tight" data-i18n="visual_name">
+                                            Thiri Khant Zaw
+                                        </p>
+
+                                        <p class="mt-2 text-sm text-[#C0C0C0]" data-i18n="visual_role">
+                                            Founder & Lead Consultant
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Floating card -->
+                            <div class="absolute bottom-5 left-5 right-5 glass rounded-2xl p-4">
+                               
+                                <div class="flex items-center justify-between">
+
+                                    <div>
+
+                                        <p class="text-[9px] font-bold uppercase tracking-[0.25em] text-white/40"
+                                            data-i18n="visual_status_label">
+                                            CURRENT FOCUS
+                                        </p>
+
+                                        <p class="mt-1 text-sm font-semibold" data-i18n="visual_status">
+                                            Strategy • Digital • Technology
+                                        </p>
+
+                                    </div>
+
+                                    <div class="h-2 w-2 rounded-full bg-white shadow-[0_0_15px_white]"></div>
+                                
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="absolute -bottom-6 -left-8 hidden rounded-2xl border border-white/10 bg-[#25070B]/90 px-5 py-4 shadow-2xl backdrop-blur-xl sm:block">
+                        
+                        <p class="text-[9px] uppercase tracking-[0.25em] text-white/40" data-i18n="badge_label">
+                            APPROACH
+                        </p>
+
+                        <p class="mt-1 text-sm font-bold" data-i18n="badge_text">
+                            Well-informed decisions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TEAM ================= -->
+        <section id="team" class="relative border-t border-white/10 px-5 py-28 lg:px-8">
+            
+            <div class="mx-auto max-w-7xl">
+
+                <div class="reveal max-w-3xl">
+
+                    <p class="text-xs font-bold uppercase tracking-[0.3em] text-white/40" data-i18n="team_eyebrow">
+                        THE TEAM
+                    </p>
+
+                    <h2 class="mt-4 text-5xl font-black tracking-[-0.05em] sm:text-6xl" data-i18n="team_title">
+                        One mind.<br />
+                        Multiple disciplines.
+                    </h2>
+
+                    <p class="mt-6 text-base leading-7 text-[#C0C0C0]" data-i18n="team_intro">
+                        ELCID is currently driven by a multidisciplinary independent
+                        professional with experience spanning technology, digital marketing,
+                        education, creative production and business consultancy.
+                    </p>
+
+                </div>
+
+                <!-- MAIN PROFILE -->
+                <div id="profile"
+                    class="profile-glow reveal mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035]">
+                    
+                    <div class="grid lg:grid-cols-[.72fr_1.28fr]">
+
+                        <!-- Profile Visual -->
+                        <div
+                            class="relative flex min-h-[500px] items-center justify-center overflow-hidden border-b border-white/10 bg-[#25070B] p-8 lg:border-b-0 lg:border-r">
+                            
+                            <div class="absolute inset-0 opacity-50">
+                                
+                                <div
+                                    class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#711521]/30 blur-3xl">
+                                </div>
+
+                            </div>
+
+                            <div class="relative text-center">
+
+                                <div
+                                    class="avatar-ring mx-auto h-48 w-48 overflow-hidden rounded-full shadow-2xl sm:h-56 sm:w-56">
+
+                                    <img src="img/Gemini_Generated_Image_iux39yiux39yiux3.jpg" alt="Thiri Khant Zaw"
+                                        class="h-full w-full object-cover object-center" loading="lazy">
+
+                                </div>
+
+                                <div class="mt-8">
+                                    
+                                    <p class="text-xs font-bold uppercase tracking-[0.3em] text-white/40">
+                                        ELCID
+                                    </p>
+
+                                    <h3 class="mt-3 text-3xl font-black tracking-tight" data-i18n="profile_name">
+                                        Thiri Khant Zaw
+                                    </h3>
+
+                                    <p class="mt-2 text-sm font-medium text-[#C0C0C0]" data-i18n="profile_nickname">
+                                        (Noe Noe)
+                                    </p>
+
+                                </div>
+
+                                <div class="mt-7 flex flex-wrap justify-center gap-2">
+                                    
+                                    <span
+                                        class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold text-white/70">
+                                        Founder
+                                    </span>
+
+                                    <span
+                                        class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold text-white/70">
+                                        Consultant
+                                    </span>
+
+                                    <span
+                                        class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold text-white/70">
+                                        Digital
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Profile Content -->
+                        <div class="p-7 sm:p-10 lg:p-12">
+
+                            <div class="flex flex-col justify-between gap-6 border-b border-white/10 pb-8 sm:flex-row">
+                                
+                                <div>
+                                    
+                                    <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/40"
+                                        data-i18n="profile_label">
+                                        FOUNDER & LEAD CONSULTANT
+                                    </p>
+
+                                    <h3 class="mt-3 text-2xl font-black" data-i18n="profile_heading">
+                                        Thiri Khant Zaw
+                                    </h3>
+
+                                </div>
+
+                                <div class="counter-line mt-2 sm:mt-4"></div>
+
+                            </div>
+
+
+                            <!-- Roles -->
+                            <div class="mt-9">
+                               
+                                <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-white/40"
+                                    data-i18n="roles_heading">
+                                    Current Roles
+                                </h4>
+
+                                <div class="mt-5 space-y-4">
+
+                                    <div class="flex gap-4">
+                                        
+                                        <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white"></span>
+                                        
+                                        <p class="text-sm leading-6 text-[#C0C0C0]" data-i18n="role_1">
+                                            Digital Marketing & Multimedia Manager at Zinyaw Fortunate Technology Pte.
+                                            Ltd.
+                                        </p>
+
+                                    </div>
+
+                                    <div class="flex gap-4">
+                                        
+                                        <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white"></span>
+                                        
+                                        <p class="text-sm leading-6 text-[#C0C0C0]" data-i18n="role_2">
+                                            Office Staff at SKT International School City Campus.
+                                        </p>
+
+                                    </div>
+
+                                    <div class="flex gap-4">
+                                       
+                                        <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white"></span>
+                                        
+                                        <p class="text-sm leading-6 text-[#C0C0C0]" data-i18n="role_3">
+                                            Founder & Lead Consultant at ELCID — Independent Freelancer.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Education -->
+                            <div class="mt-10">
+                                
+                                <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-white/40"
+                                    data-i18n="education_heading">
+                                    Education
+                                </h4>
+
+                                <div class="mt-5 grid gap-3">
+
+                                    <div class="glass rounded-2xl p-4">
+                                       
+                                        <p class="text-sm font-semibold" data-i18n="education_1_title">
+                                            B.A. in English
+                                        </p>
+                                        
+                                        <p class="mt-1 text-xs leading-5 text-[#C0C0C0]" data-i18n="education_1_text">
+                                            Third Year · Dagon University · 2017–2020
+                                        </p>
+
+                                    </div>
+
+                                    <div class="glass rounded-2xl p-4">
+                                        
+                                        <p class="text-sm font-semibold" data-i18n="education_2_title">
+                                            Diploma in Business Administration
+                                        </p>
+
+                                        <p class="mt-1 text-xs leading-5 text-[#C0C0C0]" data-i18n="education_2_text">
+                                            National Management Academy · 2024–Present
+                                        </p>
+
+                                    </div>
+
+                                    <div class="glass rounded-2xl p-4">
+                                       
+                                        <p class="text-sm font-semibold" data-i18n="education_3_title">
+                                            Bachelor of Business Administration
+                                        </p>
+
+                                        <p class="mt-1 text-xs leading-5 text-[#C0C0C0]" data-i18n="education_3_text">
+                                            University of the People · 2024–Present
+                                        </p>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="profile"
+                    class="profile-glow reveal mt-16 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035]">
+                    
+                    <div class="grid lg:grid-cols-[.72fr_1.28fr]">
+
+                        <!-- Profile Visual -->
+                        <div
+                            class="relative flex min-h-[500px] items-center justify-center overflow-hidden border-b border-white/10 bg-[#25070B] p-8 lg:border-b-0 lg:border-r">
+                            
+                            <div class="absolute inset-0 opacity-50">
+                               
+                                <div
+                                    class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#711521]/30 blur-3xl">
+                                </div>
+
+                            </div>
+
+                            <div class="relative text-center">
+
+                                <div
+                                    class="avatar-ring mx-auto h-48 w-48 overflow-hidden rounded-full shadow-2xl sm:h-56 sm:w-56">
+
+                                    <img src="img/2ecf91e8-5f62-4dbd-891c-71d04fb1c4da.png" alt="Thiri Khant Zaw"
+                                        class="h-full w-full object-cover object-center" loading="lazy">
+
+                                </div>
+
+                                <div class="mt-8">
+                                    
+                                    <p class="text-xs font-bold uppercase tracking-[0.3em] text-white/40">
+                                        ELCID
+                                    </p>
+
+                                    <h3 class="mt-3 text-3xl font-black tracking-tight" data-i18n="profile_name">
+                                        Thiri Khant Zaw
+                                    </h3>
+
+                                    <p class="mt-2 text-sm font-medium text-[#C0C0C0]" data-i18n="profile_nickname">
+                                        (Noe Noe)
+                                    </p>
+
+                                </div>
+
+                                <div class="mt-7 flex flex-wrap justify-center gap-2">
+                                    
+                                    <span
+                                        class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold text-white/70">
+                                        Founder
+                                    </span>
+
+                                    <span
+                                        class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold text-white/70">
+                                        Consultant
+                                    </span>
+
+                                    <span
+                                        class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[10px] font-semibold text-white/70">
+                                        Digital
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Profile Content -->
+                        <div class="p-7 sm:p-10 lg:p-12">
+
+                            <div class="flex flex-col justify-between gap-6 border-b border-white/10 pb-8 sm:flex-row">
+                                
+                                <div>
+                                    
+                                    <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/40"
+                                        data-i18n="profile_label">
+                                        FOUNDER & LEAD CONSULTANT
+                                    </p>
+
+                                    <h3 class="mt-3 text-2xl font-black" data-i18n="profile_heading">
+                                        Thiri Khant Zaw
+                                    </h3>
+
+                                </div>
+
+                                <div class="counter-line mt-2 sm:mt-4"></div>
+
+                            </div>
+
+
+                            <!-- Roles -->
+                            <div class="mt-9">
+
+                                <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-white/40"
+                                    data-i18n="roles_heading">
+                                    Current Roles
+                                </h4>
+
+                                <div class="mt-5 space-y-4">
+
+                                    <div class="flex gap-4">
+
+                                        <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white"></span>
+                                        
+                                        <p class="text-sm leading-6 text-[#C0C0C0]" data-i18n="role_1">
+                                            Digital Marketing & Multimedia Manager at Zinyaw Fortunate Technology Pte.
+                                            Ltd.
+                                        </p>
+
+                                    </div>
+
+                                    <div class="flex gap-4">
+                                        
+                                        <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white"></span>
+                                        
+                                        <p class="text-sm leading-6 text-[#C0C0C0]" data-i18n="role_2">
+                                            Office Staff at SKT International School City Campus.
+                                        </p>
+
+                                    </div>
+
+                                    <div class="flex gap-4">
+                                        
+                                        <span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-white"></span>
+                                        
+                                        <p class="text-sm leading-6 text-[#C0C0C0]" data-i18n="role_3">
+                                            Founder & Lead Consultant at ELCID — Independent Freelancer.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Education -->
+                            <div class="mt-10">
+                                
+                                <h4 class="text-xs font-bold uppercase tracking-[0.25em] text-white/40"
+                                    data-i18n="education_heading">
+                                    Education
+                                </h4>
+
+                                <div class="mt-5 grid gap-3">
+
+                                    <div class="glass rounded-2xl p-4">
+                                        
+                                        <p class="text-sm font-semibold" data-i18n="education_1_title">
+                                            B.A. in English
+                                        </p>
+                                       
+                                        <p class="mt-1 text-xs leading-5 text-[#C0C0C0]" data-i18n="education_1_text">
+                                            Third Year · Dagon University · 2017–2020
+                                        </p>
+
+                                    </div>
+
+                                    <div class="glass rounded-2xl p-4">
+                                       
+                                        <p class="text-sm font-semibold" data-i18n="education_2_title">
+                                            Diploma in Business Administration
+                                        </p>
+
+                                        <p class="mt-1 text-xs leading-5 text-[#C0C0C0]" data-i18n="education_2_text">
+                                            National Management Academy · 2024–Present
+                                        </p>
+
+                                    </div>
+
+                                    <div class="glass rounded-2xl p-4">
+                                        
+                                        <p class="text-sm font-semibold" data-i18n="education_3_title">
+                                            Bachelor of Business Administration
+                                        </p>
+
+                                        <p class="mt-1 text-xs leading-5 text-[#C0C0C0]" data-i18n="education_3_text">
+                                            University of the People · 2024–Present
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXPERTISE -->
+                <div class="mt-6 grid gap-6 lg:grid-cols-2">
+
+                    <!-- Technical -->
+                    <div class="card reveal glass rounded-[2rem] p-7 sm:p-9">
+                        
+                        <div class="flex items-center justify-between">
+                            
+                            <div>
+                               
+                                <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/40">01</p>
+                               
+                                <h3 class="mt-3 text-2xl font-black" data-i18n="expertise_1_title">
+                                    Web Development & Hosting
+                                </h3>
+
+                            </div>
+
+                            <div class="rounded-xl border border-white/10 p-3 text-white/60">
+                               
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                   
+                                    <path d="M8 9l-3 3 3 3M16 9l3 3-3 3M14 5l-4 14" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                
+                                    </svg>
+                            </div>
+
+                        </div>
+
+                        <p class="mt-5 text-sm leading-7 text-[#C0C0C0]" data-i18n="expertise_1_text">
+                            Building and deploying modern websites and web systems using
+                            HTML, CSS, JavaScript and Django REST framework, with practical
+                            experience in domains and deployment workflows.
+                        </p>
+
+                        <div class="mt-7 flex flex-wrap gap-2">
+                            
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">HTML</span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">CSS</span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">JavaScript</span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Django
+                                REST</span>
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Namecheap</span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Vercel</span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">GitHub</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="card reveal glass rounded-[2rem] p-7 sm:p-9">
+                        
+                        <div class="flex items-center justify-between">
+                            
+                            <div>
+                                
+                                <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/40">02</p>
+                                
+                                <h3 class="mt-3 text-2xl font-black" data-i18n="expertise_2_title">
+                                    Digital Marketing & Content
+                                </h3>
+
+                            </div>
+
+                            <div class="rounded-xl border border-white/10 p-3 text-white/60">
+                               
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                   
+                                    <path d="M4 17l5-5 4 4 7-8" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    
+                                        <path d="M16 8h4v4" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                               
+                                    </svg>
+
+                            </div>
+
+                        </div>
+
+                        <p class="mt-5 text-sm leading-7 text-[#C0C0C0]" data-i18n="expertise_2_text">
+                            Strategic marketing, campaign management, social media copywriting,
+                            promotional concepts and video editing for digital-first brands.
+                        </p>
+
+                        <div class="mt-7 flex flex-wrap gap-2">
+                           
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Strategy
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Campaigns
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Premiere Pro
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">CapCut  PC
+                               </span>
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Copywriting
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Design -->
+                    <div class="card reveal glass rounded-[2rem] p-7 sm:p-9">
+
+                        <div class="flex items-center justify-between">
+
+                            <div>
+
+                                <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/40">03</p>
+                                
+                                <h3 class="mt-3 text-2xl font-black" data-i18n="expertise_3_title">
+                                    Design & Multimedia
+                                </h3>
+
+                            </div>
+
+                            <div class="rounded-xl border border-white/10 p-3 text-white/60">
+                                
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    
+                                    <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5" />
+                                    
+                                    <path d="M8 16l8-8M8.5 8.5h.01M15.5 15.5h.01" stroke="currentColor"
+                                        stroke-width="1.5" stroke-linecap="round" />
+
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+                        <p class="mt-5 text-sm leading-7 text-[#C0C0C0]" data-i18n="expertise_3_text">
+                            Minimalist visual design, branding assets, social graphics,
+                            video production and AI-assisted creative workflows.
+                        </p>
+
+                        <div class="mt-7 flex flex-wrap gap-2">
+                            
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Photoshop
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Canva
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Runway
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Luma
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Pika
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Sora
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Veo
+                            </span>
+
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Kling
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Consultancy -->
+                    <div class="card reveal glass rounded-[2rem] p-7 sm:p-9">
+
+                        <div class="flex items-center justify-between">
+
+                            <div>
+
+                                <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/40">04</p>
+                                
+                                <h3 class="mt-3 text-2xl font-black" data-i18n="expertise_4_title">
+                                    Consultancy & Referral
+                                </h3>
+
+                            </div>
+
+                            <div class="rounded-xl border border-white/10 p-3 text-white/60">
+                               
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    
+                                    <path d="M7 17l10-10M8 7h9v9" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+
+                                </svg>
+
+                            </div>
+                            
+                        </div>
+
+                        <p class="mt-5 text-sm leading-7 text-[#C0C0C0]" data-i18n="expertise_4_text">
+                            Free information-focused discussions around business and investment
+                            topics, including pros and cons, risk considerations and appropriate
+                            referrals to specialists.
+                        </p>
+
+                        <div class="mt-7 flex flex-wrap gap-2">
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Business</span>
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Strategy</span>
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Risk
+                                Review</span>
+                            <span
+                                class="skill-tag rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs">Referrals</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Philosophy Banner -->
+                <div class="reveal mt-6 overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.045]">
+                    <div class="grid lg:grid-cols-[1fr_auto] lg:items-center">
+
+                        <div class="p-8 sm:p-10">
+                            <p class="text-xs font-bold uppercase tracking-[0.3em] text-white/40"
+                                data-i18n="philosophy_label">
+                                ELCID PHILOSOPHY
+                            </p>
+
+                            <blockquote
+                                class="mt-4 max-w-4xl text-2xl font-bold leading-tight tracking-tight sm:text-3xl"
+                                data-i18n="philosophy_quote">
+                                “Our people need information to make a well-informed decision.”
+                            </blockquote>
+
+                            <p class="mt-4 max-w-3xl text-sm leading-6 text-[#C0C0C0]" data-i18n="philosophy_text">
+                                We help bridge the information gap and, when a specialist is
+                                required, connect clients with relevant professionals.
+                            </p>
+                        </div>
+
+                        <div class="border-t border-white/10 p-8 lg:border-l lg:border-t-0">
+                            <a href="#contact"
+                                class="inline-flex rounded-full bg-white px-6 py-3.5 text-sm font-bold text-[#35090F] transition hover:-translate-y-1"
+                                data-i18n="philosophy_cta">
+                                Start a Conversation →
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= BLOG ================= -->
+        <section id="blog" class="border-t border-white/10 bg-[#25070B]/30 px-5 py-28 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+
+                <div class="reveal flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.3em] text-white/40" data-i18n="blog_eyebrow">
+                            INSIGHTS
+                        </p>
+                        <h2 class="mt-4 text-4xl font-black tracking-[-0.04em] sm:text-5xl" data-i18n="blog_title">
+                            Ideas worth sharing.
+                        </h2>
+                    </div>
+
+                    <p class="max-w-xl text-sm leading-6 text-[#C0C0C0]" data-i18n="blog_intro">
+                        Future articles can cover business scenarios, digital strategy,
+                        technology, design, marketing and practical decision-making.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid gap-4 md:grid-cols-3">
+
+                    <article class="card reveal glass rounded-3xl p-7">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35">
+                            BUSINESS
+                        </span>
+                        <h3 class="mt-12 text-xl font-bold" data-i18n="blog_1_title">
+                            Before You Build: Questions Every Business Should Ask
+                        </h3>
+                        <p class="mt-3 text-sm leading-6 text-[#C0C0C0]" data-i18n="blog_1_text">
+                            A practical framework for evaluating opportunities before investing time and resources.
+                        </p>
+                    </article>
+
+                    <article class="card reveal glass rounded-3xl p-7">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35">
+                            DIGITAL
+                        </span>
+                        <h3 class="mt-12 text-xl font-bold" data-i18n="blog_2_title">
+                            Building a Digital Presence That Actually Works
+                        </h3>
+                        <p class="mt-3 text-sm leading-6 text-[#C0C0C0]" data-i18n="blog_2_text">
+                            How websites, content and marketing can work together instead of operating as separate
+                            pieces.
+                        </p>
+                    </article>
+
+                    <article class="card reveal glass rounded-3xl p-7">
+                        <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/35">
+                            CONSULTANCY
+                        </span>
+                        <h3 class="mt-12 text-xl font-bold" data-i18n="blog_3_title">
+                            Information First: Understanding Risk Before Action
+                        </h3>
+                        <p class="mt-3 text-sm leading-6 text-[#C0C0C0]" data-i18n="blog_3_text">
+                            Why understanding options, limitations and potential scenarios matters before making
+                            decisions.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="border-t border-white/10 px-5 py-28 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+
+                <div class="grid gap-12 lg:grid-cols-[.9fr_1.1fr]">
+
+                    <div class="reveal">
+                        <p class="text-xs font-bold uppercase tracking-[0.3em] text-white/40"
+                            data-i18n="contact_eyebrow">
+                            CONTACT
+                        </p>
+
+                        <h2 class="mt-4 text-5xl font-black tracking-[-0.05em] sm:text-6xl" data-i18n="contact_title">
+                            Let's build the next step.
+                        </h2>
+
+                        <p class="mt-6 max-w-lg text-base leading-7 text-[#C0C0C0]" data-i18n="contact_text">
+                            Have a business question, digital project or consultancy need?
+                            Start with a conversation and explain what you are trying to achieve.
+                        </p>
+
+                        <div class="mt-10 space-y-4">
+
+                            <a href="mailto:YOUR_EMAIL@example.com"
+                                class="glass flex items-center justify-between rounded-2xl p-5 transition hover:bg-white/10">
+                                <div>
+                                    <p class="text-[9px] font-bold uppercase tracking-[0.25em] text-white/35">
+                                        EMAIL
+                                    </p>
+                                    <p class="mt-1 text-sm font-semibold">
+                                        YOUR_EMAIL@example.com
+                                    </p>
+                                </div>
+                                <span>↗</span>
+                            </a>
+
+                            <a href="#"
+                                class="glass flex items-center justify-between rounded-2xl p-5 transition hover:bg-white/10">
+                                <div>
+                                    <p class="text-[9px] font-bold uppercase tracking-[0.25em] text-white/35">
+                                        SOCIAL
+                                    </p>
+                                    <p class="mt-1 text-sm font-semibold" data-i18n="social_placeholder">
+                                        Your social profile
+                                    </p>
+                                </div>
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Contact Form -->
+                    <div class="reveal glass-strong rounded-[2rem] p-7 sm:p-10">
+
+                        <form id="contactForm">
+
+                            <div class="grid gap-5 sm:grid-cols-2">
+
+                                <div>
+                                    <label for="name" class="mb-2 block text-xs font-semibold text-white/60"
+                                        data-i18n="form_name_label">
+                                        Your Name
+                                    </label>
+
+                                    <input id="name" name="name" type="text" required autocomplete="name" class="w-full rounded-xl border border-white/10
+                       bg-white/5 px-4 py-3.5 text-sm text-white
+                       outline-none transition
+                       placeholder:text-white/25
+                       focus:border-white/30
+                       focus:bg-white/10" placeholder="Your name" data-i18n-placeholder="form_name_placeholder" />
+                                </div>
+
+
+                                <div>
+                                    <label for="email" class="mb-2 block text-xs font-semibold text-white/60"
+                                        data-i18n="form_email_label">
+                                        Email
+                                    </label>
+
+                                    <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-xl border border-white/10
+                       bg-white/5 px-4 py-3.5 text-sm text-white
+                       outline-none transition
+                       placeholder:text-white/25
+                       focus:border-white/30
+                       focus:bg-white/10" placeholder="you@example.com"
+                                        data-i18n-placeholder="form_email_placeholder" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-5">
+
+                                <label for="serviceSelect" class="mb-2 block text-xs font-semibold text-white/60"
+                                    data-i18n="form_service_label">
+                                    What can we help with?
+                                </label>
+
+                                <select id="serviceSelect" name="service" required class="w-full rounded-xl border border-white/10
+                   bg-[#35090F] px-4 py-3.5 text-sm text-white
+                   outline-none focus:border-white/30">
+
+                                    <option value="" data-i18n="form_select_default">
+                                        Select a service
+                                    </option>
+
+                                    <option value="Business Consultancy" data-i18n="form_option_1">
+                                        Business Consultancy
+                                    </option>
+
+                                    <option value="Digital Marketing" data-i18n="form_option_2">
+                                        Digital Marketing
+                                    </option>
+
+                                    <option value="Web Development" data-i18n="form_option_3">
+                                        Web Development
+                                    </option>
+
+                                    <option value="Design & Multimedia" data-i18n="form_option_4">
+                                        Design & Multimedia
+                                    </option>
+
+                                    <option value="Content Creation" data-i18n="form_option_5">
+                                        Content Creation
+                                    </option>
+
+                                    <option value="Investment / Crypto Advisory" data-i18n="form_option_6">
+                                        Investment / Crypto Advisory
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="mt-5">
+
+                                <label for="message" class="mb-2 block text-xs font-semibold text-white/60"
+                                    data-i18n="form_message_label">
+                                    Message
+                                </label>
+
+                                <textarea id="message" name="message" rows="6" required class="w-full resize-none rounded-xl border
+                   border-white/10 bg-white/5 px-4 py-3.5
+                   text-sm text-white outline-none transition
+                   placeholder:text-white/25
+                   focus:border-white/30
+                   focus:bg-white/10" placeholder="Tell us what you're working on..."
+                                    data-i18n-placeholder="form_message_placeholder"></textarea>
+
+                            </div>
+
+
+                            <button id="submitBtn" type="submit" class="mt-6 w-full rounded-xl bg-white
+               px-6 py-4 text-sm font-bold
+               text-[#35090F] transition
+               hover:-translate-y-1
+               hover:bg-[#eeeeee]" data-i18n="form_submit">
+
+                                Send Inquiry →
+
+                            </button>
+
+
+                            <p id="formMessage" class="mt-4 hidden rounded-xl border
+               border-white/10 bg-white/5 p-4
+               text-sm text-[#C0C0C0]">
+                            </p>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-white/10 bg-[#25070B] px-5 py-12 lg:px-8">
+        <div class="mx-auto max-w-7xl">
+
+            <div class="grid gap-10 md:grid-cols-[1fr_auto_auto] md:items-start">
+
+                <div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-sm font-black text-[#35090F]">
+                            E
+                        </div>
+                        <div>
+                            <p class="font-black tracking-[0.2em]">ELCID</p>
+                            <p class="text-[8px] tracking-[0.2em] text-white/35" data-i18n="footer_brand">
+                                STRATEGY • CONSULTANCY • EXECUTION
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="mt-6 max-w-sm text-sm leading-6 text-white/45" data-i18n="footer_tagline">
+                        Empowering well-informed decisions.
+                    </p>
+                </div>
+
+
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/35" data-i18n="footer_nav_title">
+                        Navigation
+                    </p>
+
+                    <div class="mt-4 grid gap-2">
+                        <a href="#home" class="text-sm text-white/55 hover:text-white" data-i18n="nav_home">Home</a>
+                        <a href="#about" class="text-sm text-white/55 hover:text-white" data-i18n="nav_about">About</a>
+                        <a href="#service" class="text-sm text-white/55 hover:text-white"
+                            data-i18n="nav_service">Service</a>
+                        <a href="#team" class="text-sm text-white/55 hover:text-white" data-i18n="nav_team">Team</a>
+                        <a href="#blog" class="text-sm text-white/55 hover:text-white" data-i18n="nav_blog">Blog</a>
+                        <a href="#contact" class="text-sm text-white/55 hover:text-white"
+                            data-i18n="nav_contact">Contact</a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.25em] text-white/35"
+                        data-i18n="footer_social_title">
+                        Connect
+                    </p>
+
+                    <div class="mt-4 flex gap-2">
+                        <a href="#" aria-label="Facebook"
+                            class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-xs text-white/60 hover:bg-white hover:text-[#35090F]">
+                            f
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-xs text-white/60 hover:bg-white hover:text-[#35090F]">
+                            in
+                        </a>
+                        <a href="#" aria-label="Instagram"
+                            class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-xs text-white/60 hover:bg-white hover:text-[#35090F]">
+                            ig
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div
+                class="mt-10 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/30 sm:flex-row">
+                <p data-i18n="footer_copyright">
+                    © 2026 ELCID. All rights reserved.
+                </p>
+
+                <p data-i18n="footer_note">
+                    Information provided for general purposes. Specialized professional advice should be obtained where
+                    appropriate.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+
+        /*
+          ELCID Bilingual Website
+          Languages:
+          - English: en
+          - Myanmar: mm
+        */
+
+        const translations = {
+            en: {
+                brand_subtitle: "STRATEGY • CONSULTANCY • EXECUTION",
+
+                nav_home: "Home",
+                nav_about: "About",
+                nav_service: "Service",
+                nav_team: "Team",
+                nav_blog: "Blog",
+                nav_contact: "Contact",
+
+                hero_label: "THE PEOPLE BEHIND ELCID",
+                hero_title_1: "People.",
+                hero_title_2: "Ideas.",
+                hero_title_3: "Execution.",
+                hero_description:
+                    "Meet the expertise driving ELCID — combining digital strategy, technology, multimedia, business thinking and practical execution to help people make well-informed decisions.",
+                hero_cta: "Meet the Expert →",
+                hero_cta_secondary: "Get in Touch",
+
+                visual_name: "Thiri Khant Zaw",
+                visual_role: "Founder & Lead Consultant",
+                visual_status_label: "CURRENT FOCUS",
+                visual_status: "Strategy • Digital • Technology",
+                badge_label: "APPROACH",
+                badge_text: "Well-informed decisions.",
+
+                about_eyebrow: "ABOUT ELCID",
+                about_title: "Expertise with a practical mindset.",
+                about_description:
+                    "ELCID is built around a simple philosophy: people need the right information before making important decisions. The work combines consultancy, digital services, technology, creative production and business execution into one connected capability.",
+                about_card_1_title: "Think Clearly",
+                about_card_1_text:
+                    "Break down complex choices, opportunities, risks and practical scenarios.",
+                about_card_2_title: "Build Strategically",
+                about_card_2_text:
+                    "Turn ideas into digital products, campaigns, content and business systems.",
+                about_card_3_title: "Execute Reliably",
+                about_card_3_text:
+                    "Provide hands-on management and connect clients with appropriate specialists when required.",
+
+                service_eyebrow: "CAPABILITIES",
+                service_title: "From informed decisions to digital execution.",
+                service_cta: "Discuss a Project →",
+
+                service_1_title: "Digital Marketing",
+                service_1_text:
+                    "Strategic marketing campaigns, social media, promotional copy, content planning and paid advertising management.",
+                service_2_title: "Web Development",
+                service_2_text:
+                    "Modern websites, portfolio systems, domain configuration, hosting deployment and web technology integration.",
+                service_3_title: "Design & Multimedia",
+                service_3_text:
+                    "Graphic design, video editing, AI-assisted visual production, social media assets and promotional campaigns.",
+                service_4_title: "Business Consultancy",
+                service_4_text:
+                    "Practical discussions around business models, pros and cons, scenarios, operations and specialist referrals.",
+                service_5_title: "Content Creation",
+                service_5_text:
+                    "Storytelling, video scripts, copywriting and promotional content designed around specific products and audiences.",
+                service_6_title: "Investment & Crypto Advisory",
+                service_6_text:
+                    "Information-focused discussions covering opportunities, risks, legal considerations and referral to relevant specialists.",
+
+                team_eyebrow: "THE TEAM",
+                team_title: "One mind.<br>Multiple disciplines.",
+                team_intro:
+                    "ELCID is currently driven by a multidisciplinary independent professional with experience spanning technology, digital marketing, education, creative production and business consultancy.",
+
+                profile_name: "Thiri Khant Zaw",
+                profile_nickname: "(Noe Noe)",
+                profile_label: "FOUNDER & LEAD CONSULTANT",
+                profile_heading: "Thiri Khant Zaw",
+
+                roles_heading: "Current Roles",
+                role_1:
+                    "Digital Marketing & Multimedia Manager at Zinyaw Fortunate Technology Pte. Ltd.",
+                role_2:
+                    "Office Staff at SKT International School City Campus.",
+                role_3:
+                    "Founder & Lead Consultant at ELCID — Independent Freelancer.",
+
+                education_heading: "Education",
+                education_1_title: "B.A. in English",
+                education_1_text:
+                    "Third Year · Dagon University · 2017–2020",
+                education_2_title: "Diploma in Business Administration",
+                education_2_text:
+                    "National Management Academy · 2024–Present",
+                education_3_title: "Bachelor of Business Administration",
+                education_3_text:
+                    "University of the People · 2024–Present",
+
+                expertise_1_title: "Web Development & Hosting",
+                expertise_1_text:
+                    "Building and deploying modern websites and web systems using HTML, CSS, JavaScript and Django REST framework, with practical experience in domains and deployment workflows.",
+                expertise_2_title: "Digital Marketing & Content",
+                expertise_2_text:
+                    "Strategic marketing, campaign management, social media copywriting, promotional concepts and video editing for digital-first brands.",
+                expertise_3_title: "Design & Multimedia",
+                expertise_3_text:
+                    "Minimalist visual design, branding assets, social graphics, video production and AI-assisted creative workflows.",
+                expertise_4_title: "Consultancy & Referral",
+                expertise_4_text:
+                    "Free information-focused discussions around business and investment topics, including pros and cons, risk considerations and appropriate referrals to specialists.",
+
+                philosophy_label: "ELCID PHILOSOPHY",
+                philosophy_quote:
+                    "“Our people need information to make a well-informed decision.”",
+                philosophy_text:
+                    "We help bridge the information gap and, when a specialist is required, connect clients with relevant professionals.",
+                philosophy_cta: "Start a Conversation →",
+
+                blog_eyebrow: "INSIGHTS",
+                blog_title: "Ideas worth sharing.",
+                blog_intro:
+                    "Future articles can cover business scenarios, digital strategy, technology, design, marketing and practical decision-making.",
+                blog_1_title:
+                    "Before You Build: Questions Every Business Should Ask",
+                blog_1_text:
+                    "A practical framework for evaluating opportunities before investing time and resources.",
+                blog_2_title:
+                    "Building a Digital Presence That Actually Works",
+                blog_2_text:
+                    "How websites, content and marketing can work together instead of operating as separate pieces.",
+                blog_3_title:
+                    "Information First: Understanding Risk Before Action",
+                blog_3_text:
+                    "Why understanding options, limitations and potential scenarios matters before making decisions.",
+
+                contact_eyebrow: "CONTACT",
+                contact_title: "Let's build the next step.",
+                contact_text:
+                    "Have a business question, digital project or consultancy need? Start with a conversation and explain what you are trying to achieve.",
+                social_placeholder: "Your social profile",
+
+                form_name_label: "Your Name",
+                form_name_placeholder: "Your name",
+                form_email_label: "Email",
+                form_email_placeholder: "you@example.com",
+                form_service_label: "What can we help with?",
+                form_select_default: "Select a service",
+                form_option_1: "Business Consultancy",
+                form_option_2: "Digital Marketing",
+                form_option_3: "Web Development",
+                form_option_4: "Design & Multimedia",
+                form_option_5: "Content Creation",
+                form_option_6: "Investment / Crypto Advisory",
+                form_message_label: "Message",
+                form_message_placeholder: "Tell us what you're working on...",
+                form_submit: "Send Inquiry →",
+
+                footer_brand: "STRATEGY • CONSULTANCY • EXECUTION",
+                footer_tagline: "Empowering well-informed decisions.",
+                footer_nav_title: "Navigation",
+                footer_social_title: "Connect",
+                footer_copyright: "© 2026 ELCID. All rights reserved.",
+                footer_note:
+                    "Information provided for general purposes. Specialized professional advice should be obtained where appropriate.",
+
+                form_success:
+                    "Thank you. Your inquiry has been prepared. Connect this form to your preferred email/form backend before publishing."
+            },
+
+            mm: {
+                brand_subtitle: "မဟာဗျူဟာ • အကြံပေးမှု • အကောင်အထည်ဖော်မှု",
+
+                nav_home: "ပင်မ",
+                nav_about: "အကြောင်း",
+                nav_service: "ဝန်ဆောင်မှု",
+                nav_team: "အဖွဲ့",
+                nav_blog: "ဘလော့ဂ်",
+                nav_contact: "ဆက်သွယ်ရန်",
+
+                hero_label: "ELCID ကို မောင်းနှင်ပေးနေသူ",
+                hero_title_1: "လူတွေ။",
+                hero_title_2: "အတွေးအခေါ်တွေ။",
+                hero_title_3: "အကောင်အထည်ဖော်မှု။",
+                hero_description:
+                    "ELCID ၏ နောက်ကွယ်မှ ကျွမ်းကျင်မှုများကို တွေ့ဆုံပါ — Digital Strategy၊ Technology၊ Multimedia၊ Business Thinking နှင့် လက်တွေ့အကောင်အထည်ဖော်မှုတို့ကို ပေါင်းစပ်ပြီး ကောင်းမွန်စွာ သိရှိနားလည်ထားသော ဆုံးဖြတ်ချက်များ ပြုလုပ်နိုင်ရန် ကူညီပေးပါသည်။",
+                hero_cta: "ကျွမ်းကျင်သူနှင့် တွေ့ဆုံရန် →",
+                hero_cta_secondary: "ဆက်သွယ်ရန်",
+
+                visual_name: "သီရိခန့်ဇော်",
+                visual_role: "Founder & Lead Consultant",
+                visual_status_label: "လက်ရှိအာရုံစိုက်မှု",
+                visual_status: "Strategy • Digital • Technology",
+                badge_label: "ချဉ်းကပ်ပုံ",
+                badge_text: "သေချာစွာသိရှိပြီး ဆုံးဖြတ်ချက်ချခြင်း",
+
+                about_eyebrow: "ELCID အကြောင်း",
+                about_title: "လက်တွေ့ကျသော အတွေးအခေါ်နှင့် ကျွမ်းကျင်မှု။",
+                about_description:
+                    "ELCID ၏ အခြေခံအတွေးအခေါ်မှာ အရေးကြီးသော ဆုံးဖြတ်ချက်များ မချမီ လူတိုင်းသည် မှန်ကန်သော သတင်းအချက်အလက်များ လိုအပ်သည်ဆိုခြင်း ဖြစ်ပါသည်။ Consultancy၊ Digital Services၊ Technology၊ Creative Production နှင့် Business Execution တို့ကို တစ်စုတစ်စည်းတည်း ပေါင်းစပ်ထားပါသည်။",
+                about_card_1_title: "ရှင်းလင်းစွာ စဉ်းစားပါ",
+                about_card_1_text:
+                    "ရွေးချယ်စရာများ၊ အခွင့်အလမ်းများ၊ အန္တရာယ်များနှင့် ဖြစ်နိုင်သောအခြေအနေများကို ခွဲခြမ်းစိတ်ဖြာပေးပါသည်။",
+                about_card_2_title: "မဟာဗျူဟာဖြင့် တည်ဆောက်ပါ",
+                about_card_2_text:
+                    "အတွေးအခေါ်များကို Digital Product၊ Campaign၊ Content နှင့် Business System များအဖြစ် ပြောင်းလဲပေးပါသည်။",
+                about_card_3_title: "ယုံကြည်စိတ်ချစွာ အကောင်အထည်ဖော်ပါ",
+                about_card_3_text:
+                    "လက်တွေ့ကျသော Management ပံ့ပိုးမှုနှင့် လိုအပ်ပါက သင့်တော်သော ကျွမ်းကျင်သူများထံ ချိတ်ဆက်ပေးပါသည်။",
+
+                service_eyebrow: "ကျွမ်းကျင်မှုများ",
+                service_title: "သတင်းအချက်အလက်မှ Digital အကောင်အထည်ဖော်မှုအထိ။",
+                service_cta: "Project ဆွေးနွေးရန် →",
+
+                service_1_title: "Digital Marketing",
+                service_1_text:
+                    "Strategic Marketing Campaign၊ Social Media၊ Promotional Copy၊ Content Planning နှင့် Paid Advertising Management များကို ဆောင်ရွက်ပေးပါသည်။",
+                service_2_title: "Web Development",
+                service_2_text:
+                    "ခေတ်မီ Website များ၊ Portfolio System များ၊ Domain Configuration၊ Hosting Deployment နှင့် Web Technology Integration များကို ဆောင်ရွက်ပေးပါသည်။",
+                service_3_title: "Design & Multimedia",
+                service_3_text:
+                    "Graphic Design၊ Video Editing၊ AI-assisted Visual Production၊ Social Media Asset နှင့် Promotional Campaign များကို ဆောင်ရွက်ပေးပါသည်။",
+                service_4_title: "Business Consultancy",
+                service_4_text:
+                    "Business Model၊ အားသာချက်/အားနည်းချက်၊ ဖြစ်နိုင်သော Scenario၊ Operations နှင့် Specialist Referral များအကြောင်း လက်တွေ့ကျစွာ ဆွေးနွေးပေးပါသည်။",
+                service_5_title: "Content Creation",
+                service_5_text:
+                    "Storytelling၊ Video Script၊ Copywriting နှင့် သတ်မှတ်ထားသော Product နှင့် Audience များအတွက် Promotional Content များ ဖန်တီးပေးပါသည်။",
+                service_6_title: "Investment & Crypto Advisory",
+                service_6_text:
+                    "အခွင့်အလမ်း၊ အန္တရာယ်၊ ဥပဒေဆိုင်ရာ စဉ်းစားစရာများနှင့် သက်ဆိုင်ရာ Specialist များထံ Referral ပြုလုပ်ခြင်းတို့အကြောင်း သတင်းအချက်အလက်အခြေပြု ဆွေးနွေးပေးပါသည်။",
+
+                team_eyebrow: "အဖွဲ့",
+                team_title: "လူတစ်ဦး။<br>ကျွမ်းကျင်မှုများစွာ။",
+                team_intro:
+                    "ELCID ကို Technology၊ Digital Marketing၊ Education၊ Creative Production နှင့် Business Consultancy နယ်ပယ်များတွင် အတွေ့အကြုံရှိသော Multidisciplinary Independent Professional တစ်ဦးက အဓိက မောင်းနှင်ပေးနေပါသည်။",
+
+                profile_name: "သီရိခန့်ဇော်",
+                profile_nickname: "(Noe Noe)",
+                profile_label: "FOUNDER & LEAD CONSULTANT",
+                profile_heading: "သီရိခန့်ဇော်",
+
+                roles_heading: "လက်ရှိတာဝန်များ",
+                role_1:
+                    "Zinyaw Fortunate Technology Pte. Ltd. တွင် Digital Marketing & Multimedia Manager",
+                role_2:
+                    "SKT International School City Campus တွင် Office Staff",
+                role_3:
+                    "ELCID တွင် Founder & Lead Consultant — Independent Freelancer",
+
+                education_heading: "ပညာရေး",
+                education_1_title: "B.A. in English",
+                education_1_text:
+                    "Third Year · Dagon University · 2017–2020",
+                education_2_title: "Diploma in Business Administration",
+                education_2_text:
+                    "National Management Academy · 2024–လက်ရှိ",
+                education_3_title: "Bachelor of Business Administration",
+                education_3_text:
+                    "University of the People · 2024–လက်ရှိ",
+
+                expertise_1_title: "Web Development & Hosting",
+                expertise_1_text:
+                    "HTML၊ CSS၊ JavaScript နှင့် Django REST framework တို့ဖြင့် ခေတ်မီ Website နှင့် Web System များ တည်ဆောက်ခြင်း၊ Domain နှင့် Deployment Workflow များကို လက်တွေ့ဆောင်ရွက်နိုင်ခြင်း။",
+                expertise_2_title: "Digital Marketing & Content",
+                expertise_2_text:
+                    "Strategic Marketing၊ Campaign Management၊ Social Media Copywriting၊ Promotional Concept နှင့် Digital Brand များအတွက် Video Editing များကို ဆောင်ရွက်ခြင်း။",
+                expertise_3_title: "Design & Multimedia",
+                expertise_3_text:
+                    "Minimalist Visual Design၊ Branding Asset၊ Social Graphic၊ Video Production နှင့် AI-assisted Creative Workflow များကို အသုံးပြုခြင်း။",
+                expertise_4_title: "Consultancy & Referral",
+                expertise_4_text:
+                    "Business နှင့် Investment ဆိုင်ရာ အကြောင်းအရာများတွင် အားသာချက်/အားနည်းချက်၊ Risk နှင့် သင့်တော်သော Specialist များထံ Referral ပြုလုပ်ခြင်းတို့ကို အချက်အလက်အခြေပြု ဆွေးနွေးပေးခြင်း။",
+
+                philosophy_label: "ELCID ၏ အတွေးအခေါ်",
+                philosophy_quote:
+                    "“လူတွေဟာ ကောင်းမွန်စွာ သိရှိနားလည်ပြီး ဆုံးဖြတ်နိုင်ဖို့ သတင်းအချက်အလက်တွေ လိုအပ်ပါတယ်။”",
+                philosophy_text:
+                    "လိုအပ်သော သတင်းအချက်အလက်ကွာဟချက်ကို ဖြည့်ဆည်းပေးပြီး Specialist လိုအပ်ပါက သက်ဆိုင်ရာ ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ပေးပါသည်။",
+                philosophy_cta: "စတင်ဆွေးနွေးရန် →",
+
+                blog_eyebrow: "INSIGHTS",
+                blog_title: "မျှဝေသင့်သော အတွေးအခေါ်များ။",
+                blog_intro:
+                    "အနာဂတ်တွင် Business Scenario၊ Digital Strategy၊ Technology၊ Design၊ Marketing နှင့် လက်တွေ့ကျသော Decision Making များအကြောင်း ဆောင်းပါးများ မျှဝေသွားနိုင်ပါသည်။",
+                blog_1_title:
+                    "မတည်ဆောက်မီ မေးသင့်သော Business မေးခွန်းများ",
+                blog_1_text:
+                    "အချိန်နှင့် အရင်းအမြစ်များ မသုံးစွဲမီ အခွင့်အလမ်းများကို သုံးသပ်ရန် လက်တွေ့ကျသော Framework တစ်ခု။",
+                blog_2_title:
+                    "အမှန်တကယ်အလုပ်လုပ်သော Digital Presence တစ်ခု တည်ဆောက်ခြင်း",
+                blog_2_text:
+                    "Website၊ Content နှင့် Marketing တို့ကို သီးခြားမထားဘဲ တစ်ခုနှင့်တစ်ခု ပေါင်းစပ်လုပ်ဆောင်နိုင်ပုံ။",
+                blog_3_title:
+                    "အရင်ဆုံး သတင်းအချက်အလက် — လုပ်ဆောင်မှုမပြုမီ Risk ကို နားလည်ခြင်း",
+                blog_3_text:
+                    "ဆုံးဖြတ်ချက်မချမီ ရွေးချယ်စရာများ၊ ကန့်သတ်ချက်များနှင့် ဖြစ်နိုင်သောအခြေအနေများကို နားလည်ထားရန် အဘယ်ကြောင့် အရေးကြီးသနည်း။",
+
+                contact_eyebrow: "ဆက်သွယ်ရန်",
+                contact_title: "နောက်တစ်ဆင့်ကို အတူတည်ဆောက်ကြရအောင်။",
+                contact_text:
+                    "Business မေးခွန်း၊ Digital Project သို့မဟုတ် Consultancy လိုအပ်ချက်ရှိပါသလား။ သင်အောင်မြင်လိုသည့်အရာကို ပြောပြပြီး စကားစတင်ပြောကြရအောင်။",
+                social_placeholder: "သင့် Social Profile",
+
+                form_name_label: "အမည်",
+                form_name_placeholder: "သင့်အမည်",
+                form_email_label: "Email",
+                form_email_placeholder: "you@example.com",
+                form_service_label: "မည်သည့်အရာတွင် ကူညီပေးရမလဲ?",
+                form_select_default: "ဝန်ဆောင်မှု ရွေးချယ်ပါ",
+                form_option_1: "Business Consultancy",
+                form_option_2: "Digital Marketing",
+                form_option_3: "Web Development",
+                form_option_4: "Design & Multimedia",
+                form_option_5: "Content Creation",
+                form_option_6: "Investment / Crypto Advisory",
+                form_message_label: "စာပို့ရန်",
+                form_message_placeholder: "သင်လုပ်ဆောင်နေသည့် Project သို့မဟုတ် လိုအပ်ချက်ကို ရေးပေးပါ...",
+                form_submit: "Inquiry ပို့ရန် →",
+
+                footer_brand: "မဟာဗျူဟာ • အကြံပေးမှု • အကောင်အထည်ဖော်မှု",
+                footer_tagline: "ကောင်းမွန်စွာသိရှိပြီး ဆုံးဖြတ်နိုင်ရန် အားပေးကူညီခြင်း။",
+                footer_nav_title: "Navigation",
+                footer_social_title: "ဆက်သွယ်ရန်",
+                footer_copyright: "© 2026 ELCID. မူပိုင်ခွင့်အားလုံး ရယူထားပါသည်။",
+                footer_note:
+                    "ပေးထားသော သတင်းအချက်အလက်များသည် အထွေထွေ ရည်ရွယ်ချက်အတွက်သာ ဖြစ်ပါသည်။ လိုအပ်သည့်နေရာများတွင် သက်ဆိုင်ရာ Professional ၏ အကြံပေးမှုကို ရယူသင့်ပါသည်။",
+
+                form_success:
+                    "ကျေးဇူးတင်ပါသည်။ သင်၏ Inquiry ကို ပြင်ဆင်ပြီးပါပြီ။ Website ကို အမှန်တကယ်အသုံးပြုမည်ဆိုပါက ဤ Form ကို သင့် Email/Form Backend နှင့် ချိတ်ဆက်ရန် လိုအပ်ပါသည်။"
+            }
+        };
+
+
+        /* ================= LANGUAGE SWITCHER ================= */
+
+        function setLanguage(language) {
+            const dict = translations[language];
+
+            if (!dict) return;
+
+            document.documentElement.lang = language === "mm" ? "my" : "en";
+            document.body.classList.toggle("mm", language === "mm");
+
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.dataset.i18n;
+
+                if (dict[key] !== undefined) {
+                    element.innerHTML = dict[key];
+                }
+            });
+
+            document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+                const key = element.dataset.i18nPlaceholder;
+
+                if (dict[key] !== undefined) {
+                    element.placeholder = dict[key];
+                }
+            });
+
+            document.getElementById("enBtn").classList.toggle("active", language === "en");
+            document.getElementById("mmBtn").classList.toggle("active", language === "mm");
+
+            document.getElementById("enBtn").classList.toggle("text-white/60", language !== "en");
+            document.getElementById("mmBtn").classList.toggle("text-white/60", language !== "mm");
+
+            localStorage.setItem("elcid-language", language);
+        }
+
+
+        /* ================= MOBILE MENU ================= */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("open");
+            menuBtn.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        document.querySelectorAll("#mobileMenu a").forEach((link) => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("open");
+                menuBtn.setAttribute("aria-expanded", "false");
+            });
+        });
+
+
+        /* ================= SCROLL REVEAL ================= */
+
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        revealElements.forEach((element) => {
+            revealObserver.observe(element);
+        });
+
+
+        /* ================= ACTIVE NAVIGATION ================= */
+
+        const sections = document.querySelectorAll("main section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active", "text-white");
+                            link.classList.add("text-white/65");
+
+                            if (link.getAttribute("href") === "#" + entry.target.id) {
+                                link.classList.add("active", "text-white");
+                                link.classList.remove("text-white/65");
+                            }
+                        });
+                    }
+                });
+            },
+            {
+                rootMargin: "-35% 0px -55% 0px"
+            }
+        );
+
+        sections.forEach((section) => {
+            sectionObserver.observe(section);
+        });
+
+
+        /* ================= CONTACT FORM ================= */
+
+        const GOOGLE_SCRIPT_URL =
+            "https://script.google.com/macros/s/AKfycbxc8plms6hlW2ef1_YTRE189KbTb8Uj6NoMy6vrB18RNxjd3m4yQuZVOOZ3d0RaHSmFug/exec";
+
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+
+        contactForm.addEventListener("submit", async function (event) {
+
+            event.preventDefault();
+
+
+            // Prevent multiple submissions
+            submitBtn.disabled = true;
+
+            submitBtn.classList.add(
+                "opacity-60",
+                "cursor-not-allowed"
+            );
+
+
+            const originalButtonText =
+                submitBtn.innerHTML;
+
+            submitBtn.innerHTML =
+                "Sending...";
+
+
+            formMessage.classList.add("hidden");
+
+
+            // Collect form data
+            const formData =
+                new FormData(contactForm);
+
+
+            try {
+
+                await fetch(
+                    GOOGLE_SCRIPT_URL,
+                    {
+                        method: "POST",
+                        body: formData,
+                        mode: "no-cors"
+                    }
+                );
+
+
+                // Since Apps Script + no-cors
+                // cannot expose the response,
+                // reaching this point means the
+                // request was sent successfully.
+
+                formMessage.textContent =
+                    "Thank you! Your inquiry has been submitted successfully.";
+
+                formMessage.classList.remove(
+                    "hidden"
+                );
+
+
+                // Reset form
+                contactForm.reset();
+
+
+            } catch (error) {
+
+                console.error(
+                    "Form submission error:",
+                    error
+                );
+
+
+                formMessage.textContent =
+                    "Something went wrong. Please try again later.";
+
+                formMessage.classList.remove(
+                    "hidden"
+                );
+
+            } finally {
+
+                submitBtn.disabled = false;
+
+                submitBtn.classList.remove(
+                    "opacity-60",
+                    "cursor-not-allowed"
+                );
+
+                submitBtn.innerHTML =
+                    originalButtonText;
+            }
+
+        });
+
+
+        /* ================= INITIAL LANGUAGE ================= */
+
+        const savedLanguage =
+            localStorage.getItem("elcid-language") || "en";
+
+        setLanguage(savedLanguage);
+
+    </script>
+</body>
+
+</html>

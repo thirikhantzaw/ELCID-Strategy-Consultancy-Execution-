@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="ELCID — Well-informed decisions. Consultancy, digital services, business management and execution." />
+    <meta name="theme-color" content="#58111A" />
+
+    <title>ELCID — Strategy • Consultancy • Execution</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            950: "#21070B",
+                            900: "#35090F",
+                            800: "#450D14",
+                            700: "#58111A",
+                            600: "#721522",
+                            500: "#8D1A29"
+                        },
+                        silver: "#C0C0C0"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "Noto Sans Myanmar", "system-ui", "sans-serif"]
+                    },
+                    boxShadow: {
+                        crimson: "0 25px 80px rgba(141, 26, 41, .28)",
+                        card: "0 20px 70px rgba(0, 0, 0, .25)"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Myanmar:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --burgundy: #58111A;
+            --burgundy-dark: #35090F;
+            --burgundy-deep: #21070B;
+            --crimson: #8D1A29;
+            --white: #FFFFFF;
+            --silver: #C0C0C0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 80% 10%, rgba(141, 26, 41, .16), transparent 30%),
+                radial-gradient(circle at 10% 70%, rgba(114, 21, 34, .12), transparent 28%),
+                var(--burgundy-deep);
+            color: var(--white);
+            font-family: Inter, "Noto Sans Myanmar", system-ui, sans-serif;
+            overflow-x: hidden;
+        }
+
+        body.mm {
+            font-family: "Noto Sans Myanmar", Inter, system-ui, sans-serif;
+        }
+
+        /* Subtle technical grid */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+            -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, .045);
+            border: 1px solid rgba(255, 255, 255, .11);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .glass-hover {
+            transition:
+                transform .35s ease,
+                border-color .35s ease,
+                background .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .glass-hover:hover {
+            transform: translateY(-7px);
+            background: rgba(255, 255, 255, .07);
+            border-color: rgba(192, 192, 192, .28);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .25);
+        }
+
+        .gradient-text {
+            background: linear-gradient(110deg,
+                    #ffffff 10%,
+                    #c0c0c0 48%,
+                    #ffffff 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .crimson-text {
+            color: #e0a3ac;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #c0c0c0;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .section-label::before {
+            content: "";
+            width: 25px;
+            height: 1px;
+            background: #c0c0c0;
+        }
+
+        .service-number {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .4);
+            letter-spacing: .15em;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: rgba(141, 26, 41, .18);
+            border: 1px solid rgba(224, 163, 172, .16);
+            color: #fff;
+        }
+
+        .nav-link {
+            position: relative;
+            color: rgba(255, 255, 255, .64);
+            transition: color .25s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff;
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -9px;
+            height: 1px;
+            background: #fff;
+        }
+
+        .lang-button {
+            min-width: 76px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, .16);
+            background: rgba(255, 255, 255, .05);
+            color: white;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .lang-button:hover {
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .lang-button .active-lang {
+            background: #fff;
+            color: #35090F;
+            border-radius: 999px;
+            padding: 4px 8px;
+            font-weight: 800;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .35s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        .orb {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 35% 28%, #a62b3b 0%, #721522 20%, #3b0a11 52%, #190306 100%);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, .12),
+                0 0 55px rgba(141, 26, 41, .38),
+                inset 0 0 45px rgba(0, 0, 0, .65);
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+
+        .orb::before,
+        .orb::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .orb::before {
+            inset: -18px;
+            border-color: rgba(141, 26, 41, .38);
+        }
+
+        .orb::after {
+            inset: -42px;
+            border-color: rgba(255, 255, 255, .06);
+        }
+
+        .network-line {
+            position: absolute;
+            height: 1px;
+            transform-origin: left center;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(192, 192, 192, .55),
+                    rgba(141, 26, 41, .7),
+                    transparent);
+        }
+
+        .network-node {
+            position: absolute;
+            padding: 9px 13px;
+            border-radius: 11px;
+            background: rgba(24, 3, 7, .82);
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: #c0c0c0;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            backdrop-filter: blur(10px);
+        }
+
+        .network-node::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin-right: 6px;
+            background: #9d2333;
+            box-shadow: 0 0 10px rgba(157, 35, 51, .8);
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .floating-delay {
+            animation: float 5s ease-in-out 1.4s infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .pulse {
+            animation: pulse 3.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: .65;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, .3),
+                    rgba(141, 26, 41, .1),
+                    transparent);
+        }
+
+        .check {
+            width: 20px;
+            height: 20px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(141, 26, 41, .22);
+            color: #fff;
+            flex: 0 0 auto;
+            font-size: 11px;
+        }
+
+        input,
+        textarea {
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: rgba(255, 255, 255, .35) !important;
+            box-shadow: 0 0 0 3px rgba(141, 26, 41, .2);
+        }
+
+        @media (max-width: 900px) {
+            .orb {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid-bg {
+                background-size: 35px 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+       NAVIGATION
+    ========================================================== -->
+    <header id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#21070B]/80 backdrop-blur-xl"> \
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            <div class="h-[78px] flex items-center justify-between">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+
+                    <div class="w-9 h-9 rounded-xl border border-white/15 bg-white/5 grid place-items-center">
+
+                        <span class="font-extrabold text-sm">E</span>
+
+                    </div>
+
+                    <div>
+
+                        <div class="font-extrabold tracking-[.18em] text-lg">ELCID</div>
+
+                        <div class="hidden sm:block text-[8px] tracking-[.25em] text-white/40 uppercase"
+                            data-en="Strategy • Consultancy • Execution"
+                            data-mm="မဟာဗျူဟာ • အကြံပေးခြင်း • အကောင်အထည်ဖော်ခြင်း">
+                            Strategy • Consultancy • Execution
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Desktop navigation -->
+                <nav class="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+
+                    <a class="nav-link active text-sm" href="index.html" target="_blank" data-section="home"
+                        data-en="Home" data-mm="ပင်မစာမျက်နှာ">Home</a>
+
+                    <a class="nav-link text-sm" href="about.html" target="_blank" data-section="about" data-en="About"
+                        data-mm="အကြောင်း">About</a>
+
+                    <a class="nav-link text-sm" href="service.html" target="_blank" data-section="services"
+                        data-en="Service" data-mm="ဝန်ဆောင်မှု">Service</a>
+
+                    <a class="nav-link text-sm" href="team.html" target="_blank" data-section="team" data-en="Team"
+                        data-mm="အဖွဲ့">Team</a>
+
+                    <a class="nav-link text-sm" href="blog.html" target="_blank" data-section="blog" data-en="Blog"
+                        data-mm="ဘလော့ဂ်">Blog</a>
+
+                    <a class="nav-link text-sm" href="#contact" data-section="contact" data-en="Contact"
+                        data-mm="ဆက်သွယ်ရန်">Contact</a>
+
+                </nav>
+
+                <!-- Language switcher -->
+                <div class="hidden lg:flex items-center gap-4">
+
+                    <button id="languageToggle" class="lang-button" type="button" aria-label="Switch language">
+
+                        <span id="enLabel" class="active-lang">EN</span>
+
+                        <span id="mmLabel">MM</span>
+
+                    </button>
+
+                </div>
+
+                <!-- Mobile controls -->
+                <div class="lg:hidden flex items-center gap-2">
+
+                    <button id="mobileLanguage" class="lang-button" type="button" aria-label="Switch language">
+
+                        <span id="mobileLangText">EN</span>
+
+                    </button>
+
+                    <button id="menuButton" type="button"
+                        class="w-10 h-10 rounded-xl border border-white/10 bg-white/5 grid place-items-center"
+                        aria-label="Open navigation menu" aria-expanded="false">
+
+                        <span class="text-lg">☰</span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="mobile-menu lg:hidden">
+
+                <nav class="pb-5 pt-2 flex flex-col gap-1" aria-label="Mobile navigation">
+
+                    <a href="index.html" target="_blank" class="mobile-nav-link rounded-xl px-4 py-3 hover:bg-white/5"
+                        data-en="Home" data-mm="ပင်မစာမျက်နှာ">Home</a>
+
+                    <a href="about.html" target="_blank" class="mobile-nav-link rounded-xl px-4 py-3 hover:bg-white/5"
+                        data-en="About" data-mm="အကြောင်း">About</a>
+
+                    <a href="service.html" target="_blank" class="mobile-nav-link rounded-xl px-4 py-3 hover:bg-white/5"
+                        data-en="Service" data-mm="ဝန်ဆောင်မှု">Service</a>
+
+                    <a href="team.html" target="_blank" class="mobile-nav-link rounded-xl px-4 py-3 hover:bg-white/5"
+                        data-en="Team" data-mm="အဖွဲ့">Team</a>
+
+                    <a href="blog.html" target="_blank" class="mobile-nav-link rounded-xl px-4 py-3 hover:bg-white/5"
+                        data-en="Blog" data-mm="ဘလော့ဂ်">Blog</a>
+
+                    <a href="#contact" class="mobile-nav-link rounded-xl px-4 py-3 hover:bg-white/5" data-en="Contact"
+                        data-mm="ဆက်သွယ်ရန်">Contact</a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+       HOME / HERO
+    ========================================================== -->
+    <main>
+
+        <section id="home" class="relative min-h-screen flex items-center pt-28 overflow-hidden">
+
+            <div class="grid-bg absolute inset-0 pointer-events-none"></div>
+
+            <div class="absolute right-[8%] top-[12%] w-96 h-96 bg-[#8D1A29]/10 blur-[120px] rounded-full"></div>
+
+            <div class="relative max-w-7xl mx-auto px-5 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-8 items-center">
+
+                    <!-- Hero copy -->
+                    <div class="max-w-4xl">
+
+                        <div class="reveal section-label mb-7" data-en="OUR SERVICES • EXPERTISE • SOLUTIONS"
+                            data-mm="ဝန်ဆောင်မှုများ • ကျွမ်းကျင်မှုများ • လုပ်ငန်းအတွက် ဖြေရှင်းချက်များ">
+                            OUR SERVICES • EXPERTISE • SOLUTIONS
+                        </div>
+
+                        <h1
+                            class="reveal text-5xl sm:text-6xl lg:text-[78px] xl:text-[88px] leading-[.94] tracking-[-.055em] font-extrabold">
+
+                            <span data-en="Make decisions" data-mm="ဆုံးဖြတ်ချက်များကို">
+                                Make decisions
+                            </span>
+
+                            <br />
+
+                            <span class="gradient-text" data-en="with confidence." data-mm="ယုံကြည်မှုဖြင့် ချမှတ်ပါ။">
+                                with confidence.
+                            </span>
+
+                        </h1>
+
+                        <p class="reveal mt-8 max-w-2xl text-lg sm:text-xl leading-8 text-silver"
+                            data-en="We help individuals and businesses understand their options, evaluate opportunities, connect with trusted specialists, and execute the right strategy."
+                            data-mm="တစ်ဦးချင်းစီနှင့် စီးပွားရေးလုပ်ငန်းများအတွက် ရွေးချယ်စရာများကို နားလည်စေပြီး အခွင့်အလမ်းများကို သုံးသပ်ကာ ယုံကြည်ရသော ကျွမ်းကျင်သူများနှင့် ချိတ်ဆက်ပေးပြီး သင့်တော်သော မဟာဗျူဟာကို အကောင်အထည်ဖော်ပေးပါသည်။">
+                            We help individuals and businesses understand their options, evaluate opportunities,
+                            connect with trusted specialists, and execute the right strategy.
+                        </p>
+
+                        <div class="reveal mt-9 flex flex-col sm:flex-row gap-4">
+
+                            <a href="#services"
+                                class="inline-flex justify-center items-center gap-2 rounded-full bg-white text-burgundy-900 px-7 py-4 font-bold hover:bg-silver transition">
+
+                                <span data-en="Explore Services" data-mm="ဝန်ဆောင်မှုများကြည့်ရန်">
+                                    Explore Services
+                                </span>
+
+                                <span>→</span>
+
+                            </a>
+
+                            <a href="#contact"
+                                class="inline-flex justify-center items-center rounded-full border border-white/15 bg-white/5 px-7 py-4 font-semibold hover:bg-white/10 transition"
+                                data-en="Free Initial Consultation" data-mm="အခမဲ့ ကနဦးအကြံပေးဆွေးနွေးမှု">
+                                Free Initial Consultation
+                            </a>
+
+                        </div>
+
+                        <div class="reveal mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs text-white/40">
+
+                            <span>01 / Information</span>
+                            <span>02 / Strategy</span>
+                            <span>03 / Execution</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =======================================================
+         SERVICES
+        ======================================================== -->
+        <section id="services" class="relative py-28 lg:py-36 border-t border-white/5">
+
+            <div class="absolute inset-0 grid-bg pointer-events-none opacity-40"></div>
+
+            <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="max-w-3xl">
+
+                    <div class="reveal section-label" data-en="Our Services" data-mm="ကျွန်ုပ်တို့၏ ဝန်ဆောင်မှုများ">
+                        Our Services
+                    </div>
+
+                    <h2
+                        class="reveal mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.03]">
+
+                        <span data-en="Two ways we create value." data-mm="တန်ဖိုးဖန်တီးပေးသည့် နည်းလမ်းနှစ်မျိုး။">
+                            Two ways we create value.
+                        </span>
+
+                    </h2>
+
+                    <p class="reveal mt-6 text-lg leading-8 text-silver"
+                        data-en="Start with information. Continue with execution when you need a team to take ownership."
+                        data-mm="သတင်းအချက်အလက်ဖြင့် စတင်ပါ။ လိုအပ်ပါက လုပ်ငန်းတာဝန်များကို တာဝန်ယူအကောင်အထည်ဖော်ပေးနိုင်ပါသည်။">
+                        Start with information. Continue with execution when you need a team to take ownership.
+                    </p>
+
+                </div>
+
+                <!-- Free consultancy -->
+                <div class="mt-16">
+
+                    <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+
+                        <div>
+
+                            <div class="text-xs font-bold tracking-[.2em] text-[#e0a3ac] uppercase"
+                                data-en="01 / Free Consultancy" data-mm="၀၁ / အခမဲ့ အကြံပေးဝန်ဆောင်မှု">
+                                01 / Free Consultancy
+                            </div>
+
+                            <h3 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-en="Well-Informed Decision Model"
+                                data-mm="သတင်းအချက်အလက်ပြည့်စုံသော ဆုံးဖြတ်ချက်ပုံစံ">
+                                Well-Informed Decision Model
+                            </h3>
+
+                        </div>
+
+                        <div class="max-w-xl text-sm leading-6 text-white/50"
+                            data-en="Our initial consultancy is free. Where specialist action is required, we can introduce clients to relevant local or global partners."
+                            data-mm="ကနဦးအကြံပေးဆွေးနွေးမှုသည် အခမဲ့ဖြစ်ပါသည်။ အထူးကျွမ်းကျင်သူ၏ ဝန်ဆောင်မှုလိုအပ်ပါက သက်ဆိုင်ရာ ပြည်တွင်း သို့မဟုတ် နိုင်ငံတကာမိတ်ဖက်များနှင့် ချိတ်ဆက်ပေးနိုင်ပါသည်။">
+                            Our initial consultancy is free. Where specialist action is required, we can introduce
+                            clients to relevant local or global partners.
+                        </div>
+
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+
+                        <!-- Consultancy 1 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-7 lg:p-8">
+
+                            <div class="flex items-start justify-between">
+
+                                <div class="icon-box">
+
+                                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" />
+                                        <path d="M8 9h8M8 13h5" />
+                                    </svg>
+
+                                </div>
+
+                                <span class="service-number">01A</span>
+
+                            </div>
+
+                            <h4 class="mt-7 text-2xl font-bold" data-en="General Business & Strategic Consultancy"
+                                data-mm="အထွေထွေစီးပွားရေးနှင့် မဟာဗျူဟာ အကြံပေးခြင်း">
+                                General Business & Strategic Consultancy
+                            </h4>
+
+                            <p class="mt-4 text-sm leading-7 text-silver"
+                                data-en="Discuss business opportunities, pros and cons, legal considerations, practical case scenarios and possible next steps before committing resources."
+                                data-mm="စီးပွားရေးအခွင့်အလမ်းများ၊ အားသာချက်/အားနည်းချက်များ၊ ဥပဒေရေးရာ စဉ်းစားရမည့်အချက်များ၊ ဖြစ်နိုင်သောအခြေအနေများနှင့် နောက်တစ်ဆင့် လုပ်ဆောင်ရမည့်အရာများကို ဆွေးနွေးနိုင်ပါသည်။">
+                                Discuss business opportunities, pros and cons, legal considerations, practical case
+                                scenarios and possible next steps before committing resources.
+                            </p>
+
+                            <div class="mt-7 pt-6 border-t border-white/10">
+
+                                <div class="text-xs font-bold tracking-[.16em] uppercase text-white/45"
+                                    data-en="Referral model" data-mm="Referral ပုံစံ">
+                                    Referral model
+                                </div>
+
+                                <p class="mt-3 text-sm leading-7 text-white/60"
+                                    data-en="If specialized action is needed, we may introduce you to appropriate professionals—for example, a Chicago real-estate agent or loan officer for a home purchase. No consultancy fee is charged by ELCID for the initial discussion."
+                                    data-mm="အထူးကျွမ်းကျင်သူ၏ လုပ်ဆောင်ချက်လိုအပ်ပါက သင့်တော်သော ပညာရှင်များနှင့် ချိတ်ဆက်ပေးနိုင်ပါသည်။ ဥပမာ Chicago တွင် အိမ်ဝယ်ယူလိုသူများအတွက် အိမ်ခြံမြေအကျိုးဆောင် သို့မဟုတ် loan officer နှင့် မိတ်ဆက်ပေးနိုင်ပါသည်။ ကနဦးဆွေးနွေးမှုအတွက် ELCID မှ အကြံပေးခ မကောက်ခံပါ။">
+                                    If specialized action is needed, we may introduce you to appropriate
+                                    professionals—for
+                                    example, a Chicago real-estate agent or loan officer for a home purchase. No
+                                    consultancy fee is charged by ELCID for the initial discussion.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Consultancy 2 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-7 lg:p-8">
+
+                            <div class="flex items-start justify-between">
+
+                                <div class="icon-box">
+
+                                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+
+                                        <circle cx="12" cy="12" r="9" />
+
+                                        <path
+                                            d="M12 7v10M15 9.5c0-1-1.2-1.8-3-1.8s-3 .8-3 1.8 1.2 1.7 3 1.7 3 .8 3 1.8-1.2 1.8-3 1.8-3-.8-3-1.8" />
+
+                                    </svg>
+
+                                </div>
+
+                                <span class="service-number">01B</span>
+
+                            </div>
+
+                            <h4 class="mt-7 text-2xl font-bold" data-en="Investment & Crypto Advisory"
+                                data-mm="ရင်းနှီးမြှုပ်နှံမှုနှင့် Crypto အကြံပေးခြင်း">
+                                Investment & Crypto Advisory
+                            </h4>
+
+                            <p class="mt-4 text-sm leading-7 text-silver"
+                                data-en="Explore investment opportunities, market pros and cons, legal considerations, risk scenarios and questions to consider before making a decision."
+                                data-mm="ရင်းနှီးမြှုပ်နှံမှုအခွင့်အလမ်းများ၊ စျေးကွက်၏ အားသာချက်/အားနည်းချက်များ၊ ဥပဒေရေးရာ စဉ်းစားချက်များ၊ အန္တရာယ်အခြေအနေများနှင့် ဆုံးဖြတ်ချက်မချမီ စဉ်းစားသင့်သော မေးခွန်းများကို သုံးသပ်ပေးပါသည်။">
+                                Explore investment opportunities, market pros and cons, legal considerations, risk
+                                scenarios and questions to consider before making a decision.
+                            </p>
+
+                            <div class="mt-7 pt-6 border-t border-white/10">
+
+                                <div class="text-xs font-bold tracking-[.16em] uppercase text-white/45"
+                                    data-en="Referral model" data-mm="Referral ပုံစံ">
+                                    Referral model
+                                </div>
+
+                                <p class="mt-3 text-sm leading-7 text-white/60"
+                                    data-en="If a client chooses to proceed, ELCID may refer them to relevant crypto brokers or other specialists. Referral compensation may be received from partners; the advisory discussion itself is free to the client."
+                                    data-mm="Client မှ ဆက်လက်လုပ်ဆောင်ရန် ဆုံးဖြတ်ပါက သက်ဆိုင်ရာ Crypto broker များ သို့မဟုတ် အခြားကျွမ်းကျင်သူများထံသို့ referral ပြုလုပ်ပေးနိုင်ပါသည်။ မိတ်ဖက်များထံမှ referral compensation ရရှိနိုင်သော်လည်း အကြံပေးဆွေးနွေးမှုကို client အတွက် အခမဲ့ပေးပါသည်။">
+                                    If a client chooses to proceed, ELCID may refer them to relevant crypto brokers or
+                                    other specialists. Referral compensation may be received from partners; the advisory
+                                    discussion itself is free to the client.
+                                </p>
+
+                            </div>
+
+                            <div class="mt-5 rounded-2xl bg-[#8D1A29]/10 border border-[#8D1A29]/20 p-4 text-xs leading-6 text-white/50"
+                                data-en="Important: Investment and crypto discussions are informational only and are not a guarantee of returns or individualized financial advice."
+                                data-mm="အရေးကြီးချက် - Investment နှင့် Crypto ဆွေးနွေးမှုများသည် သတင်းအချက်အလက်ပေးရန်သာ ဖြစ်ပြီး အမြတ်ရရှိမည်ဟု အာမခံခြင်း သို့မဟုတ် တစ်ဦးချင်းအတွက် ငွေကြေးအကြံပေးခြင်း မဟုတ်ပါ။">
+                                Important: Investment and crypto discussions are informational only and are not a
+                                guarantee of returns or individualized financial advice.
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                    <!-- Free CTA -->
+                    <div
+                        class="reveal mt-6 rounded-3xl border border-white/10 bg-white/[.025] p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+
+                        <div>
+
+                            <h4 class="font-bold text-xl" data-en="Need clarity before you act?"
+                                data-mm="လုပ်ဆောင်မည့်အရာမတိုင်မီ ရှင်းလင်းမှုလိုပါသလား။">
+                                Need clarity before you act?
+                            </h4>
+
+                            <p class="mt-2 text-sm text-white/45" data-en="Start with a free initial discussion."
+                                data-mm="အခမဲ့ ကနဦးဆွေးနွေးမှုဖြင့် စတင်ပါ။">
+                                Start with a free initial discussion.
+                            </p>
+
+                        </div>
+
+                        <a href="#contact"
+                            class="inline-flex justify-center items-center gap-2 rounded-full bg-white text-burgundy-900 px-6 py-3.5 font-bold hover:bg-silver transition">
+
+                            <span data-en="Book Free Consultation" data-mm="အခမဲ့ အကြံပေးဆွေးနွေးရန်">
+                                Book Free Consultation
+                            </span>
+
+                            <span>→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Paid services -->
+                <div class="mt-28">
+
+                    <div class="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+
+                        <div>
+
+                            <div class="text-xs font-bold tracking-[.2em] text-[#e0a3ac] uppercase"
+                                data-en="02 / Paid Professional Management"
+                                data-mm="၀၂ / အခကြေးငွေဖြင့် Professional Management">
+                                02 / Paid Professional Management
+                            </div>
+
+                            <h3 class="mt-3 text-3xl sm:text-4xl font-extrabold" data-en="End-to-End Execution"
+                                data-mm="အစမှအဆုံး အကောင်အထည်ဖော်ခြင်း">
+                                End-to-End Execution
+                            </h3>
+
+                        </div>
+
+                        <div class="max-w-xl text-sm leading-6 text-white/50"
+                            data-en="For clients who want a comprehensive, hands-off solution, we manage digital and business operations through project or ongoing engagements."
+                            data-mm="လုပ်ငန်းများကို ကိုယ်တိုင်စီမံရန်မလိုဘဲ အပြည့်အစုံ လက်လွှဲလုပ်ဆောင်စေလိုသော client များအတွက် project သို့မဟုတ် ongoing engagement ဖြင့် Digital နှင့် Business Operations များကို စီမံပေးပါသည်။">
+                            For clients who want a comprehensive, hands-off solution, we manage digital and
+                            business operations through project or ongoing engagements.
+                        </div>
+
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                        <!-- Paid 1 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-6">
+
+                            <div class="flex justify-between items-start">
+
+                                <div class="icon-box">
+
+                                    <span class="text-xl">◎</span>
+
+                                </div>
+
+                                <span class="service-number">02A</span>
+
+                            </div>
+
+                            <h4 class="mt-6 text-xl font-bold" data-en="Digital Marketing Agency"
+                                data-mm="Digital Marketing Agency">
+                                Digital Marketing Agency
+                            </h4>
+
+                            <p class="mt-3 text-sm leading-7 text-silver"
+                                data-en="Organic and paid campaigns, social media strategy, promotional copy, campaign planning, audience development and advertising management."
+                                data-mm="Organic နှင့် Paid Campaign များ၊ Social Media Strategy၊ Promotional Copy၊ Campaign Planning၊ Audience Development နှင့် Advertising Management များကို ဆောင်ရွက်ပေးပါသည်။">
+                                Organic and paid campaigns, social media strategy, promotional copy, campaign planning,
+                                audience development and advertising management.
+                            </p>
+
+                        </article>
+
+                        <!-- Paid 2 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-6">
+
+                            <div class="flex justify-between items-start">
+
+                                <div class="icon-box">
+
+                                    <span class="text-xl">◇</span>
+
+                                </div>
+
+                                <span class="service-number">02B</span>
+
+                            </div>
+
+                            <h4 class="mt-6 text-xl font-bold" data-en="E-Commerce Solutions"
+                                data-mm="E-Commerce Solutions">
+                                E-Commerce Solutions
+                            </h4>
+
+                            <p class="mt-3 text-sm leading-7 text-silver"
+                                data-en="End-to-end store setup, optimization, product presentation, sales funnels, conversion improvements and online product marketing."
+                                data-mm="Online Store တည်ဆောက်ခြင်း၊ Optimization၊ Product Presentation၊ Sales Funnel၊ Conversion Improvement နှင့် Online Product Marketing များကို အစမှအဆုံး ဆောင်ရွက်ပေးပါသည်။">
+                                End-to-end store setup, optimization, product presentation, sales funnels, conversion
+                                improvements and online product marketing.
+                            </p>
+
+                        </article>
+
+                        <!-- Paid 3 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-6">
+
+                            <div class="flex justify-between items-start">
+
+                                <div class="icon-box">
+
+                                    <span class="text-xl">✦</span>
+
+                                </div>
+
+                                <span class="service-number">02C</span>
+
+                            </div>
+
+                            <h4 class="mt-6 text-xl font-bold" data-en="Graphics Design & Print Shop"
+                                data-mm="Graphics Design နှင့် Print Shop">
+                                Graphics Design & Print Shop
+                            </h4>
+
+                            <p class="mt-3 text-sm leading-7 text-silver"
+                                data-en="Brand identities, promotional posters, marketing graphics, social media assets, print-ready artwork and campaign visuals."
+                                data-mm="Brand Identity၊ Promotional Poster၊ Marketing Graphic၊ Social Media Asset၊ Print-ready Artwork နှင့် Campaign Visual များကို Professional Design ဖြင့် ပြုလုပ်ပေးပါသည်။">
+                                Brand identities, promotional posters, marketing graphics, social media assets,
+                                print-ready artwork and campaign visuals.
+                            </p>
+
+                        </article>
+
+                        <!-- Paid 4 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-6">
+
+                            <div class="flex justify-between items-start">
+
+                                <div class="icon-box">
+
+                                    <span class="text-xl">◌</span>
+
+                                </div>
+
+                                <span class="service-number">02D</span>
+
+                            </div>
+
+                            <h4 class="mt-6 text-xl font-bold" data-en="Content Creation" data-mm="Content Creation">
+                                Content Creation
+                            </h4>
+
+                            <p class="mt-3 text-sm leading-7 text-silver"
+                                data-en="Video scripts, copywriting, storytelling campaigns, promotional concepts and multimedia content designed around your audience."
+                                data-mm="Video Script၊ Copywriting၊ Storytelling Campaign၊ Promotional Concept နှင့် Audience အလိုက် Multimedia Content များကို ဖန်တီးပေးပါသည်။">
+                                Video scripts, copywriting, storytelling campaigns, promotional concepts and
+                                multimedia content designed around your audience.
+                            </p>
+
+                            <!-- <div class="mt-4 text-xs text-white/40">
+                                <span data-en="Example:" data-mm="ဥပမာ:">Example:</span>
+                                ဒေါ်နု ခြံထွက်နွားနို့
+                            </div> -->
+
+                        </article>
+
+                        <!-- Paid 5 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-6">
+
+                            <div class="flex justify-between items-start">
+
+                                <div class="icon-box">
+
+                                    <span class="text-xl">⌁</span>
+
+                                </div>
+
+                                <span class="service-number">02E</span>
+
+                            </div>
+
+                            <h4 class="mt-6 text-xl font-bold" data-en="Web Design & Development"
+                                data-mm="Web Design & Development">
+                                Web Design & Development
+                            </h4>
+
+                            <p class="mt-3 text-sm leading-7 text-silver"
+                                data-en="Modern custom websites, portfolios, landing pages, domain configuration and deployment workflows."
+                                data-mm="Modern Custom Website၊ Portfolio၊ Landing Page၊ Domain Configuration နှင့် Deployment Workflow များကို တည်ဆောက်ပေးပါသည်။">
+                                Modern custom websites, portfolios, landing pages, domain configuration and
+                                deployment workflows.
+                            </p>
+
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span
+                                    class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-white/45">Namecheap</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-white/45">Vercel</span>
+                                <span
+                                    class="px-2.5 py-1 rounded-full bg-white/5 text-[10px] text-white/45">GitHub</span>
+                            </div>
+
+                        </article>
+
+
+                        <!-- Paid 6 -->
+                        <article class="reveal glass glass-hover rounded-3xl p-6">
+
+                            <div class="flex justify-between items-start">
+
+                                <div class="icon-box">
+
+                                    <span class="text-xl">▣</span>
+
+                                </div>
+
+                                <span class="service-number">02F</span>
+
+                            </div>
+
+                            <h4 class="mt-6 text-xl font-bold" data-en="Business, Taxation & Website Management"
+                                data-mm="Business၊ Taxation နှင့် Website Management">
+                                Business, Taxation & Website Management
+                            </h4>
+
+                            <p class="mt-3 text-sm leading-7 text-silver"
+                                data-en="Monthly or project-based management covering business operations, tax guidance oversight, website maintenance and digital advertising execution."
+                                data-mm="လစဉ် သို့မဟုတ် Project အလိုက် Business Operations၊ Tax Guidance Oversight၊ Website Maintenance နှင့် Digital Advertising Execution များကို စီမံပေးပါသည်။">
+                                Monthly or project-based management covering business operations, tax guidance
+                                oversight, website maintenance and digital advertising execution.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+
+                    <div
+                        class="reveal mt-8 rounded-3xl bg-white p-7 lg:p-9 text-burgundy-900 flex flex-col lg:flex-row lg:items-center justify-between gap-7">
+
+                        <div>
+
+                            <div class="text-xs font-bold tracking-[.2em] uppercase opacity-50"
+                                data-en="Ready to delegate?" data-mm="တာဝန်လွှဲပေးရန် အဆင်သင့်ဖြစ်ပြီလား။">
+                                Ready to delegate?
+                            </div>
+
+                            <h3 class="mt-2 text-2xl sm:text-3xl font-extrabold"
+                                data-en="Let's build and manage it together."
+                                data-mm="အတူတကွ တည်ဆောက်ပြီး စီမံခန့်ခွဲကြရအောင်။">
+                                Let's build and manage it together.
+                            </h3>
+
+                        </div>
+
+                        <a href="#contact"
+                            class="shrink-0 inline-flex items-center justify-center gap-2 rounded-full bg-burgundy-900 text-white px-7 py-4 font-bold hover:bg-burgundy-700 transition">
+
+                            <span data-en="Contact ELCID" data-mm="ELCID ကို ဆက်သွယ်ရန်">
+                                Contact ELCID
+                            </span>
+
+                            <span>→</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =======================================================
+         CONTACT
+        ======================================================== -->
+        <section id="contact" class="py-28 lg:py-36 border-t border-white/5">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+                    <div>
+
+                        <div class="reveal section-label" data-en="Contact" data-mm="ဆက်သွယ်ရန်">
+                            Contact
+                        </div>
+
+                        <h2 class="reveal mt-6 text-5xl sm:text-6xl font-extrabold tracking-tight leading-[1.02]"
+                            data-en="Let's make the next decision clearer."
+                            data-mm="နောက်တစ်ဆင့် ဆုံးဖြတ်ချက်ကို ပိုမိုရှင်းလင်းအောင် အတူလုပ်ဆောင်ကြရအောင်။">
+                            Let's make the next decision clearer.
+                        </h2>
+
+                        <p class="reveal mt-6 text-lg leading-8 text-silver"
+                            data-en="Tell us what you're considering. Start with a free initial discussion or ask about our paid management services."
+                            data-mm="သင်စဉ်းစားနေသော အကြောင်းအရာကို ပြောပြပါ။ အခမဲ့ ကနဦးဆွေးနွေးမှုဖြင့် စတင်နိုင်သလို Paid Management Service များအကြောင်းလည်း မေးမြန်းနိုင်ပါသည်။">
+                            Tell us what you're considering. Start with a free initial discussion or ask about
+                            our paid management services.
+                        </p>
+
+                        <div class="reveal mt-9 space-y-4">
+
+                            <div class="glass rounded-2xl p-5">
+
+                                <div class="text-xs uppercase tracking-[.18em] text-white/35" data-en="Email"
+                                    data-mm="အီးမေးလ်">
+                                    Email
+                                </div>
+
+                                <div class="mt-2 text-white/75">
+                                    YOUR_EMAIL@example.com
+                                </div>
+
+                            </div>
+
+                            <div class="glass rounded-2xl p-5">
+
+                                <div class="text-xs uppercase tracking-[.18em] text-white/35" data-en="Social"
+                                    data-mm="Social Media">
+                                    Social
+                                </div>
+
+                                <div class="mt-2 text-white/75">
+                                    @ELCID
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Contact form -->
+                    <div class="reveal glass rounded-[28px] p-6 sm:p-8 lg:p-10">
+
+                        <!--
+                        IMPORTANT:
+                        Replace YOUR_FORM_ENDPOINT with your real backend/form service endpoint.
+                        Until then this form only demonstrates the front-end interaction.
+                        -->
+
+                        <form id="contactForm"
+                            action="https://script.google.com/macros/s/AKfycbxc8plms6hlW2ef1_YTRE189KbTb8Uj6NoMy6vrB18RNxjd3m4yQuZVOOZ3d0RaHSmFug/exec"
+                            method="POST">
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+
+                                <div>
+
+                                    <label for="name" class="block text-sm font-semibold mb-2" data-en="Name"
+                                        data-mm="အမည်">
+                                        Name
+                                    </label>
+
+                                    <input id="name" name="name" type="text" autocomplete="name" required
+                                        placeholder="Your name" data-placeholder-en="Your name"
+                                        data-placeholder-mm="သင့်အမည်"
+                                        class="w-full rounded-xl border border-white/10 bg-black/10 px-4 py-3.5 text-white placeholder:text-white/25" />
+
+                                </div>
+
+
+                                <div>
+
+                                    <label for="email" class="block text-sm font-semibold mb-2" data-en="Email"
+                                        data-mm="အီးမေးလ်">
+                                        Email
+                                    </label>
+
+                                    <input id="email" name="email" type="email" autocomplete="email" required
+                                        placeholder="you@example.com" data-placeholder-en="you@example.com"
+                                        data-placeholder-mm="you@example.com"
+                                        class="w-full rounded-xl border border-white/10 bg-black/10 px-4 py-3.5 text-white placeholder:text-white/25" />
+
+                                </div>
+
+                            </div>
+
+                            <div class="mt-5">
+
+                                <label for="service" class="block text-sm font-semibold mb-2"
+                                    data-en="What can we help with?" data-mm="ဘာအတွက် ကူညီပေးရမလဲ။">
+                                    What can we help with?
+                                </label>
+
+                                <select id="service" name="service"
+                                    class="w-full rounded-xl border border-white/10 bg-[#35090F] px-4 py-3.5 text-white">
+                                    
+                                    <option value="free-consultation" data-en="Free Initial Consultation"
+                                        data-mm="အခမဲ့ ကနဦးအကြံပေးဆွေးနွေးမှု">
+                                        Free Initial Consultation
+                                    </option>
+
+                                    <option value="digital-marketing" data-en="Digital Marketing"
+                                        data-mm="Digital Marketing">
+                                        Digital Marketing
+                                    </option>
+
+                                    <option value="ecommerce" data-en="E-Commerce" data-mm="E-Commerce">
+                                        E-Commerce
+                                    </option>
+
+                                    <option value="design" data-en="Graphics Design & Print"
+                                        data-mm="Graphics Design & Print">
+                                        Graphics Design & Print
+                                    </option>
+
+                                    <option value="content" data-en="Content Creation" data-mm="Content Creation">
+                                        Content Creation
+                                    </option>
+
+                                    <option value="web" data-en="Web Design & Development"
+                                        data-mm="Web Design & Development">
+                                        Web Design & Development
+                                    </option>
+
+                                    <option value="management" data-en="Business / Tax / Website Management"
+                                        data-mm="Business / Tax / Website Management">
+                                        Business / Tax / Website Management
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="mt-5">
+                                
+                                <label for="message" class="block text-sm font-semibold mb-2" data-en="Tell us more"
+                                    data-mm="အသေးစိတ် ပြောပြပါ">
+                                    Tell us more
+                                </label>
+
+                                <textarea id="message" name="message" rows="6" required
+                                    placeholder="Briefly describe what you are considering..."
+                                    data-placeholder-en="Briefly describe what you are considering..."
+                                    data-placeholder-mm="သင်စဉ်းစားနေသောအရာကို အကျဉ်းချုပ်ရေးသားပါ..."
+                                    class="w-full rounded-xl border border-white/10 bg-black/10 px-4 py-3.5 text-white placeholder:text-white/25 resize-none">
+                                </textarea>
+
+                            </div>
+
+
+                            <button type="submit"
+                                class="mt-6 w-full rounded-xl bg-white text-burgundy-900 py-4 font-extrabold hover:bg-silver transition">
+                                
+                                <span data-en="Send Inquiry →" data-mm="စုံစမ်းမေးမြန်းရန် →">
+                                    Send Inquiry →
+                                </span>
+
+                            </button>
+
+
+                            <p id="formMessage"
+                                class="hidden mt-4 rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-white/60">
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+       FOOTER
+    ========================================================== -->
+    <footer class="border-t border-white/5 py-10">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-5">
+
+                <div>
+                    <div class="font-extrabold tracking-[.18em]">ELCID</div>
+                    <div class="mt-1 text-xs text-white/30" data-en="Well-informed decisions."
+                        data-mm="သတင်းအချက်အလက်ပြည့်စုံသော ဆုံးဖြတ်ချက်များ။">
+                        Well-informed decisions.
+                    </div>
+                </div>
+
+                <div class="text-xs text-white/30" data-en="© 2026 ELCID. All rights reserved."
+                    data-mm="© ၂၀၂၆ ELCID။ မူပိုင်ခွင့်အားလုံး ရယူထားပါသည်။">
+                    © 2026 ELCID. All rights reserved.
+                </div>
+
+            </div>
+
+            <div class="mt-8 text-[11px] leading-6 text-white/25 max-w-4xl"
+                data-en="Investment, crypto and referral-related information is provided for general informational purposes. Referral relationships and compensation, where applicable, should be disclosed clearly to clients. Tax and legal matters should be reviewed with appropriately licensed professionals."
+                data-mm="Investment၊ Crypto နှင့် Referral ဆိုင်ရာ အချက်အလက်များသည် အထွေထွေသတင်းအချက်အလက်ပေးရန်သာ ဖြစ်ပါသည်။ Referral Relationship နှင့် Compensation ရှိပါက Client များအား ရှင်းလင်းစွာ အသိပေးသင့်ပါသည်။ Tax နှင့် Legal ကိစ္စများကို သက်ဆိုင်ရာ လိုင်စင်ရကျွမ်းကျင်သူများနှင့် ပြန်လည်စစ်ဆေးသင့်ပါသည်။">
+                Investment, crypto and referral-related information is provided for general informational
+                purposes. Referral relationships and compensation, where applicable, should be disclosed
+                clearly to clients. Tax and legal matters should be reviewed with appropriately licensed
+                professionals.
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- =========================================================
+       JAVASCRIPT
+    ========================================================== -->
+    <script>
+        (() => {
+            "use strict";
+
+            let currentLanguage = localStorage.getItem("elcid-language") || "en";
+
+            const languageToggle = document.getElementById("languageToggle");
+            const mobileLanguage = document.getElementById("mobileLanguage");
+            const enLabel = document.getElementById("enLabel");
+            const mmLabel = document.getElementById("mmLabel");
+            const mobileLangText = document.getElementById("mobileLangText");
+
+            const translatableElements = document.querySelectorAll("[data-en][data-mm]");
+
+            function applyLanguage(language) {
+                currentLanguage = language;
+
+                document.documentElement.lang = language === "mm" ? "my" : "en";
+                document.body.classList.toggle("mm", language === "mm");
+
+                translatableElements.forEach((element) => {
+                    const value = element.getAttribute(
+                        language === "mm" ? "data-mm" : "data-en"
+                    );
+
+                    if (value !== null) {
+                        element.textContent = value;
+                    }
+                });
+
+                // Inputs / textarea placeholders
+                document.querySelectorAll("[data-placeholder-en][data-placeholder-mm]")
+                    .forEach((element) => {
+                        element.placeholder =
+                            language === "mm"
+                                ? element.getAttribute("data-placeholder-mm")
+                                : element.getAttribute("data-placeholder-en");
+                    });
+
+                // Select options
+                document.querySelectorAll("option[data-en][data-mm]").forEach((option) => {
+                    option.textContent =
+                        language === "mm"
+                            ? option.getAttribute("data-mm")
+                            : option.getAttribute("data-en");
+                });
+
+                enLabel.classList.toggle("active-lang", language === "en");
+                mmLabel.classList.toggle("active-lang", language === "mm");
+                mobileLangText.textContent = language === "en" ? "EN" : "MM";
+
+                localStorage.setItem("elcid-language", language);
+
+                updateFormMessage();
+            }
+
+
+            function toggleLanguage() {
+                applyLanguage(currentLanguage === "en" ? "mm" : "en");
+            }
+
+
+            languageToggle.addEventListener("click", toggleLanguage);
+            mobileLanguage.addEventListener("click", toggleLanguage);
+
+
+            // =======================================================
+            // Mobile menu
+            // =======================================================
+            const menuButton = document.getElementById("menuButton");
+            const mobileMenu = document.getElementById("mobileMenu");
+
+            menuButton.addEventListener("click", () => {
+                const isOpen = mobileMenu.classList.toggle("open");
+                menuButton.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+                link.addEventListener("click", () => {
+                    mobileMenu.classList.remove("open");
+                    menuButton.setAttribute("aria-expanded", "false");
+                });
+            });
+
+
+            // =======================================================
+            // Scroll reveal
+            // =======================================================
+            const revealObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+            document.querySelectorAll(".reveal").forEach((element) => {
+                revealObserver.observe(element);
+            });
+
+
+            // =======================================================
+            // Active navigation section
+            // =======================================================
+            const sections = document.querySelectorAll("main section[id]");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            const sectionObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const sectionId = entry.target.id;
+
+                            navLinks.forEach((link) => {
+                                link.classList.toggle(
+                                    "active",
+                                    link.getAttribute("data-section") === sectionId
+                                );
+                            });
+                        }
+                    });
+                },
+                {
+                    rootMargin: "-30% 0px -55% 0px",
+                    threshold: 0
+                }
+            );
+
+            sections.forEach((section) => sectionObserver.observe(section));
+
+
+            // =======================================================
+            // Contact form
+            // =======================================================
+            const form = document.getElementById("contactForm");
+            const formMessage = document.getElementById("formMessage");
+
+            function updateFormMessage() {
+                if (!formMessage.classList.contains("hidden")) {
+                    formMessage.textContent =
+                        currentLanguage === "mm"
+                            ? "Form ကို ပို့ရန် သင့်ရဲ့ real form endpoint ကို YOUR_FORM_ENDPOINT နေရာတွင် ထည့်သွင်းပါ။"
+                            : "Connect your real form endpoint by replacing YOUR_FORM_ENDPOINT in the form action.";
+                }
+            }
+
+            form.addEventListener("submit", (event) => {
+                const action = form.getAttribute("action");
+
+                if (!action || action === "YOUR_FORM_ENDPOINT") {
+                    event.preventDefault();
+
+                    formMessage.classList.remove("hidden");
+                    formMessage.textContent =
+                        currentLanguage === "mm"
+                            ? "ဒီ Demo Form ကို အမှန်တကယ် message လက်ခံနိုင်ရန် YOUR_FORM_ENDPOINT ကို သင့်ရဲ့ backend သို့မဟုတ် form service endpoint ဖြင့် အစားထိုးပါ။"
+                            : "This demo form needs a real backend or form-service endpoint. Replace YOUR_FORM_ENDPOINT in the form action before publishing.";
+
+                    return;
+                }
+
+                // If a real endpoint is supplied, the browser performs the normal POST.
+            });
+
+
+            // =======================================================
+            // Initial language
+            // =======================================================
+            applyLanguage(currentLanguage);
+
+        })();
+
+        // Form
+
+        const contactForm = document.getElementById("contactForm");
+        const formMessage = document.getElementById("formMessage");
+
+        contactForm.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const submitButton = contactForm.querySelector(
+                'button[type="submit"]'
+            );
+
+            const originalText = submitButton.innerHTML;
+
+            submitButton.disabled = true;
+            submitButton.innerHTML = `
+        <span>Sending...</span>
+    `;
+
+            formMessage.classList.remove("hidden");
+            formMessage.textContent = "Sending your inquiry...";
+
+            try {
+                const formData = new FormData(contactForm);
+
+                const response = await fetch(
+                    contactForm.action,
+                    {
+                        method: "POST",
+                        body: formData
+                    }
+                );
+
+                const result = await response.json();
+
+                if (result.success) {
+
+                    formMessage.textContent =
+                        "Your inquiry has been sent successfully. Thank you.";
+
+                    formMessage.classList.remove(
+                        "bg-red-500/10",
+                        "border-red-500/20"
+                    );
+
+                    formMessage.classList.add(
+                        "bg-green-500/10",
+                        "border-green-500/20"
+                    );
+
+                    contactForm.reset();
+
+                } else {
+
+                    throw new Error(
+                        result.message || "Something went wrong."
+                    );
+                }
+
+            } catch (error) {
+
+                console.error(error);
+
+                formMessage.textContent =
+                    "Unable to send your inquiry. Please try again.";
+
+                formMessage.classList.remove(
+                    "bg-green-500/10",
+                    "border-green-500/20"
+                );
+
+                formMessage.classList.add(
+                    "bg-red-500/10",
+                    "border-red-500/20"
+                );
+
+            } finally {
+
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalText;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
